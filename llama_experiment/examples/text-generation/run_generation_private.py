@@ -550,7 +550,21 @@ def main():
         model_kwargs = {}
         if args.fp16:
             model_kwargs["torch_dtype"] = torch.float16
-        model = model_class.from_pretrained(args.model_name_or_path, **model_kwargs)
+        # ONNX export of LLaMA can fail on some torch/transformers stacks when
+        # SDPA path is selected (Unsupported type for attn_mask). Prefer eager
+        # attention for export stability.
+        if args.model_type == "llama":
+            model_kwargs["attn_implementation"] = "eager"
+        try:
+            model = model_class.from_pretrained(args.model_name_or_path, **model_kwargs)
+        except TypeError as e:
+            # Backward compatibility for transformers versions that do not
+            # accept attn_implementation in from_pretrained.
+            if args.model_type == "llama" and "attn_implementation" in str(e):
+                model_kwargs.pop("attn_implementation", None)
+                model = model_class.from_pretrained(args.model_name_or_path, **model_kwargs)
+            else:
+                raise
 
     if (
         args.model_type == "llama"
