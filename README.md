@@ -342,6 +342,15 @@ Environment requirements (offline CPU path):
 - Runtime libs: `libsodium`, `boost`, `openssl`
 - If installing to `/usr/local`, admin privileges (`sudo`) are required.
 
+Build command (manual):
+
+```bash
+cd /path/to/2PC/offline_experiment
+make clean
+MPICXX=/usr/bin/mpicxx make offline
+chmod +x build/pcg_matrix_beaver
+```
+
 ```bash
 cd /path/to/2PC/offline_experiment
 echo "$(hostname) slots=64" > hostfile
@@ -360,6 +369,12 @@ One-command wrapper:
 
 ```bash
 scripts/run_pcg_15k_baseline.sh
+```
+
+One-command wrapper with auto-build:
+
+```bash
+MPIRUN=/usr/bin/mpirun MPICXX=/usr/bin/mpicxx PCG_AUTO_BUILD=1 scripts/run_pcg_15k_baseline.sh
 ```
 
 Auto-tuning / overrides for different machines:
@@ -394,6 +409,8 @@ Alioth-specific pitfalls and fixes:
   `chmod +x offline_experiment/build/pcg_matrix_beaver`.
 - If `nproc` looks smaller than expected but affinity/cpuset is larger, use the
   wrapper script defaults or explicitly set `PCG_SLOTS`/`PCG_PE`.
+- If compile-time MPI and runtime MPI are mixed, force both:
+  `MPICXX=/usr/bin/mpicxx` and `MPIRUN=/usr/bin/mpirun`.
 
 Notes:
 

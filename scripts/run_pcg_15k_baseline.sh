@@ -8,12 +8,26 @@ if [[ -x /usr/bin/mpirun ]]; then
 else
   MPIRUN_BIN="${MPIRUN:-mpirun}"
 fi
+if [[ -x /usr/bin/mpicxx ]]; then
+  MPICXX_BIN="${MPICXX:-/usr/bin/mpicxx}"
+else
+  MPICXX_BIN="${MPICXX:-mpicxx}"
+fi
 
 cd "$EXP_DIR"
 
+if [[ "${PCG_AUTO_BUILD:-0}" == "1" ]]; then
+  echo "Auto-build enabled: MPICXX=$MPICXX_BIN"
+  make clean
+  MPICXX="$MPICXX_BIN" make offline
+  chmod +x build/pcg_matrix_beaver
+fi
+
 if [[ ! -x build/pcg_matrix_beaver ]]; then
   echo "Missing build/pcg_matrix_beaver in $EXP_DIR"
-  echo "Please build it first (make offline) or copy a validated binary."
+  echo "Build first:"
+  echo "  cd $EXP_DIR && MPICXX=$MPICXX_BIN make offline && chmod +x build/pcg_matrix_beaver"
+  echo "or run with PCG_AUTO_BUILD=1."
   exit 1
 fi
 
@@ -63,6 +77,7 @@ echo "Topology: sockets=$SOCKETS, cores/socket=$CORES_PER_SOCKET, threads/core=$
 echo "Config: PE=$PCG_PE, OMP_THREADS=$PCG_OMP_THREADS, slots=$PCG_SLOTS, MKN=${PCG_M}x${PCG_K}x${PCG_N}, channels=$PCG_CHANNELS, batch=$PCG_BATCH"
 echo "MPI: $MPIRUN_BIN"
 "$MPIRUN_BIN" --version 2>/dev/null | head -1 || true
+echo "MPICXX: $MPICXX_BIN"
 if [[ -n "${LOGICAL_CPUS_NPROC}" && "${LOGICAL_CPUS_NPROC}" != "${LOGICAL_CPUS}" ]]; then
   echo "Note: nproc=$LOGICAL_CPUS_NPROC but affinity-based cpu count=$LOGICAL_CPUS (using affinity count)."
 fi
