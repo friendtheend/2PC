@@ -60,20 +60,26 @@ endif
 # 编译标志
 # -------------------------
 CXXFLAGS = -O3 -std=c++20 -Wall -Wextra -fcoroutines -fopenmp -march=native -pthread
-CXXFLAGS += -I$(OTE_PREFIX)/include -DCOPROTO_ENABLE_BOOST
+CXXFLAGS += -I$(OTE_PREFIX)/include -DCOPROTO_ENABLE_BOOST -DENABLE_IKNP
 
 NVCCFLAGS = -O3 -std=c++17 -arch=$(CUDA_ARCH)
 
 LDFLAGS = -no-pie
 
 LIBS = \
-  $(OTE_PREFIX)/lib/libKyberOT.a \
   $(OTE_PREFIX)/lib/liblibOTe.a \
-  $(OTE_PREFIX)/lib/libSimplestOT.a \
   $(OTE_PREFIX)/lib/libcryptoTools.a \
   $(OTE_PREFIX)/lib/libcoproto.a \
   -lsodium -lboost_system -lboost_thread -lboost_filesystem \
   -lssl -lcrypto -ldl -lpthread -lm
+
+# Optional static libs (present on some machines only).
+ifneq ("$(wildcard $(OTE_PREFIX)/lib/libKyberOT.a)","")
+  LIBS += $(OTE_PREFIX)/lib/libKyberOT.a
+endif
+ifneq ("$(wildcard $(OTE_PREFIX)/lib/libSimplestOT.a)","")
+  LIBS += $(OTE_PREFIX)/lib/libSimplestOT.a
+endif
 
 MPI_LIBS = -I$(MPI_INC_PATH) -L$(MPI_LIB_PATH) -lmpi
 

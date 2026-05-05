@@ -75,6 +75,7 @@ extern "C" int crypto_scalarmult_base_noclamp(
 #include <libOTe/TwoChooseOne/Iknp/IknpOtExtReceiver.h>
 #include <coproto/Socket/Socket.h>
 #include <cryptoTools/Common/Defines.h>
+#include <cryptoTools/Common/BitVector.h>
 #include <cryptoTools/Crypto/PRNG.h>
 #include <macoro/sync_wait.h>
 #include <macoro/task.h>

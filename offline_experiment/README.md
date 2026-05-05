@@ -31,3 +31,5 @@ mpirun -np 2 --hostfile hostfile \
 - Prefer `OMP_NUM_THREADS=16` for this workload.
 - `OMP_NUM_THREADS=32` may run but can significantly reduce throughput.
 - If you recompile, keep this directory isolated from other BMT variants.
+- The bundled `Makefile` enables `-DENABLE_IKNP` and treats `libKyberOT.a` /
+  `libSimplestOT.a` as optional link-time libraries for better cross-machine compatibility.

@@ -62,6 +62,40 @@ else
 fi
 echo
 
+echo "== IKNP compile flag check =="
+mk_file="$EXP_DIR/Makefile"
+iknp_flag_state="unknown"
+if [[ -f "$mk_file" ]]; then
+  if grep -Eq -- '-DENABLE_IKNP([[:space:]]|$)' "$mk_file"; then
+    echo "Makefile CXXFLAGS includes -DENABLE_IKNP: YES"
+    iknp_flag_state="yes"
+  else
+    echo "Makefile CXXFLAGS includes -DENABLE_IKNP: NO"
+    iknp_flag_state="no"
+  fi
+else
+  echo "Makefile not found: $mk_file"
+fi
+
+if [[ -f "$BIN" ]]; then
+  iknp_sym="$(nm -C "$BIN" 2>/dev/null | grep -E 'IknpOtExt(Sender|Receiver)' | head -1 || true)"
+  if [[ -n "$iknp_sym" ]]; then
+    echo "Binary IKNP symbols present: YES"
+  else
+    iknp_str="$(strings "$BIN" 2>/dev/null | grep -E 'IknpOtExt(Sender|Receiver)' | head -1 || true)"
+    if [[ -n "$iknp_str" ]]; then
+      echo "Binary IKNP strings present: YES"
+    else
+      echo "Binary IKNP symbols/strings present: NO (or stripped/inlined)"
+    fi
+  fi
+fi
+
+if [[ "$iknp_flag_state" == "no" ]]; then
+  echo "Fix: add -DENABLE_IKNP to offline_experiment/Makefile CXXFLAGS."
+fi
+echo
+
 echo "== libOTe / deps (expected by offline_experiment Makefile) =="
 missing=0
 for hdr in \
