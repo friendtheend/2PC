@@ -217,6 +217,14 @@ BRILLM_CUDA_VISIBLE_DEVICES=0 scripts/run_table5_bert.sh   # single-GPU two-rank
 CUDA_ARCH=sm_90 scripts/run_table5_bert.sh                 # build for Hopper
 ```
 
+Single-GPU (H200) run:
+
+```bash
+CUDA_VISIBLE_DEVICES=0 \
+BRILLM_CUDA_VISIBLE_DEVICES=0 \
+scripts/run_table5_bert.sh
+```
+
 ### LLaMA2 Experiments
 
 Run the full LLaMA2 table pipeline:
@@ -234,6 +242,15 @@ results/llama2_experiment_*/brillm_llama2_raw_online.csv
 results/llama2_experiment_*/llama2_hybrid_summary.csv
 results/llama2_experiment_*/llama2_table.tex
 results/llama2_experiment_*/table5.tex
+```
+
+Single-GPU (H200) run:
+
+```bash
+CUDA_VISIBLE_DEVICES=0 \
+SHAFT_CUDA_DEVICES=0 \
+BRILLM_CUDA_VISIBLE_DEVICES=0 \
+scripts/run_table5_llama2.sh
 ```
 
 ### GPT2-base Experiments
@@ -255,6 +272,14 @@ python run_generation_private.py \
   --len_data 128 \
   --comp \
   --length 1
+```
+
+Single-GPU (H200) run:
+
+```bash
+CUDA_VISIBLE_DEVICES=0 \
+BRILLM_CUDA_VISIBLE_DEVICES=0 \
+scripts/run_table5_gpt2.sh
 ```
 
 ## Important Measurement Caveats
