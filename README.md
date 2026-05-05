@@ -331,8 +331,19 @@ For the CPU offline generator (`pcg_matrix_beaver`), the following setup is the
 validated high-throughput baseline in this repo (around 15k+ C elements/s in
 the reported environment):
 
+Environment requirements (offline CPU path):
+
+- OS: Linux (tested on Ubuntu)
+- Compiler toolchain: `gcc/g++` with C++20 and OpenMP support
+- MPI: OpenMPI (compile and run must use the same MPI distribution)
+- Crypto deps installed under `/usr/local`:
+  - `libKyberOT.a`, `liblibOTe.a`, `libSimplestOT.a`, `libcryptoTools.a`, `libcoproto.a`
+  - headers such as `libOTe/TwoChooseOne/Iknp/IknpOtExtSender.h`
+- Runtime libs: `libsodium`, `boost`, `openssl`
+- If installing to `/usr/local`, admin privileges (`sudo`) are required.
+
 ```bash
-cd ~/luoresearch/2PC/offline_experiment
+cd /path/to/2PC/offline_experiment
 echo "$(hostname) slots=64" > hostfile
 
 unset OMP_DYNAMIC OMP_WAIT_POLICY OMP_PLACES OMP_PROC_BIND
@@ -373,6 +384,16 @@ Why `hostfile` matters:
 - Writing `hostfile` with explicit slots (e.g., `slots=64` or `slots=192`)
   makes `--map-by ... PE=... --bind-to core` deterministic.
 - If hostfile slots are too small, binding fails or silently under-allocates.
+
+Alioth-specific pitfalls and fixes:
+
+- If you see `Need 2 MPI processes`, you are likely mixing MPI runtimes
+  (e.g., conda `mpirun` with system-linked binary). Fix by forcing:
+  `MPIRUN=/usr/bin/mpirun`, `MPICXX=/usr/bin/mpicxx`, then rebuild.
+- If `mpirun` says executable lacks permissions, run:
+  `chmod +x offline_experiment/build/pcg_matrix_beaver`.
+- If `nproc` looks smaller than expected but affinity/cpuset is larger, use the
+  wrapper script defaults or explicitly set `PCG_SLOTS`/`PCG_PE`.
 
 Notes:
 

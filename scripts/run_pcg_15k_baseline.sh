@@ -3,6 +3,11 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 EXP_DIR="$ROOT_DIR/offline_experiment"
+if [[ -x /usr/bin/mpirun ]]; then
+  MPIRUN_BIN="${MPIRUN:-/usr/bin/mpirun}"
+else
+  MPIRUN_BIN="${MPIRUN:-mpirun}"
+fi
 
 cd "$EXP_DIR"
 
@@ -16,7 +21,23 @@ fi
 CORES_PER_SOCKET="$(lscpu | awk -F: '/Core\(s\) per socket/{gsub(/ /,"",$2); print $2; exit}')"
 THREADS_PER_CORE="$(lscpu | awk -F: '/Thread\(s\) per core/{gsub(/ /,"",$2); print $2; exit}')"
 SOCKETS="$(lscpu | awk -F: '/Socket\(s\)/{gsub(/ /,"",$2); print $2; exit}')"
-LOGICAL_CPUS="$(nproc)"
+LOGICAL_CPUS_NPROC="$(command nproc 2>/dev/null || true)"
+LOGICAL_CPUS_AFF="$(python3 - <<'PY'
+import os
+try:
+    print(len(os.sched_getaffinity(0)))
+except Exception:
+    print("")
+PY
+)"
+LOGICAL_CPUS_GETCONF="$(getconf _NPROCESSORS_ONLN 2>/dev/null || true)"
+LOGICAL_CPUS="${LOGICAL_CPUS_AFF:-}"
+if [[ -z "${LOGICAL_CPUS}" ]]; then
+  LOGICAL_CPUS="${LOGICAL_CPUS_GETCONF:-}"
+fi
+if [[ -z "${LOGICAL_CPUS}" ]]; then
+  LOGICAL_CPUS="${LOGICAL_CPUS_NPROC:-64}"
+fi
 
 if [[ -z "${CORES_PER_SOCKET}" || -z "${THREADS_PER_CORE}" || -z "${SOCKETS}" ]]; then
   echo "Failed to parse lscpu topology."
@@ -40,13 +61,21 @@ PCG_BATCH="${PCG_BATCH:-256}"
 
 echo "Topology: sockets=$SOCKETS, cores/socket=$CORES_PER_SOCKET, threads/core=$THREADS_PER_CORE, logical_cpus=$LOGICAL_CPUS"
 echo "Config: PE=$PCG_PE, OMP_THREADS=$PCG_OMP_THREADS, slots=$PCG_SLOTS, MKN=${PCG_M}x${PCG_K}x${PCG_N}, channels=$PCG_CHANNELS, batch=$PCG_BATCH"
+echo "MPI: $MPIRUN_BIN"
+"$MPIRUN_BIN" --version 2>/dev/null | head -1 || true
+if [[ -n "${LOGICAL_CPUS_NPROC}" && "${LOGICAL_CPUS_NPROC}" != "${LOGICAL_CPUS}" ]]; then
+  echo "Note: nproc=$LOGICAL_CPUS_NPROC but affinity-based cpu count=$LOGICAL_CPUS (using affinity count)."
+fi
+if (( PCG_OMP_THREADS > PCG_PE )); then
+  echo "Note: OMP threads ($PCG_OMP_THREADS) > PE cores/rank ($PCG_PE). This is SMT/oversubscription mode and may reduce throughput."
+fi
 
 echo "$(hostname) slots=$PCG_SLOTS" > hostfile
 
 unset OMP_DYNAMIC OMP_WAIT_POLICY OMP_PLACES OMP_PROC_BIND
 export OMP_NUM_THREADS="$PCG_OMP_THREADS"
 
-exec mpirun -np 2 --hostfile hostfile \
+exec "$MPIRUN_BIN" -np 2 --hostfile hostfile \
   --map-by ppr:2:node:PE="$PCG_PE" --bind-to core --report-bindings \
   --mca pml ob1 --mca btl vader,self \
   ./build/pcg_matrix_beaver \
