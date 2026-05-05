@@ -49,6 +49,7 @@ RUN_SHAFT_COMP="${RUN_SHAFT_COMP:-1}"
 RUN_BRILLM="${RUN_BRILLM:-1}"
 BRILLM_CUDA_VISIBLE_DEVICES="${BRILLM_CUDA_VISIBLE_DEVICES:-rank}"
 ENABLE_OP_PROFILE="${ENABLE_OP_PROFILE:-1}"
+BRILLM_MPI_MODE="${BRILLM_MPI_MODE:-tcp}"
 
 mkdir -p "$OUT"
 
@@ -68,6 +69,7 @@ export PYTHONPATH="$SHAFT_ROOT:${PYTHONPATH:-}"
   echo "BIN=$BIN"
   echo "BRILLM_CUDA_VISIBLE_DEVICES=$BRILLM_CUDA_VISIBLE_DEVICES"
   echo "ENABLE_OP_PROFILE=$ENABLE_OP_PROFILE"
+  echo "BRILLM_MPI_MODE=$BRILLM_MPI_MODE"
   nvidia-smi || true
   tc qdisc show || true
 } > "$OUT/env.txt" 2>&1
@@ -133,7 +135,13 @@ if [[ "$RUN_BRILLM" == "1" ]]; then
   cd "$ROOT"
   PCG="$OUT/brillm_dummy_pcg"
   mkdir -p "$PCG"
-  MPIRUN=(mpirun -np 2 --oversubscribe --mca btl tcp,self --mca btl_tcp_if_include lo)
+  if [[ "$BRILLM_MPI_MODE" == "shm" ]]; then
+    MPIRUN=(mpirun -np 2 --oversubscribe --mca btl vader,self)
+  elif [[ "$BRILLM_MPI_MODE" == "default" ]]; then
+    MPIRUN=(mpirun -np 2 --oversubscribe)
+  else
+    MPIRUN=(mpirun -np 2 --oversubscribe --mca btl tcp,self --mca btl_tcp_if_include lo)
+  fi
 
   run_one() {
     local label="$1" M="$2" K="$3" N="$4" iters="$5"

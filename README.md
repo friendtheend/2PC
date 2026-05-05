@@ -225,6 +225,15 @@ BRILLM_CUDA_VISIBLE_DEVICES=0 \
 scripts/run_table5_bert.sh
 ```
 
+Single-machine shared-memory MPI (recommended for local 2-party runs; avoids forced TCP loopback):
+
+```bash
+CUDA_VISIBLE_DEVICES=0 \
+BRILLM_CUDA_VISIBLE_DEVICES=0 \
+BRILLM_MPI_MODE=shm \
+scripts/run_table5_bert.sh
+```
+
 ### LLaMA2 Experiments
 
 Run the full LLaMA2 table pipeline:
@@ -250,6 +259,16 @@ Single-GPU (H200) run:
 CUDA_VISIBLE_DEVICES=0 \
 SHAFT_CUDA_DEVICES=0 \
 BRILLM_CUDA_VISIBLE_DEVICES=0 \
+scripts/run_table5_llama2.sh
+```
+
+Single-machine shared-memory MPI (recommended for local 2-party runs):
+
+```bash
+CUDA_VISIBLE_DEVICES=0 \
+SHAFT_CUDA_DEVICES=0 \
+BRILLM_CUDA_VISIBLE_DEVICES=0 \
+BRILLM_MPI_MODE=shm \
 scripts/run_table5_llama2.sh
 ```
 
@@ -280,6 +299,30 @@ Single-GPU (H200) run:
 CUDA_VISIBLE_DEVICES=0 \
 BRILLM_CUDA_VISIBLE_DEVICES=0 \
 scripts/run_table5_gpt2.sh
+```
+
+Single-machine shared-memory MPI (recommended for local 2-party runs):
+
+```bash
+CUDA_VISIBLE_DEVICES=0 \
+BRILLM_CUDA_VISIBLE_DEVICES=0 \
+BRILLM_MPI_MODE=shm \
+scripts/run_table5_gpt2.sh
+```
+
+MPI mode notes:
+
+```text
+BRILLM_MPI_MODE=tcp      # force tcp,self over lo (legacy behavior)
+BRILLM_MPI_MODE=shm      # force shared-memory BTL (vader,self; OpenMPI 4.x)
+BRILLM_MPI_MODE=default  # let OpenMPI auto-select transport
+```
+
+Threading note:
+
+```text
+The BriLLMFlow online CUDA binary does not use OpenMP for its main online path.
+Setting OMP_NUM_THREADS may have little effect compared with MPI transport mode.
 ```
 
 ## Important Measurement Caveats

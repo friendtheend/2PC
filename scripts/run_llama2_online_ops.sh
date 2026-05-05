@@ -6,6 +6,7 @@ BIN="${BIN:-$ROOT/brillmflow_2pc/BMT/build/gpu_matrix_beaver}"
 OUT="${OUT:-$ROOT/results/rerun_llama2_online_$(date +%Y%m%d_%H%M%S)}"
 BRILLM_CUDA_VISIBLE_DEVICES="${BRILLM_CUDA_VISIBLE_DEVICES:-rank}"
 BRILLM_LLAMA_MODE="${BRILLM_LLAMA_MODE:-real_forward}"
+BRILLM_MPI_MODE="${BRILLM_MPI_MODE:-tcp}"
 PCG="$OUT/dummy_pcg"
 mkdir -p "$PCG"
 
@@ -15,7 +16,13 @@ if [[ ! -x "$BIN" ]]; then
   exit 1
 fi
 
-MPIRUN=(mpirun -np 2 --oversubscribe --mca btl tcp,self --mca btl_tcp_if_include lo)
+if [[ "$BRILLM_MPI_MODE" == "shm" ]]; then
+  MPIRUN=(mpirun -np 2 --oversubscribe --mca btl vader,self)
+elif [[ "$BRILLM_MPI_MODE" == "default" ]]; then
+  MPIRUN=(mpirun -np 2 --oversubscribe)
+else
+  MPIRUN=(mpirun -np 2 --oversubscribe --mca btl tcp,self --mca btl_tcp_if_include lo)
+fi
 
 run_one() {
   local label="$1" M="$2" K="$3" N="$4" iters="$5"

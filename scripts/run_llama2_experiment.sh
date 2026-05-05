@@ -56,6 +56,7 @@ BIN="${BIN:-$ROOT/brillmflow_2pc/BMT/build/gpu_matrix_beaver}"
 BRILLM_CUDA_VISIBLE_DEVICES="${BRILLM_CUDA_VISIBLE_DEVICES:-rank}"
 ENABLE_OP_PROFILE="${ENABLE_OP_PROFILE:-1}"
 BRILLM_LLAMA_MODE="${BRILLM_LLAMA_MODE:-real_forward}"
+BRILLM_MPI_MODE="${BRILLM_MPI_MODE:-tcp}"
 mkdir -p "$OUT"
 
 export PYTHONPATH="$SHAFT_ROOT:${PYTHONPATH:-}"
@@ -72,6 +73,7 @@ export PYTHONPATH="$SHAFT_ROOT:${PYTHONPATH:-}"
   echo "BRILLM_CUDA_VISIBLE_DEVICES=$BRILLM_CUDA_VISIBLE_DEVICES"
   echo "ENABLE_OP_PROFILE=$ENABLE_OP_PROFILE"
   echo "BRILLM_LLAMA_MODE=$BRILLM_LLAMA_MODE"
+  echo "BRILLM_MPI_MODE=$BRILLM_MPI_MODE"
   nvidia-smi || true
   tc qdisc show || true
 } > "$OUT/env.txt" 2>&1
@@ -128,7 +130,7 @@ if [[ "$RUN_BRILLM" == "1" ]]; then
     echo "Still missing BriLLMFlow online binary after build attempt: $BIN" >&2
     exit 1
   fi
-  OUT="$OUT" BIN="$BIN" BRILLM_LLAMA_MODE="$BRILLM_LLAMA_MODE" "$ROOT/scripts/run_llama2_online_ops.sh"
+  OUT="$OUT" BIN="$BIN" BRILLM_LLAMA_MODE="$BRILLM_LLAMA_MODE" BRILLM_MPI_MODE="$BRILLM_MPI_MODE" "$ROOT/scripts/run_llama2_online_ops.sh"
 fi
 
 shaft_logs=()
