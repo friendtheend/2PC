@@ -325,6 +325,61 @@ The BriLLMFlow online CUDA binary does not use OpenMP for its main online path.
 Setting OMP_NUM_THREADS may have little effect compared with MPI transport mode.
 ```
 
+### PCG Offline Throughput Repro (1024x64x1024)
+
+For the CPU offline generator (`pcg_matrix_beaver`), the following setup is the
+validated high-throughput baseline in this repo (around 15k+ C elements/s in
+the reported environment):
+
+```bash
+cd ~/luoresearch/2PC/offline_experiment
+echo "$(hostname) slots=64" > hostfile
+
+unset OMP_DYNAMIC OMP_WAIT_POLICY OMP_PLACES OMP_PROC_BIND
+export OMP_NUM_THREADS=16
+
+mpirun -np 2 --hostfile hostfile \
+  --map-by ppr:2:node:PE=16 --bind-to core --report-bindings \
+  --mca pml ob1 --mca btl vader,self \
+  ./build/pcg_matrix_beaver \
+  --M 1024 --K 64 --N 1024 --bits 64 --channels 20 --batch 256 --no-verify
+```
+
+One-command wrapper:
+
+```bash
+scripts/run_pcg_15k_baseline.sh
+```
+
+Auto-tuning / overrides for different machines:
+
+```bash
+# defaults are auto-detected from lscpu:
+#   PE = cores per socket
+#   OMP threads = PE
+#   slots = nproc
+
+# Example: 96 physical cores / 192 threads machine (2 sockets x 48 cores)
+PCG_PE=48 PCG_OMP_THREADS=48 PCG_SLOTS=192 scripts/run_pcg_15k_baseline.sh
+
+# Example: test SMT-heavy run on same machine
+PCG_PE=48 PCG_OMP_THREADS=96 PCG_SLOTS=192 scripts/run_pcg_15k_baseline.sh
+```
+
+Why `hostfile` matters:
+
+- In this environment, OpenMPI can sometimes mis-detect available CPUs and
+  report `#cpus: 1` for binding checks.
+- Writing `hostfile` with explicit slots (e.g., `slots=64` or `slots=192`)
+  makes `--map-by ... PE=... --bind-to core` deterministic.
+- If hostfile slots are too small, binding fails or silently under-allocates.
+
+Notes:
+
+- `OMP_NUM_THREADS=16` is the preferred setting for this workload.
+- `OMP_NUM_THREADS=32` can run, but often regresses throughput due to thread contention.
+- Ensure `./build/pcg_matrix_beaver` exists in the selected tree before running.
+
 ## Important Measurement Caveats
 
 - LLaMA2 SHAFT results use the LLaMA-compatible adapter in `llama_experiment`;
@@ -352,3 +407,5 @@ Setting OMP_NUM_THREADS may have little effect compared with MPI transport mode.
 - LLaMA2 table generator: `scripts/make_llama2_hybrid_table.py`
 - GPT2 table generator: `scripts/make_gpt2_hybrid_table.py`
 - BriLLMFlow online CUDA source: `brillmflow_2pc/BMT/gpu_matrix_beaver_online.cu`
+- Frozen CPU offline baseline (15k pattern): `offline_experiment/`
+- Offline baseline runner: `scripts/run_pcg_15k_baseline.sh`

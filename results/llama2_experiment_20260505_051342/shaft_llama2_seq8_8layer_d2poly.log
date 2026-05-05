@@ -1,0 +1,244 @@
+INFO:root:==================
+INFO:root:DistributedCommunicator with rank 0
+INFO:root:==================
+INFO:root:==================
+INFO:root:DistributedCommunicator with rank 1
+INFO:root:==================
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:1 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:1 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:1 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:1 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:2 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:2 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:2 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:2 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:3 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:3 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:3 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:3 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:4 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:4 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:4 with 2 nodes.
+INFO:root:World size = 2
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:4 with 2 nodes.
+INFO:root:World size = 2
+WARNING:__mp_main__:device: cuda:1, rank: 1, world_size: 2, 16-bits inference: True
+/home/ylu18/miniconda3/envs/shaft_clean/lib/python3.10/site-packages/huggingface_hub/file_download.py:942: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+WARNING:__mp_main__:device: cuda:0, rank: 0, world_size: 2, 16-bits inference: True
+/home/ylu18/miniconda3/envs/shaft_clean/lib/python3.10/site-packages/huggingface_hub/file_download.py:942: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Loading checkpoint shards:   0%|                                                                                                     | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|                                                                                                     | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|██████████████████████████████████████████████▌                                              | 1/2 [00:00<00:00,  1.04it/s]Loading checkpoint shards:  50%|██████████████████████████████████████████████▌                                              | 1/2 [00:01<00:01,  1.14s/it]Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:01<00:00,  1.52it/s]Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:01<00:00,  1.42it/s]
+Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:01<00:00,  1.45it/s]Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:01<00:00,  1.32it/s]
+WARNING:__mp_main__:Truncated Llama layers: 32 -> 8
+WARNING:__mp_main__:Truncated Llama layers: 32 -> 8
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/__init__.py:66: RuntimeWarning: CrypTen is already initialized.
+  warnings.warn("CrypTen is already initialized.", RuntimeWarning)
+/home/ylu18/miniconda3/envs/shaft_clean/lib/python3.10/site-packages/transformers/models/llama/modeling_llama.py:1068: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if seq_length > self.causal_mask.shape[-1]:
+/home/ylu18/miniconda3/envs/shaft_clean/lib/python3.10/site-packages/transformers/models/llama/modeling_llama.py:385: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if attn_output.size() != (bsz, self.num_heads, q_len, self.head_dim):
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/__init__.py:66: RuntimeWarning: CrypTen is already initialized.
+  warnings.warn("CrypTen is already initialized.", RuntimeWarning)
+/home/ylu18/miniconda3/envs/shaft_clean/lib/python3.10/site-packages/transformers/models/llama/modeling_llama.py:1068: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if seq_length > self.causal_mask.shape[-1]:
+[W shape_type_inference.cpp:1920] Warning: The shape inference of shaft::Embedding type is missing, so it may result in wrong shape inference for the exported graph. Please consider adding it in symbolic function. (function UpdateReliable)
+/home/ylu18/miniconda3/envs/shaft_clean/lib/python3.10/site-packages/transformers/models/llama/modeling_llama.py:385: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if attn_output.size() != (bsz, self.num_heads, q_len, self.head_dim):
+[W shape_type_inference.cpp:1920] Warning: The shape inference of shaft::Embedding type is missing, so it may result in wrong shape inference for the exported graph. Please consider adding it in symbolic function. (function UpdateReliable)
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/nn/onnx_converter.py:255: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/tensor_numpy.cpp:206.)
+  param = torch.from_numpy(numpy_helper.to_array(node))
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/nn/onnx_converter.py:255: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/tensor_numpy.cpp:206.)
+  param = torch.from_numpy(numpy_helper.to_array(node))
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/mpc/provider/tfp_provider.py:62: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  v = torch.nn.functional.one_hot(r, num_classes=length)
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/mpc/provider/tfp_provider.py:62: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  v = torch.nn.functional.one_hot(r, num_classes=length)
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/mpc/provider/tfp_provider.py:29: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c = getattr(torch, op)(a, b, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/mpc/provider/tfp_provider.py:29: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c = getattr(torch, op)(a, b, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/mpc/primitives/beaver.py:82: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c._tensor += getattr(torch, op)(epsilon, b._tensor, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/mpc/primitives/beaver.py:82: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c._tensor += getattr(torch, op)(epsilon, b._tensor, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/mpc/primitives/beaver.py:83: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c._tensor += getattr(torch, op)(a._tensor, delta, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/mpc/primitives/beaver.py:83: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c._tensor += getattr(torch, op)(a._tensor, delta, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/mpc/primitives/beaver.py:84: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c += getattr(torch, op)(epsilon, delta, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/mpc/primitives/beaver.py:84: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c += getattr(torch, op)(epsilon, delta, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/mpc/primitives/arithmetic.py:372: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  result.share = getattr(torch, op)(result.share, y, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/mpc/primitives/arithmetic.py:372: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  result.share = getattr(torch, op)(result.share, y, *args, **kwargs)
+================ Diagnostic Run torch.onnx.export version 2.0.1 ================
+verbose: False, log level: Level.ERROR
+======================= 0 NONE 0 NOTE 1 WARNING 0 ERROR ========================
+1 WARNING were not printed due to the log level.
+
+[OP_PROFILE] idx=1 node=/model/layers.0/self_attn/q_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=350.126028 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=2 node=/model/layers.0/self_attn/k_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=344.733477 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=3 node=/model/layers.0/self_attn/v_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=338.728189 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=4 node=/model/layers.0/self_attn/rotary_emb/MatMul_output_0 module=MatMul input_shape=[(1, 64, 1), (1, 1, 8)] output_shape=(1, 64, 8) time_ms=0.172853 comm_mb=0.000000 rounds=0
+[OP_PROFILE] idx=5 node=/model/layers.0/self_attn/MatMul_output_0 module=MatMul input_shape=[(1, 32, 8, 128), (1, 32, 128, 8)] output_shape=(1, 32, 8, 8) time_ms=6.671190 comm_mb=1.000000 rounds=1
+[OP_PROFILE] idx=6 node=/model/layers.0/self_attn/MatMul_1_output_0 module=MatMul input_shape=[(1, 32, 8, 8), (1, 32, 8, 128)] output_shape=(1, 32, 8, 128) time_ms=4.278183 comm_mb=0.531250 rounds=1
+[OP_PROFILE] idx=7 node=/model/layers.0/self_attn/o_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=346.927643 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=8 node=/model/layers.0/mlp/gate_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 11008)] output_shape=(1, 8, 11008) time_ms=820.741415 comm_mb=688.500000 rounds=1
+[OP_PROFILE] idx=9 node=/model/layers.0/mlp/up_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 11008)] output_shape=(1, 8, 11008) time_ms=932.299852 comm_mb=688.500000 rounds=1
+[OP_PROFILE] idx=10 node=/model/layers.0/mlp/down_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 11008), (11008, 4096)] output_shape=(1, 8, 4096) time_ms=827.287197 comm_mb=689.343750 rounds=1
+[OP_PROFILE] idx=11 node=/model/layers.1/self_attn/q_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=344.261646 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=12 node=/model/layers.1/self_attn/k_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=345.386505 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=13 node=/model/layers.1/self_attn/v_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=342.929125 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=14 node=/model/layers.1/self_attn/MatMul_output_0 module=MatMul input_shape=[(1, 32, 8, 128), (1, 32, 128, 8)] output_shape=(1, 32, 8, 8) time_ms=5.225182 comm_mb=1.000000 rounds=1
+[OP_PROFILE] idx=15 node=/model/layers.1/self_attn/MatMul_1_output_0 module=MatMul input_shape=[(1, 32, 8, 8), (1, 32, 8, 128)] output_shape=(1, 32, 8, 128) time_ms=4.326582 comm_mb=0.531250 rounds=1
+[OP_PROFILE] idx=16 node=/model/layers.1/self_attn/o_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=346.429348 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=17 node=/model/layers.1/mlp/gate_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 11008)] output_shape=(1, 8, 11008) time_ms=930.481434 comm_mb=688.500000 rounds=1
+[OP_PROFILE] idx=18 node=/model/layers.1/mlp/up_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 11008)] output_shape=(1, 8, 11008) time_ms=935.890198 comm_mb=688.500000 rounds=1
+[OP_PROFILE] idx=19 node=/model/layers.1/mlp/down_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 11008), (11008, 4096)] output_shape=(1, 8, 4096) time_ms=949.335098 comm_mb=689.343750 rounds=1
+[OP_PROFILE] idx=20 node=/model/layers.2/self_attn/q_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=359.204292 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=21 node=/model/layers.2/self_attn/k_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=354.369879 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=22 node=/model/layers.2/self_attn/v_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=357.816458 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=23 node=/model/layers.2/self_attn/MatMul_output_0 module=MatMul input_shape=[(1, 32, 8, 128), (1, 32, 128, 8)] output_shape=(1, 32, 8, 8) time_ms=7.509470 comm_mb=1.000000 rounds=1
+[OP_PROFILE] idx=24 node=/model/layers.2/self_attn/MatMul_1_output_0 module=MatMul input_shape=[(1, 32, 8, 8), (1, 32, 8, 128)] output_shape=(1, 32, 8, 128) time_ms=4.405022 comm_mb=0.531250 rounds=1
+[OP_PROFILE] idx=25 node=/model/layers.2/self_attn/o_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=361.203432 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=26 node=/model/layers.2/mlp/gate_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 11008)] output_shape=(1, 8, 11008) time_ms=939.375639 comm_mb=688.500000 rounds=1
+[OP_PROFILE] idx=27 node=/model/layers.2/mlp/up_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 11008)] output_shape=(1, 8, 11008) time_ms=873.172283 comm_mb=688.500000 rounds=1
+[OP_PROFILE] idx=28 node=/model/layers.2/mlp/down_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 11008), (11008, 4096)] output_shape=(1, 8, 4096) time_ms=946.024418 comm_mb=689.343750 rounds=1
+[OP_PROFILE] idx=29 node=/model/layers.3/self_attn/q_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=367.688417 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=30 node=/model/layers.3/self_attn/k_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=360.168457 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=31 node=/model/layers.3/self_attn/v_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=354.964495 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=32 node=/model/layers.3/self_attn/MatMul_output_0 module=MatMul input_shape=[(1, 32, 8, 128), (1, 32, 128, 8)] output_shape=(1, 32, 8, 8) time_ms=6.388664 comm_mb=1.000000 rounds=1
+[OP_PROFILE] idx=33 node=/model/layers.3/self_attn/MatMul_1_output_0 module=MatMul input_shape=[(1, 32, 8, 8), (1, 32, 8, 128)] output_shape=(1, 32, 8, 128) time_ms=4.366159 comm_mb=0.531250 rounds=1
+[OP_PROFILE] idx=34 node=/model/layers.3/self_attn/o_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=369.367123 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=35 node=/model/layers.3/mlp/gate_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 11008)] output_shape=(1, 8, 11008) time_ms=882.901907 comm_mb=688.500000 rounds=1
+[OP_PROFILE] idx=36 node=/model/layers.3/mlp/up_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 11008)] output_shape=(1, 8, 11008) time_ms=904.205561 comm_mb=688.500000 rounds=1
+[OP_PROFILE] idx=37 node=/model/layers.3/mlp/down_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 11008), (11008, 4096)] output_shape=(1, 8, 4096) time_ms=959.299326 comm_mb=689.343750 rounds=1
+[OP_PROFILE] idx=38 node=/model/layers.4/self_attn/q_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=363.163471 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=39 node=/model/layers.4/self_attn/k_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=360.001802 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=40 node=/model/layers.4/self_attn/v_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=359.870672 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=41 node=/model/layers.4/self_attn/MatMul_output_0 module=MatMul input_shape=[(1, 32, 8, 128), (1, 32, 128, 8)] output_shape=(1, 32, 8, 8) time_ms=5.637407 comm_mb=1.000000 rounds=1
+[OP_PROFILE] idx=42 node=/model/layers.4/self_attn/MatMul_1_output_0 module=MatMul input_shape=[(1, 32, 8, 8), (1, 32, 8, 128)] output_shape=(1, 32, 8, 128) time_ms=4.254103 comm_mb=0.531250 rounds=1
+[OP_PROFILE] idx=43 node=/model/layers.4/self_attn/o_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=353.773594 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=44 node=/model/layers.4/mlp/gate_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 11008)] output_shape=(1, 8, 11008) time_ms=924.433470 comm_mb=688.500000 rounds=1
+[OP_PROFILE] idx=45 node=/model/layers.4/mlp/up_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 11008)] output_shape=(1, 8, 11008) time_ms=960.506916 comm_mb=688.500000 rounds=1
+[OP_PROFILE] idx=46 node=/model/layers.4/mlp/down_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 11008), (11008, 4096)] output_shape=(1, 8, 4096) time_ms=840.759516 comm_mb=689.343750 rounds=1
+[OP_PROFILE] idx=47 node=/model/layers.5/self_attn/q_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=368.776560 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=48 node=/model/layers.5/self_attn/k_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=373.859167 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=49 node=/model/layers.5/self_attn/v_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=369.716167 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=50 node=/model/layers.5/self_attn/MatMul_output_0 module=MatMul input_shape=[(1, 32, 8, 128), (1, 32, 128, 8)] output_shape=(1, 32, 8, 8) time_ms=5.458355 comm_mb=1.000000 rounds=1
+[OP_PROFILE] idx=51 node=/model/layers.5/self_attn/MatMul_1_output_0 module=MatMul input_shape=[(1, 32, 8, 8), (1, 32, 8, 128)] output_shape=(1, 32, 8, 128) time_ms=4.359722 comm_mb=0.531250 rounds=1
+[OP_PROFILE] idx=52 node=/model/layers.5/self_attn/o_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=367.301941 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=53 node=/model/layers.5/mlp/gate_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 11008)] output_shape=(1, 8, 11008) time_ms=893.561363 comm_mb=688.500000 rounds=1
+[OP_PROFILE] idx=54 node=/model/layers.5/mlp/up_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 11008)] output_shape=(1, 8, 11008) time_ms=966.412783 comm_mb=688.500000 rounds=1
+[OP_PROFILE] idx=55 node=/model/layers.5/mlp/down_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 11008), (11008, 4096)] output_shape=(1, 8, 4096) time_ms=944.186211 comm_mb=689.343750 rounds=1
+[OP_PROFILE] idx=56 node=/model/layers.6/self_attn/q_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=361.010790 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=57 node=/model/layers.6/self_attn/k_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=338.873386 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=58 node=/model/layers.6/self_attn/v_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=340.836048 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=59 node=/model/layers.6/self_attn/MatMul_output_0 module=MatMul input_shape=[(1, 32, 8, 128), (1, 32, 128, 8)] output_shape=(1, 32, 8, 8) time_ms=6.985664 comm_mb=1.000000 rounds=1
+[OP_PROFILE] idx=60 node=/model/layers.6/self_attn/MatMul_1_output_0 module=MatMul input_shape=[(1, 32, 8, 8), (1, 32, 8, 128)] output_shape=(1, 32, 8, 128) time_ms=4.354715 comm_mb=0.531250 rounds=1
+[OP_PROFILE] idx=61 node=/model/layers.6/self_attn/o_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=348.794222 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=62 node=/model/layers.6/mlp/gate_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 11008)] output_shape=(1, 8, 11008) time_ms=898.633480 comm_mb=688.500000 rounds=1
+[OP_PROFILE] idx=63 node=/model/layers.6/mlp/up_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 11008)] output_shape=(1, 8, 11008) time_ms=844.704628 comm_mb=688.500000 rounds=1
+[OP_PROFILE] idx=64 node=/model/layers.6/mlp/down_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 11008), (11008, 4096)] output_shape=(1, 8, 4096) time_ms=932.762384 comm_mb=689.343750 rounds=1
+[OP_PROFILE] idx=65 node=/model/layers.7/self_attn/q_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=360.439777 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=66 node=/model/layers.7/self_attn/k_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=361.308098 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=67 node=/model/layers.7/self_attn/v_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=357.970238 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=68 node=/model/layers.7/self_attn/MatMul_output_0 module=MatMul input_shape=[(1, 32, 8, 128), (1, 32, 128, 8)] output_shape=(1, 32, 8, 8) time_ms=5.380869 comm_mb=1.000000 rounds=1
+[OP_PROFILE] idx=69 node=/model/layers.7/self_attn/MatMul_1_output_0 module=MatMul input_shape=[(1, 32, 8, 8), (1, 32, 8, 128)] output_shape=(1, 32, 8, 128) time_ms=4.316092 comm_mb=0.531250 rounds=1
+[OP_PROFILE] idx=70 node=/model/layers.7/self_attn/o_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 4096)] output_shape=(1, 8, 4096) time_ms=348.819256 comm_mb=256.500000 rounds=1
+[OP_PROFILE] idx=71 node=/model/layers.7/mlp/gate_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 11008)] output_shape=(1, 8, 11008) time_ms=939.196587 comm_mb=688.500000 rounds=1
+[OP_PROFILE] idx=72 node=/model/layers.7/mlp/up_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 11008)] output_shape=(1, 8, 11008) time_ms=959.669590 comm_mb=688.500000 rounds=1
+[OP_PROFILE] idx=73 node=/model/layers.7/mlp/down_proj/MatMul_output_0 module=MatMul input_shape=[(1, 8, 11008), (11008, 4096)] output_shape=(1, 8, 4096) time_ms=986.188650 comm_mb=689.343750 rounds=1
+[OP_PROFILE] idx=74 node=/lm_head/MatMul_output_0 module=MatMul input_shape=[(1, 8, 4096), (4096, 32000)] output_shape=(1, 8, 32000) time_ms=2659.218073 comm_mb=2000.500000 rounds=1
+====================================================
+total_running_time: 43.013609886169434 sec
+embedding_time: 3.095176935195923 sec
+matmul_time: 36.114157915115356 sec
+softmax_time: 0.7167742252349854 sec
+silu_time: 0.04821300506591797 sec
+layernorm_time: 0 sec
+tanh_time: 0 sec
+conv_time: 0 sec
+other_time: 5.054473876953125e-05 sec
+====================================================
+total_comm_time: 16.603734000585973 sec
+embedding_comm_time: 1.4589919690042734 sec
+matmul_comm_time: 13.849738081917167 sec
+softmax_comm_time: 0.30480286991223693 sec
+silu_comm_time: 0.023420668207108974 sec
+layernorm_comm_time: 0 sec
+tanh_comm_time: 0 sec
+conv_comm_time: 0 sec
+other_comm_time: 0.9667804115451872 sec
+====================================================
+total_comm_bytes: 28.169140100479126 GB
+embedding_comm_bytes: 1.9569398164749146 GB
+matmul_comm_bytes: 26.12451171875 GB
+softmax_comm_bytes: 0.02978515625 GB
+silu_comm_bytes: 0.010498046875 GB
+layernorm_comm_bytes: 0.0 GB
+tanh_comm_bytes: 0.0 GB
+conv_comm_bytes: 0.0 GB
+other_comm_bytes: 0.047405362129211426 GB
+====================================================
+total_comm_rounds: 1853
+embedding_comm_rounds: 2
+matmul_comm_rounds: 73
+softmax_comm_rounds: 328
+silu_comm_rounds: 8
+layernorm_comm_rounds: 0
+tanh_comm_rounds: 0
+conv_comm_rounds: 0
+other_comm_rounds: 1442
+====================================================
+running time: 43.01s, comm byte: 28.17 GB
+================ Diagnostic Run torch.onnx.export version 2.0.1 ================
+verbose: False, log level: Level.ERROR
+======================= 0 NONE 0 NOTE 1 WARNING 0 ERROR ========================
+1 WARNING were not printed due to the log level.
+
+====================================================
+total_running_time: 42.87314438819885 sec
+embedding_time: 2.957620143890381 sec
+matmul_time: 36.177605628967285 sec
+softmax_time: 0.7152230739593506 sec
+silu_time: 0.035691261291503906 sec
+layernorm_time: 0 sec
+tanh_time: 0 sec
+conv_time: 0 sec
+other_time: 6.29425048828125e-05 sec
+====================================================
+total_comm_time: 16.360708724707365 sec
+embedding_comm_time: 1.3246086961589754 sec
+matmul_comm_time: 13.80686761951074 sec
+softmax_comm_time: 0.2994467602111399 sec
+silu_comm_time: 0.012674523517489433 sec
+layernorm_comm_time: 0 sec
+tanh_comm_time: 0 sec
+conv_comm_time: 0 sec
+other_comm_time: 0.9171111253090203 sec
+====================================================
+total_comm_bytes: 28.169140100479126 GB
+embedding_comm_bytes: 1.9569398164749146 GB
+matmul_comm_bytes: 26.12451171875 GB
+softmax_comm_bytes: 0.02978515625 GB
+silu_comm_bytes: 0.010498046875 GB
+layernorm_comm_bytes: 0.0 GB
+tanh_comm_bytes: 0.0 GB
+conv_comm_bytes: 0.0 GB
+other_comm_bytes: 0.047405362129211426 GB
+====================================================
+total_comm_rounds: 1853
+embedding_comm_rounds: 2
+matmul_comm_rounds: 73
+softmax_comm_rounds: 328
+silu_comm_rounds: 8
+layernorm_comm_rounds: 0
+tanh_comm_rounds: 0
+conv_comm_rounds: 0
+other_comm_rounds: 1442
+====================================================
+BENCH_RESULT system=SHAFT model=Llama2-7B latency_sec=43.01 comm_gb=28.17

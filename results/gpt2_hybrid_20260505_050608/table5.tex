@@ -1,0 +1,32 @@
+\begin{table}[t]
+\centering
+\caption{GPT2-base online phase comparison with SHAFT (sequence length 128, 12 layers). SHAFT uses its standard GPT2 private generation path; BriLLMFlow replaces linear operators with GPU integer GEMM and uses MixPoly GELU.}
+\label{tab:gpt2_shaft_comparison}
+\setlength{\tabcolsep}{4pt}
+\footnotesize
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Op} & \textbf{Time (ms)} & \textbf{Comm (MB)} & \textbf{BW (Gbps)} \\
+\midrule
+\multicolumn{4}{l}{\textit{BriLLMFlow Linear (per-operator)}} \\
+W\_Q/K/V    & 72.6 & 198.2 & 21.83 \\
+W\_O        & 24.8 & 66.1 & 21.34 \\
+W\_1        & 116.3 & 235.9 & 16.24 \\
+W\_2        & 134.8 & 264.2 & 15.68 \\
+Q@K$^T$     & 14.7 & 18.9 & 10.24 \\
+scores@V    & 18.9 & 28.3 & 11.98 \\
+\midrule
+\multicolumn{4}{l}{\textit{Aggregate (GPT2-base, 12 layers)}} \\
+                       & \textbf{SHAFT} & \textbf{BriLLMFlow} & \textbf{Speedup} \\
+Linear time            & 6051 ms & \textbf{382 ms} & \textbf{15.84}$\times$ \\
+Linear comm            & 2053 MB & 812 MB & 2.53$\times$ less \\
+Non-linear time        & 14625 ms & \textbf{11442 ms} & 1.28$\times$ \\
+Non-linear comm        & 9255 MB & \textbf{5177 MB} & 1.79$\times$ less \\
+\quad of which GELU time & 3251 ms & \textbf{68 ms} & \textbf{47.8}$\times$ \\
+\quad of which GELU comm & 4148 MB & \textbf{70 MB} & \textbf{59.3}$\times$ less \\
+\midrule
+\textbf{Online E2E}    & 20676 ms & \textbf{11824 ms} & \textbf{1.75}$\times$ \\
+\textbf{Online comm}   & 11309 MB & \textbf{5989 MB} & \textbf{1.89}$\times$ less \\
+\bottomrule
+\end{tabular}
+\end{table}

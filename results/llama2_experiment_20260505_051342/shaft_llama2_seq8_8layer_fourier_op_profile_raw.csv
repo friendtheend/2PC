@@ -1,0 +1,75 @@
+idx,node,module,input_shape,output_shape,time_ms,comm_mb,rounds
+1,/model/layers.0/self_attn/q_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",369.043827,256.5,1.0
+2,/model/layers.0/self_attn/k_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",367.988348,256.5,1.0
+3,/model/layers.0/self_attn/v_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",369.34948,256.5,1.0
+4,/model/layers.0/self_attn/rotary_emb/MatMul_output_0,MatMul,"[(1, 64, 1), (1, 1, 8)]","(1, 64, 8)",0.139475,0.0,0.0
+5,/model/layers.0/self_attn/MatMul_output_0,MatMul,"[(1, 32, 8, 128), (1, 32, 128, 8)]","(1, 32, 8, 8)",7.364035,1.0,1.0
+6,/model/layers.0/self_attn/MatMul_1_output_0,MatMul,"[(1, 32, 8, 8), (1, 32, 8, 128)]","(1, 32, 8, 128)",4.398823,0.53125,1.0
+7,/model/layers.0/self_attn/o_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",377.637386,256.5,1.0
+8,/model/layers.0/mlp/gate_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 11008)]","(1, 8, 11008)",960.771084,688.5,1.0
+9,/model/layers.0/mlp/up_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 11008)]","(1, 8, 11008)",901.827097,688.5,1.0
+10,/model/layers.0/mlp/down_proj/MatMul_output_0,MatMul,"[(1, 8, 11008), (11008, 4096)]","(1, 8, 4096)",992.576361,689.34375,1.0
+11,/model/layers.1/self_attn/q_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",346.448898,256.5,1.0
+12,/model/layers.1/self_attn/k_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",345.442057,256.5,1.0
+13,/model/layers.1/self_attn/v_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",344.52486,256.5,1.0
+14,/model/layers.1/self_attn/MatMul_output_0,MatMul,"[(1, 32, 8, 128), (1, 32, 128, 8)]","(1, 32, 8, 8)",7.179022,1.0,1.0
+15,/model/layers.1/self_attn/MatMul_1_output_0,MatMul,"[(1, 32, 8, 8), (1, 32, 8, 128)]","(1, 32, 8, 128)",4.358053,0.53125,1.0
+16,/model/layers.1/self_attn/o_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",374.430656,256.5,1.0
+17,/model/layers.1/mlp/gate_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 11008)]","(1, 8, 11008)",876.965046,688.5,1.0
+18,/model/layers.1/mlp/up_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 11008)]","(1, 8, 11008)",926.203251,688.5,1.0
+19,/model/layers.1/mlp/down_proj/MatMul_output_0,MatMul,"[(1, 8, 11008), (11008, 4096)]","(1, 8, 4096)",943.240643,689.34375,1.0
+20,/model/layers.2/self_attn/q_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",360.829115,256.5,1.0
+21,/model/layers.2/self_attn/k_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",366.465569,256.5,1.0
+22,/model/layers.2/self_attn/v_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",367.068768,256.5,1.0
+23,/model/layers.2/self_attn/MatMul_output_0,MatMul,"[(1, 32, 8, 128), (1, 32, 128, 8)]","(1, 32, 8, 8)",7.305861,1.0,1.0
+24,/model/layers.2/self_attn/MatMul_1_output_0,MatMul,"[(1, 32, 8, 8), (1, 32, 8, 128)]","(1, 32, 8, 128)",4.578114,0.53125,1.0
+25,/model/layers.2/self_attn/o_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",376.908302,256.5,1.0
+26,/model/layers.2/mlp/gate_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 11008)]","(1, 8, 11008)",972.593069,688.5,1.0
+27,/model/layers.2/mlp/up_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 11008)]","(1, 8, 11008)",975.577116,688.5,1.0
+28,/model/layers.2/mlp/down_proj/MatMul_output_0,MatMul,"[(1, 8, 11008), (11008, 4096)]","(1, 8, 4096)",988.251448,689.34375,1.0
+29,/model/layers.3/self_attn/q_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",357.228518,256.5,1.0
+30,/model/layers.3/self_attn/k_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",362.593174,256.5,1.0
+31,/model/layers.3/self_attn/v_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",368.147373,256.5,1.0
+32,/model/layers.3/self_attn/MatMul_output_0,MatMul,"[(1, 32, 8, 128), (1, 32, 128, 8)]","(1, 32, 8, 8)",7.359743,1.0,1.0
+33,/model/layers.3/self_attn/MatMul_1_output_0,MatMul,"[(1, 32, 8, 8), (1, 32, 8, 128)]","(1, 32, 8, 128)",4.324913,0.53125,1.0
+34,/model/layers.3/self_attn/o_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",366.284609,256.5,1.0
+35,/model/layers.3/mlp/gate_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 11008)]","(1, 8, 11008)",951.317787,688.5,1.0
+36,/model/layers.3/mlp/up_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 11008)]","(1, 8, 11008)",955.598831,688.5,1.0
+37,/model/layers.3/mlp/down_proj/MatMul_output_0,MatMul,"[(1, 8, 11008), (11008, 4096)]","(1, 8, 4096)",992.750645,689.34375,1.0
+38,/model/layers.4/self_attn/q_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",366.895914,256.5,1.0
+39,/model/layers.4/self_attn/k_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",362.902403,256.5,1.0
+40,/model/layers.4/self_attn/v_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",308.407545,256.5,1.0
+41,/model/layers.4/self_attn/MatMul_output_0,MatMul,"[(1, 32, 8, 128), (1, 32, 128, 8)]","(1, 32, 8, 8)",7.214546,1.0,1.0
+42,/model/layers.4/self_attn/MatMul_1_output_0,MatMul,"[(1, 32, 8, 8), (1, 32, 8, 128)]","(1, 32, 8, 128)",4.548073,0.53125,1.0
+43,/model/layers.4/self_attn/o_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",369.543314,256.5,1.0
+44,/model/layers.4/mlp/gate_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 11008)]","(1, 8, 11008)",946.409225,688.5,1.0
+45,/model/layers.4/mlp/up_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 11008)]","(1, 8, 11008)",959.481955,688.5,1.0
+46,/model/layers.4/mlp/down_proj/MatMul_output_0,MatMul,"[(1, 8, 11008), (11008, 4096)]","(1, 8, 4096)",994.985104,689.34375,1.0
+47,/model/layers.5/self_attn/q_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",367.027521,256.5,1.0
+48,/model/layers.5/self_attn/k_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",372.668743,256.5,1.0
+49,/model/layers.5/self_attn/v_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",371.391535,256.5,1.0
+50,/model/layers.5/self_attn/MatMul_output_0,MatMul,"[(1, 32, 8, 128), (1, 32, 128, 8)]","(1, 32, 8, 8)",7.279396,1.0,1.0
+51,/model/layers.5/self_attn/MatMul_1_output_0,MatMul,"[(1, 32, 8, 8), (1, 32, 8, 128)]","(1, 32, 8, 128)",4.221201,0.53125,1.0
+52,/model/layers.5/self_attn/o_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",312.716722,256.5,1.0
+53,/model/layers.5/mlp/gate_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 11008)]","(1, 8, 11008)",796.042442,688.5,1.0
+54,/model/layers.5/mlp/up_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 11008)]","(1, 8, 11008)",816.715956,688.5,1.0
+55,/model/layers.5/mlp/down_proj/MatMul_output_0,MatMul,"[(1, 8, 11008), (11008, 4096)]","(1, 8, 4096)",976.564407,689.34375,1.0
+56,/model/layers.6/self_attn/q_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",370.013237,256.5,1.0
+57,/model/layers.6/self_attn/k_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",366.849184,256.5,1.0
+58,/model/layers.6/self_attn/v_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",374.829769,256.5,1.0
+59,/model/layers.6/self_attn/MatMul_output_0,MatMul,"[(1, 32, 8, 128), (1, 32, 128, 8)]","(1, 32, 8, 8)",8.917809,1.0,1.0
+60,/model/layers.6/self_attn/MatMul_1_output_0,MatMul,"[(1, 32, 8, 8), (1, 32, 8, 128)]","(1, 32, 8, 128)",4.691601,0.53125,1.0
+61,/model/layers.6/self_attn/o_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",357.372761,256.5,1.0
+62,/model/layers.6/mlp/gate_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 11008)]","(1, 8, 11008)",959.980011,688.5,1.0
+63,/model/layers.6/mlp/up_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 11008)]","(1, 8, 11008)",972.371101,688.5,1.0
+64,/model/layers.6/mlp/down_proj/MatMul_output_0,MatMul,"[(1, 8, 11008), (11008, 4096)]","(1, 8, 4096)",1001.288176,689.34375,1.0
+65,/model/layers.7/self_attn/q_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",369.008541,256.5,1.0
+66,/model/layers.7/self_attn/k_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",366.409779,256.5,1.0
+67,/model/layers.7/self_attn/v_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",375.443459,256.5,1.0
+68,/model/layers.7/self_attn/MatMul_output_0,MatMul,"[(1, 32, 8, 128), (1, 32, 128, 8)]","(1, 32, 8, 8)",6.834507,1.0,1.0
+69,/model/layers.7/self_attn/MatMul_1_output_0,MatMul,"[(1, 32, 8, 8), (1, 32, 8, 128)]","(1, 32, 8, 128)",4.476547,0.53125,1.0
+70,/model/layers.7/self_attn/o_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 4096)]","(1, 8, 4096)",368.941545,256.5,1.0
+71,/model/layers.7/mlp/gate_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 11008)]","(1, 8, 11008)",973.880768,688.5,1.0
+72,/model/layers.7/mlp/up_proj/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 11008)]","(1, 8, 11008)",978.308439,688.5,1.0
+73,/model/layers.7/mlp/down_proj/MatMul_output_0,MatMul,"[(1, 8, 11008), (11008, 4096)]","(1, 8, 4096)",972.74518,689.34375,1.0
+74,/lm_head/MatMul_output_0,MatMul,"[(1, 8, 4096), (4096, 32000)]","(1, 8, 32000)",2756.531954,2000.5,1.0

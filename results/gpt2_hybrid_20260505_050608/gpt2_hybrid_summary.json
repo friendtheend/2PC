@@ -1,0 +1,21 @@
+{
+  "model": "GPT2-base, 12 layers",
+  "shaft_total_s": 20.676400184631348,
+  "shaft_total_comm_gb": 11.3086177110672,
+  "shaft_linear_s": 6.051457643508911,
+  "shaft_linear_comm_gb": 2.053173065185547,
+  "shaft_nonlin_s": 14.624942541122437,
+  "shaft_nonlin_comm_gb": 9.255444645881653,
+  "shaft_gelu_s": 3.250680685043335,
+  "shaft_gelu_comm_gb": 4.1484375,
+  "brillm_linear_s": 0.3821157599999987,
+  "brillm_linear_comm_gb": 0.8115978239999999,
+  "brillm_nonlin_s": 11.442261856079101,
+  "brillm_nonlin_comm_gb": 5.177007145881653,
+  "brillm_gelu_s": 0.068,
+  "brillm_gelu_comm_gb": 0.07,
+  "brillm_total_s": 11.8243776160791,
+  "brillm_total_comm_gb": 5.988604969881653,
+  "online_speedup": 1.7486248203469952,
+  "online_comm_less": 1.8883559306284785
+}

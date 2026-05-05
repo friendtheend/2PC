@@ -1,0 +1,363 @@
+INFO:root:==================
+INFO:root:DistributedCommunicator with rank 1
+INFO:root:==================
+INFO:root:==================
+INFO:root:DistributedCommunicator with rank 0
+INFO:root:==================
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:1 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:1 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:1 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:1 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:2 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:2 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:2 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:2 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:3 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:3 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:3 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:3 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:4 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:4 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:4 with 2 nodes.
+INFO:root:World size = 2
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:4 with 2 nodes.
+INFO:root:World size = 2
+/home/ylu18/miniconda3/envs/shaft_clean/lib/python3.10/site-packages/huggingface_hub/file_download.py:942: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/home/ylu18/miniconda3/envs/shaft_clean/lib/python3.10/site-packages/huggingface_hub/file_download.py:942: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+loading configuration file config.json from cache at /home/ylu18/.cache/huggingface/hub/models--andeskyl--bert-base-cased-qnli/snapshots/71bbfcd7141adc6ca5db400825f4726c39b2e4bc/config.json
+Model config BertConfig {
+  "_name_or_path": "andeskyl/bert-base-cased-qnli",
+  "architectures": [
+    "BertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "finetuning_task": "qnli",
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "problem_type": "single_label_classification",
+  "torch_dtype": "float32",
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 28996
+}
+
+loading configuration file config.json from cache at /home/ylu18/.cache/huggingface/hub/models--andeskyl--bert-base-cased-qnli/snapshots/71bbfcd7141adc6ca5db400825f4726c39b2e4bc/config.json
+Model config BertConfig {
+  "_name_or_path": "andeskyl/bert-base-cased-qnli",
+  "architectures": [
+    "BertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "finetuning_task": "qnli",
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "problem_type": "single_label_classification",
+  "torch_dtype": "float32",
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 28996
+}
+
+loading file vocab.txt from cache at /home/ylu18/.cache/huggingface/hub/models--andeskyl--bert-base-cased-qnli/snapshots/71bbfcd7141adc6ca5db400825f4726c39b2e4bc/vocab.txt
+loading file tokenizer.json from cache at /home/ylu18/.cache/huggingface/hub/models--andeskyl--bert-base-cased-qnli/snapshots/71bbfcd7141adc6ca5db400825f4726c39b2e4bc/tokenizer.json
+loading file added_tokens.json from cache at None
+loading file special_tokens_map.json from cache at None
+loading file tokenizer_config.json from cache at /home/ylu18/.cache/huggingface/hub/models--andeskyl--bert-base-cased-qnli/snapshots/71bbfcd7141adc6ca5db400825f4726c39b2e4bc/tokenizer_config.json
+loading file vocab.txt from cache at /home/ylu18/.cache/huggingface/hub/models--andeskyl--bert-base-cased-qnli/snapshots/71bbfcd7141adc6ca5db400825f4726c39b2e4bc/vocab.txt
+loading file tokenizer.json from cache at /home/ylu18/.cache/huggingface/hub/models--andeskyl--bert-base-cased-qnli/snapshots/71bbfcd7141adc6ca5db400825f4726c39b2e4bc/tokenizer.json
+loading file added_tokens.json from cache at None
+loading file special_tokens_map.json from cache at None
+loading file tokenizer_config.json from cache at /home/ylu18/.cache/huggingface/hub/models--andeskyl--bert-base-cased-qnli/snapshots/71bbfcd7141adc6ca5db400825f4726c39b2e4bc/tokenizer_config.json
+loading weights file model.safetensors from cache at /home/ylu18/.cache/huggingface/hub/models--andeskyl--bert-base-cased-qnli/snapshots/71bbfcd7141adc6ca5db400825f4726c39b2e4bc/model.safetensors
+loading weights file model.safetensors from cache at /home/ylu18/.cache/huggingface/hub/models--andeskyl--bert-base-cased-qnli/snapshots/71bbfcd7141adc6ca5db400825f4726c39b2e4bc/model.safetensors
+All model checkpoint weights were used when initializing BertForSequenceClassification.
+
+All the weights of BertForSequenceClassification were initialized from the model checkpoint at andeskyl/bert-base-cased-qnli.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use BertForSequenceClassification for predictions without further training.
+Running tokenizer on dataset:   0%|                                                                                      | 0/104743 [00:00<?, ? examples/s]All model checkpoint weights were used when initializing BertForSequenceClassification.
+
+All the weights of BertForSequenceClassification were initialized from the model checkpoint at andeskyl/bert-base-cased-qnli.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use BertForSequenceClassification for predictions without further training.
+Running tokenizer on dataset:   0%|                                                                                      | 0/104743 [00:00<?, ? examples/s]Running tokenizer on dataset:   3%|██                                                                      | 3000/104743 [00:00<00:05, 19313.52 examples/s]Running tokenizer on dataset:   1%|▋                                                                        | 1000/104743 [00:00<00:11, 8671.88 examples/s]Running tokenizer on dataset:   7%|████▊                                                                   | 7000/104743 [00:00<00:04, 24088.43 examples/s]Running tokenizer on dataset:   5%|███▍                                                                    | 5000/104743 [00:00<00:04, 23319.17 examples/s]Running tokenizer on dataset:  11%|███████▍                                                               | 11000/104743 [00:00<00:03, 28521.68 examples/s]Running tokenizer on dataset:   9%|██████▏                                                                 | 9000/104743 [00:00<00:03, 27959.01 examples/s]Running tokenizer on dataset:  14%|██████████▏                                                            | 15000/104743 [00:00<00:02, 31158.48 examples/s]Running tokenizer on dataset:  12%|████████▊                                                              | 13000/104743 [00:00<00:03, 30418.89 examples/s]Running tokenizer on dataset:  16%|███████████▌                                                           | 17000/104743 [00:00<00:02, 31787.90 examples/s]Running tokenizer on dataset:  18%|████████████▉                                                          | 19000/104743 [00:00<00:03, 21669.41 examples/s]Running tokenizer on dataset:  22%|███████████████▌                                                       | 23000/104743 [00:00<00:03, 24894.30 examples/s]Running tokenizer on dataset:  20%|██████████████▏                                                        | 21000/104743 [00:00<00:03, 20959.56 examples/s]Running tokenizer on dataset:  26%|██████████████████▎                                                    | 27000/104743 [00:01<00:02, 26439.24 examples/s]Running tokenizer on dataset:  24%|████████████████▉                                                      | 25000/104743 [00:01<00:03, 23869.02 examples/s]Running tokenizer on dataset:  30%|█████████████████████                                                  | 31000/104743 [00:01<00:02, 28572.48 examples/s]Running tokenizer on dataset:  28%|███████████████████▋                                                   | 29000/104743 [00:01<00:02, 26333.47 examples/s]Running tokenizer on dataset:  33%|███████████████████████▋                                               | 35000/104743 [00:01<00:02, 29599.08 examples/s]Running tokenizer on dataset:  32%|██████████████████████▎                                                | 33000/104743 [00:01<00:02, 28614.59 examples/s]Running tokenizer on dataset:  38%|███████████████████████████                                            | 40000/104743 [00:01<00:02, 22341.82 examples/s]Running tokenizer on dataset:  36%|█████████████████████████▊                                             | 38000/104743 [00:01<00:02, 23161.28 examples/s]Running tokenizer on dataset:  42%|█████████████████████████████▊                                         | 44000/104743 [00:01<00:02, 24278.08 examples/s]Running tokenizer on dataset:  40%|████████████████████████████▍                                          | 42000/104743 [00:01<00:02, 25270.62 examples/s]Running tokenizer on dataset:  46%|████████████████████████████████▌                                      | 48000/104743 [00:01<00:02, 26282.20 examples/s]Running tokenizer on dataset:  44%|███████████████████████████████▏                                       | 46000/104743 [00:01<00:02, 26883.87 examples/s]Running tokenizer on dataset:  50%|███████████████████████████████████▏                                   | 52000/104743 [00:01<00:01, 27533.85 examples/s]Running tokenizer on dataset:  48%|█████████████████████████████████▉                                     | 50000/104743 [00:01<00:01, 27914.00 examples/s]Running tokenizer on dataset:  52%|████████████████████████████████████▌                                  | 54000/104743 [00:02<00:01, 28948.12 examples/s]Running tokenizer on dataset:  53%|█████████████████████████████████████▉                                 | 56000/104743 [00:02<00:02, 21114.51 examples/s]Running tokenizer on dataset:  55%|███████████████████████████████████████▎                               | 58000/104743 [00:02<00:02, 23114.28 examples/s]Running tokenizer on dataset:  57%|████████████████████████████████████████▋                              | 60000/104743 [00:02<00:01, 23623.50 examples/s]Running tokenizer on dataset:  59%|██████████████████████████████████████████                             | 62000/104743 [00:02<00:01, 25176.59 examples/s]Running tokenizer on dataset:  61%|███████████████████████████████████████████▍                           | 64000/104743 [00:02<00:01, 25765.34 examples/s]Running tokenizer on dataset:  63%|████████████████████████████████████████████▋                          | 66000/104743 [00:02<00:01, 26993.88 examples/s]Running tokenizer on dataset:  65%|██████████████████████████████████████████████                         | 68000/104743 [00:02<00:01, 27577.90 examples/s]Running tokenizer on dataset:  67%|███████████████████████████████████████████████▍                       | 70000/104743 [00:02<00:01, 28395.84 examples/s]Running tokenizer on dataset:  69%|████████████████████████████████████████████████▊                      | 72000/104743 [00:02<00:01, 29098.81 examples/s]Running tokenizer on dataset:  71%|██████████████████████████████████████████████████▏                    | 74000/104743 [00:02<00:01, 29774.15 examples/s]Running tokenizer on dataset:  73%|███████████████████████████████████████████████████▌                   | 76000/104743 [00:03<00:01, 23807.00 examples/s]Running tokenizer on dataset:  74%|████████████████████████████████████████████████████▊                  | 78000/104743 [00:03<00:01, 24648.31 examples/s]Running tokenizer on dataset:  76%|██████████████████████████████████████████████████████▏                | 80000/104743 [00:03<00:00, 25579.14 examples/s]Running tokenizer on dataset:  78%|███████████████████████████████████████████████████████▌               | 82000/104743 [00:03<00:00, 26515.50 examples/s]Running tokenizer on dataset:  80%|████████████████████████████████████████████████████████▉              | 84000/104743 [00:03<00:00, 27352.95 examples/s]Running tokenizer on dataset:  82%|██████████████████████████████████████████████████████████▎            | 86000/104743 [00:03<00:00, 28509.24 examples/s]Running tokenizer on dataset:  84%|███████████████████████████████████████████████████████████▋           | 88000/104743 [00:03<00:00, 29206.46 examples/s]Running tokenizer on dataset:  86%|█████████████████████████████████████████████████████████████          | 90000/104743 [00:03<00:00, 30029.49 examples/s]Running tokenizer on dataset:  88%|██████████████████████████████████████████████████████████████▎        | 92000/104743 [00:03<00:00, 30516.28 examples/s]Running tokenizer on dataset:  91%|████████████████████████████████████████████████████████████████▍      | 95000/104743 [00:03<00:00, 25228.55 examples/s]Running tokenizer on dataset:  93%|█████████████████████████████████████████████████████████████████▊     | 97000/104743 [00:03<00:00, 24575.95 examples/s]Running tokenizer on dataset:  95%|███████████████████████████████████████████████████████████████████    | 99000/104743 [00:03<00:00, 26884.11 examples/s]Running tokenizer on dataset:  96%|███████████████████████████████████████████████████████████████████▍  | 101000/104743 [00:03<00:00, 26343.67 examples/s]Running tokenizer on dataset:  98%|████████████████████████████████████████████████████████████████████▊ | 103000/104743 [00:03<00:00, 28311.71 examples/s]Running tokenizer on dataset: 100%|██████████████████████████████████████████████████████████████████████| 104743/104743 [00:04<00:00, 27973.11 examples/s]Running tokenizer on dataset: 100%|██████████████████████████████████████████████████████████████████████| 104743/104743 [00:04<00:00, 26089.74 examples/s]
+Running tokenizer on dataset:   0%|                                                                                        | 0/5463 [00:00<?, ? examples/s]Running tokenizer on dataset: 100%|██████████████████████████████████████████████████████████████████████| 104743/104743 [00:03<00:00, 26587.13 examples/s]
+Running tokenizer on dataset:   0%|                                                                                        | 0/5463 [00:00<?, ? examples/s]Running tokenizer on dataset:  73%|██████████████████████████████████████████████████████▏                   | 4000/5463 [00:00<00:00, 32128.01 examples/s]Running tokenizer on dataset:  73%|██████████████████████████████████████████████████████▏                   | 4000/5463 [00:00<00:00, 31540.45 examples/s]Running tokenizer on dataset: 100%|██████████████████████████████████████████████████████████████████████████| 5463/5463 [00:00<00:00, 31910.17 examples/s]
+Running tokenizer on dataset:   0%|                                                                                        | 0/5463 [00:00<?, ? examples/s]Running tokenizer on dataset: 100%|██████████████████████████████████████████████████████████████████████████| 5463/5463 [00:00<00:00, 31003.51 examples/s]
+Running tokenizer on dataset:   0%|                                                                                        | 0/5463 [00:00<?, ? examples/s]Running tokenizer on dataset:  73%|██████████████████████████████████████████████████████▏                   | 4000/5463 [00:00<00:00, 32567.38 examples/s]Running tokenizer on dataset:  73%|██████████████████████████████████████████████████████▏                   | 4000/5463 [00:00<00:00, 31777.44 examples/s]Running tokenizer on dataset: 100%|██████████████████████████████████████████████████████████████████████████| 5463/5463 [00:00<00:00, 18757.30 examples/s]
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/__init__.py:66: RuntimeWarning: CrypTen is already initialized.
+  warnings.warn("CrypTen is already initialized.", RuntimeWarning)
+Running tokenizer on dataset: 100%|██████████████████████████████████████████████████████████████████████████| 5463/5463 [00:00<00:00, 19831.77 examples/s]
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/__init__.py:66: RuntimeWarning: CrypTen is already initialized.
+  warnings.warn("CrypTen is already initialized.", RuntimeWarning)
+[W shape_type_inference.cpp:1920] Warning: The shape inference of shaft::Embedding type is missing, so it may result in wrong shape inference for the exported graph. Please consider adding it in symbolic function. (function UpdateReliable)
+[W shape_type_inference.cpp:1920] Warning: The shape inference of shaft::Embedding type is missing, so it may result in wrong shape inference for the exported graph. Please consider adding it in symbolic function. (function UpdateReliable)
+[W shape_type_inference.cpp:1920] Warning: The shape inference of shaft::Embedding type is missing, so it may result in wrong shape inference for the exported graph. Please consider adding it in symbolic function. (function UpdateReliable)
+[W shape_type_inference.cpp:1920] Warning: The shape inference of shaft::Embedding type is missing, so it may result in wrong shape inference for the exported graph. Please consider adding it in symbolic function. (function UpdateReliable)
+[W shape_type_inference.cpp:1920] Warning: The shape inference of shaft::Embedding type is missing, so it may result in wrong shape inference for the exported graph. Please consider adding it in symbolic function. (function UpdateReliable)
+[W shape_type_inference.cpp:1920] Warning: The shape inference of shaft::Embedding type is missing, so it may result in wrong shape inference for the exported graph. Please consider adding it in symbolic function. (function UpdateReliable)
+/home/ylu18/miniconda3/envs/shaft_clean/lib/python3.10/site-packages/torch/onnx/utils.py:1636: UserWarning: The exported ONNX model failed ONNX shape inference.The model will not be executable by the ONNX Runtime.If this is unintended and you believe there is a bug,please report an issue at https://github.com/pytorch/pytorch/issues.Error reported by strict ONNX shape inference: [ShapeInferenceError] (op_type:Dropout, node name: /bert/embeddings/dropout/Dropout): training_mode typestr: T2, has unsupported type: tensor(int64) (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/jit/serialization/export.cpp:1407.)
+  _C._check_onnx_proto(proto)
+/home/ylu18/miniconda3/envs/shaft_clean/lib/python3.10/site-packages/torch/onnx/utils.py:1636: UserWarning: The exported ONNX model failed ONNX shape inference.The model will not be executable by the ONNX Runtime.If this is unintended and you believe there is a bug,please report an issue at https://github.com/pytorch/pytorch/issues.Error reported by strict ONNX shape inference: [ShapeInferenceError] (op_type:Dropout, node name: /bert/embeddings/dropout/Dropout): training_mode typestr: T2, has unsupported type: tensor(int64) (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/jit/serialization/export.cpp:1407.)
+  _C._check_onnx_proto(proto)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/nn/onnx_converter.py:256: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/tensor_numpy.cpp:206.)
+  param = torch.from_numpy(numpy_helper.to_array(node))
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/nn/onnx_converter.py:256: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/tensor_numpy.cpp:206.)
+  param = torch.from_numpy(numpy_helper.to_array(node))
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/arithmetic.py:372: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  result.share = getattr(torch, op)(result.share, y, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/provider/tfp_provider.py:62: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  v = torch.nn.functional.one_hot(r, num_classes=length)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/arithmetic.py:372: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  result.share = getattr(torch, op)(result.share, y, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/provider/tfp_provider.py:62: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  v = torch.nn.functional.one_hot(r, num_classes=length)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/provider/tfp_provider.py:29: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c = getattr(torch, op)(a, b, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/provider/tfp_provider.py:29: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c = getattr(torch, op)(a, b, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/beaver.py:82: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c._tensor += getattr(torch, op)(epsilon, b._tensor, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/beaver.py:82: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c._tensor += getattr(torch, op)(epsilon, b._tensor, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/beaver.py:83: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c._tensor += getattr(torch, op)(a._tensor, delta, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/beaver.py:83: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c._tensor += getattr(torch, op)(a._tensor, delta, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/beaver.py:84: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c += getattr(torch, op)(epsilon, delta, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/beaver.py:84: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c += getattr(torch, op)(epsilon, delta, *args, **kwargs)
+================ Diagnostic Run torch.onnx.export version 2.0.1 ================
+verbose: False, log level: Level.ERROR
+======================= 0 NONE 0 NOTE 0 WARNING 0 ERROR ========================
+
+================ Diagnostic Run torch.onnx.export version 2.0.1 ================
+verbose: False, log level: Level.ERROR
+======================= 0 NONE 0 NOTE 3 WARNING 0 ERROR ========================
+3 WARNING were not printed due to the log level.
+
+[OP_PROFILE] idx=1 node=/bert/encoder/layer.0/attention/self/query/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=55.842876 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=2 node=/bert/encoder/layer.0/attention/self/key/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=55.819035 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=3 node=/bert/encoder/layer.0/attention/self/value/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=55.597067 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=4 node=/bert/encoder/layer.0/attention/self/MatMul_output_0 module=MatMul input_shape=[(1, 12, 128, 64), (1, 12, 64, 128)] output_shape=(1, 12, 128, 128) time_ms=15.269756 comm_mb=3.000000 rounds=1
+[OP_PROFILE] idx=5 node=/bert/encoder/layer.0/attention/self/MatMul_1_output_0 module=MatMul input_shape=[(1, 12, 128, 128), (1, 12, 128, 64)] output_shape=(1, 12, 128, 64) time_ms=17.365456 comm_mb=4.500000 rounds=1
+[OP_PROFILE] idx=6 node=/bert/encoder/layer.0/attention/output/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=55.114031 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=7 node=/bert/encoder/layer.0/intermediate/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 3072)] output_shape=(1, 128, 3072) time_ms=199.437618 comm_mb=37.500000 rounds=1
+[OP_PROFILE] idx=8 node=/bert/encoder/layer.0/output/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 3072), (3072, 768)] output_shape=(1, 128, 768) time_ms=209.067345 comm_mb=42.000000 rounds=1
+[OP_PROFILE] idx=9 node=/bert/encoder/layer.1/attention/self/query/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=56.836367 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=10 node=/bert/encoder/layer.1/attention/self/key/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=56.349277 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=11 node=/bert/encoder/layer.1/attention/self/value/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=55.406094 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=12 node=/bert/encoder/layer.1/attention/self/MatMul_output_0 module=MatMul input_shape=[(1, 12, 128, 64), (1, 12, 64, 128)] output_shape=(1, 12, 128, 128) time_ms=15.509367 comm_mb=3.000000 rounds=1
+[OP_PROFILE] idx=13 node=/bert/encoder/layer.1/attention/self/MatMul_1_output_0 module=MatMul input_shape=[(1, 12, 128, 128), (1, 12, 128, 64)] output_shape=(1, 12, 128, 64) time_ms=19.198656 comm_mb=4.500000 rounds=1
+[OP_PROFILE] idx=14 node=/bert/encoder/layer.1/attention/output/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=58.595181 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=15 node=/bert/encoder/layer.1/intermediate/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 3072)] output_shape=(1, 128, 3072) time_ms=198.026896 comm_mb=37.500000 rounds=1
+[OP_PROFILE] idx=16 node=/bert/encoder/layer.1/output/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 3072), (3072, 768)] output_shape=(1, 128, 768) time_ms=214.511871 comm_mb=42.000000 rounds=1
+[OP_PROFILE] idx=17 node=/bert/encoder/layer.2/attention/self/query/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=55.425406 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=18 node=/bert/encoder/layer.2/attention/self/key/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=55.405855 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=19 node=/bert/encoder/layer.2/attention/self/value/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=55.678129 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=20 node=/bert/encoder/layer.2/attention/self/MatMul_output_0 module=MatMul input_shape=[(1, 12, 128, 64), (1, 12, 64, 128)] output_shape=(1, 12, 128, 128) time_ms=15.062332 comm_mb=3.000000 rounds=1
+[OP_PROFILE] idx=21 node=/bert/encoder/layer.2/attention/self/MatMul_1_output_0 module=MatMul input_shape=[(1, 12, 128, 128), (1, 12, 128, 64)] output_shape=(1, 12, 128, 64) time_ms=18.857479 comm_mb=4.500000 rounds=1
+[OP_PROFILE] idx=22 node=/bert/encoder/layer.2/attention/output/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=53.980112 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=23 node=/bert/encoder/layer.2/intermediate/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 3072)] output_shape=(1, 128, 3072) time_ms=197.083950 comm_mb=37.500000 rounds=1
+[OP_PROFILE] idx=24 node=/bert/encoder/layer.2/output/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 3072), (3072, 768)] output_shape=(1, 128, 768) time_ms=213.835955 comm_mb=42.000000 rounds=1
+[OP_PROFILE] idx=25 node=/bert/encoder/layer.3/attention/self/query/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=55.788755 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=26 node=/bert/encoder/layer.3/attention/self/key/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=55.755138 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=27 node=/bert/encoder/layer.3/attention/self/value/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=59.149742 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=28 node=/bert/encoder/layer.3/attention/self/MatMul_output_0 module=MatMul input_shape=[(1, 12, 128, 64), (1, 12, 64, 128)] output_shape=(1, 12, 128, 128) time_ms=15.351772 comm_mb=3.000000 rounds=1
+[OP_PROFILE] idx=29 node=/bert/encoder/layer.3/attention/self/MatMul_1_output_0 module=MatMul input_shape=[(1, 12, 128, 128), (1, 12, 128, 64)] output_shape=(1, 12, 128, 64) time_ms=19.132853 comm_mb=4.500000 rounds=1
+[OP_PROFILE] idx=30 node=/bert/encoder/layer.3/attention/output/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=55.537701 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=31 node=/bert/encoder/layer.3/intermediate/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 3072)] output_shape=(1, 128, 3072) time_ms=198.641300 comm_mb=37.500000 rounds=1
+[OP_PROFILE] idx=32 node=/bert/encoder/layer.3/output/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 3072), (3072, 768)] output_shape=(1, 128, 768) time_ms=209.933519 comm_mb=42.000000 rounds=1
+[OP_PROFILE] idx=33 node=/bert/encoder/layer.4/attention/self/query/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=55.560589 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=34 node=/bert/encoder/layer.4/attention/self/key/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=55.108547 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=35 node=/bert/encoder/layer.4/attention/self/value/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=55.359125 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=36 node=/bert/encoder/layer.4/attention/self/MatMul_output_0 module=MatMul input_shape=[(1, 12, 128, 64), (1, 12, 64, 128)] output_shape=(1, 12, 128, 128) time_ms=14.494896 comm_mb=3.000000 rounds=1
+[OP_PROFILE] idx=37 node=/bert/encoder/layer.4/attention/self/MatMul_1_output_0 module=MatMul input_shape=[(1, 12, 128, 128), (1, 12, 128, 64)] output_shape=(1, 12, 128, 64) time_ms=17.415524 comm_mb=4.500000 rounds=1
+[OP_PROFILE] idx=38 node=/bert/encoder/layer.4/attention/output/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=54.287910 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=39 node=/bert/encoder/layer.4/intermediate/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 3072)] output_shape=(1, 128, 3072) time_ms=196.841955 comm_mb=37.500000 rounds=1
+[OP_PROFILE] idx=40 node=/bert/encoder/layer.4/output/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 3072), (3072, 768)] output_shape=(1, 128, 768) time_ms=210.525751 comm_mb=42.000000 rounds=1
+[OP_PROFILE] idx=41 node=/bert/encoder/layer.5/attention/self/query/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=55.665970 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=42 node=/bert/encoder/layer.5/attention/self/key/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=55.948973 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=43 node=/bert/encoder/layer.5/attention/self/value/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=56.117058 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=44 node=/bert/encoder/layer.5/attention/self/MatMul_output_0 module=MatMul input_shape=[(1, 12, 128, 64), (1, 12, 64, 128)] output_shape=(1, 12, 128, 128) time_ms=15.202045 comm_mb=3.000000 rounds=1
+[OP_PROFILE] idx=45 node=/bert/encoder/layer.5/attention/self/MatMul_1_output_0 module=MatMul input_shape=[(1, 12, 128, 128), (1, 12, 128, 64)] output_shape=(1, 12, 128, 64) time_ms=19.132614 comm_mb=4.500000 rounds=1
+[OP_PROFILE] idx=46 node=/bert/encoder/layer.5/attention/output/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=57.004690 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=47 node=/bert/encoder/layer.5/intermediate/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 3072)] output_shape=(1, 128, 3072) time_ms=204.977512 comm_mb=37.500000 rounds=1
+[OP_PROFILE] idx=48 node=/bert/encoder/layer.5/output/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 3072), (3072, 768)] output_shape=(1, 128, 768) time_ms=213.945389 comm_mb=42.000000 rounds=1
+[OP_PROFILE] idx=49 node=/bert/encoder/layer.6/attention/self/query/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=56.075573 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=50 node=/bert/encoder/layer.6/attention/self/key/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=55.764914 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=51 node=/bert/encoder/layer.6/attention/self/value/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=55.953264 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=52 node=/bert/encoder/layer.6/attention/self/MatMul_output_0 module=MatMul input_shape=[(1, 12, 128, 64), (1, 12, 64, 128)] output_shape=(1, 12, 128, 128) time_ms=13.661623 comm_mb=3.000000 rounds=1
+[OP_PROFILE] idx=53 node=/bert/encoder/layer.6/attention/self/MatMul_1_output_0 module=MatMul input_shape=[(1, 12, 128, 128), (1, 12, 128, 64)] output_shape=(1, 12, 128, 64) time_ms=19.366741 comm_mb=4.500000 rounds=1
+[OP_PROFILE] idx=54 node=/bert/encoder/layer.6/attention/output/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=56.673288 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=55 node=/bert/encoder/layer.6/intermediate/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 3072)] output_shape=(1, 128, 3072) time_ms=198.686123 comm_mb=37.500000 rounds=1
+[OP_PROFILE] idx=56 node=/bert/encoder/layer.6/output/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 3072), (3072, 768)] output_shape=(1, 128, 768) time_ms=213.210821 comm_mb=42.000000 rounds=1
+[OP_PROFILE] idx=57 node=/bert/encoder/layer.7/attention/self/query/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=56.232929 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=58 node=/bert/encoder/layer.7/attention/self/key/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=56.335211 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=59 node=/bert/encoder/layer.7/attention/self/value/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=56.391954 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=60 node=/bert/encoder/layer.7/attention/self/MatMul_output_0 module=MatMul input_shape=[(1, 12, 128, 64), (1, 12, 64, 128)] output_shape=(1, 12, 128, 128) time_ms=15.300751 comm_mb=3.000000 rounds=1
+[OP_PROFILE] idx=61 node=/bert/encoder/layer.7/attention/self/MatMul_1_output_0 module=MatMul input_shape=[(1, 12, 128, 128), (1, 12, 128, 64)] output_shape=(1, 12, 128, 64) time_ms=19.490004 comm_mb=4.500000 rounds=1
+[OP_PROFILE] idx=62 node=/bert/encoder/layer.7/attention/output/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=57.391882 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=63 node=/bert/encoder/layer.7/intermediate/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 3072)] output_shape=(1, 128, 3072) time_ms=199.769974 comm_mb=37.500000 rounds=1
+[OP_PROFILE] idx=64 node=/bert/encoder/layer.7/output/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 3072), (3072, 768)] output_shape=(1, 128, 768) time_ms=215.052366 comm_mb=42.000000 rounds=1
+[OP_PROFILE] idx=65 node=/bert/encoder/layer.8/attention/self/query/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=56.064606 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=66 node=/bert/encoder/layer.8/attention/self/key/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=55.899620 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=67 node=/bert/encoder/layer.8/attention/self/value/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=56.246996 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=68 node=/bert/encoder/layer.8/attention/self/MatMul_output_0 module=MatMul input_shape=[(1, 12, 128, 64), (1, 12, 64, 128)] output_shape=(1, 12, 128, 128) time_ms=15.806198 comm_mb=3.000000 rounds=1
+[OP_PROFILE] idx=69 node=/bert/encoder/layer.8/attention/self/MatMul_1_output_0 module=MatMul input_shape=[(1, 12, 128, 128), (1, 12, 128, 64)] output_shape=(1, 12, 128, 64) time_ms=19.776344 comm_mb=4.500000 rounds=1
+[OP_PROFILE] idx=70 node=/bert/encoder/layer.8/attention/output/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=53.659916 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=71 node=/bert/encoder/layer.8/intermediate/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 3072)] output_shape=(1, 128, 3072) time_ms=199.990988 comm_mb=37.500000 rounds=1
+[OP_PROFILE] idx=72 node=/bert/encoder/layer.8/output/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 3072), (3072, 768)] output_shape=(1, 128, 768) time_ms=211.666346 comm_mb=42.000000 rounds=1
+[OP_PROFILE] idx=73 node=/bert/encoder/layer.9/attention/self/query/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=56.142569 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=74 node=/bert/encoder/layer.9/attention/self/key/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=56.425571 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=75 node=/bert/encoder/layer.9/attention/self/value/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=55.819750 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=76 node=/bert/encoder/layer.9/attention/self/MatMul_output_0 module=MatMul input_shape=[(1, 12, 128, 64), (1, 12, 64, 128)] output_shape=(1, 12, 128, 128) time_ms=15.357971 comm_mb=3.000000 rounds=1
+[OP_PROFILE] idx=77 node=/bert/encoder/layer.9/attention/self/MatMul_1_output_0 module=MatMul input_shape=[(1, 12, 128, 128), (1, 12, 128, 64)] output_shape=(1, 12, 128, 64) time_ms=19.543171 comm_mb=4.500000 rounds=1
+[OP_PROFILE] idx=78 node=/bert/encoder/layer.9/attention/output/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=55.297613 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=79 node=/bert/encoder/layer.9/intermediate/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 3072)] output_shape=(1, 128, 3072) time_ms=198.191404 comm_mb=37.500000 rounds=1
+[OP_PROFILE] idx=80 node=/bert/encoder/layer.9/output/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 3072), (3072, 768)] output_shape=(1, 128, 768) time_ms=214.441299 comm_mb=42.000000 rounds=1
+[OP_PROFILE] idx=81 node=/bert/encoder/layer.10/attention/self/query/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=56.364775 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=82 node=/bert/encoder/layer.10/attention/self/key/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=55.688381 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=83 node=/bert/encoder/layer.10/attention/self/value/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=55.233479 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=84 node=/bert/encoder/layer.10/attention/self/MatMul_output_0 module=MatMul input_shape=[(1, 12, 128, 64), (1, 12, 64, 128)] output_shape=(1, 12, 128, 128) time_ms=15.913486 comm_mb=3.000000 rounds=1
+[OP_PROFILE] idx=85 node=/bert/encoder/layer.10/attention/self/MatMul_1_output_0 module=MatMul input_shape=[(1, 12, 128, 128), (1, 12, 128, 64)] output_shape=(1, 12, 128, 64) time_ms=19.286633 comm_mb=4.500000 rounds=1
+[OP_PROFILE] idx=86 node=/bert/encoder/layer.10/attention/output/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=52.008629 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=87 node=/bert/encoder/layer.10/intermediate/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 3072)] output_shape=(1, 128, 3072) time_ms=198.668480 comm_mb=37.500000 rounds=1
+[OP_PROFILE] idx=88 node=/bert/encoder/layer.10/output/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 3072), (3072, 768)] output_shape=(1, 128, 768) time_ms=212.081671 comm_mb=42.000000 rounds=1
+[OP_PROFILE] idx=89 node=/bert/encoder/layer.11/attention/self/query/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=55.565834 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=90 node=/bert/encoder/layer.11/attention/self/key/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=54.112196 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=91 node=/bert/encoder/layer.11/attention/self/value/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=55.268288 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=92 node=/bert/encoder/layer.11/attention/self/MatMul_output_0 module=MatMul input_shape=[(1, 12, 128, 64), (1, 12, 64, 128)] output_shape=(1, 12, 128, 128) time_ms=15.212536 comm_mb=3.000000 rounds=1
+[OP_PROFILE] idx=93 node=/bert/encoder/layer.11/attention/self/MatMul_1_output_0 module=MatMul input_shape=[(1, 12, 128, 128), (1, 12, 128, 64)] output_shape=(1, 12, 128, 64) time_ms=19.244432 comm_mb=4.500000 rounds=1
+[OP_PROFILE] idx=94 node=/bert/encoder/layer.11/attention/output/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 768)] output_shape=(1, 128, 768) time_ms=56.626558 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=95 node=/bert/encoder/layer.11/intermediate/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 768), (768, 3072)] output_shape=(1, 128, 3072) time_ms=198.522329 comm_mb=37.500000 rounds=1
+[OP_PROFILE] idx=96 node=/bert/encoder/layer.11/output/dense/MatMul_output_0 module=MatMul input_shape=[(1, 128, 3072), (3072, 768)] output_shape=(1, 128, 768) time_ms=212.785959 comm_mb=42.000000 rounds=1
+[OP_PROFILE] idx=97 node=/bert/pooler/dense/Gemm_output_0 module=Gemm input_shape=[(1, 768), (768, 768), (768,)] output_shape=(1, 768) time_ms=17.635822 comm_mb=9.011719 rounds=1
+[OP_PROFILE] idx=98 node=output module=Gemm input_shape=[(1, 768), (2, 768), (2,)] output_shape=(1, 2) time_ms=9.956360 comm_mb=0.035156 rounds=1
+====================================================
+total_running_time: 20.287399768829346 sec
+embedding_time: 2.189131498336792 sec
+matmul_time: 8.056019067764282 sec
+softmax_time: 4.435722351074219 sec
+gelu_time: 2.8973445892333984 sec
+silu_time: 0 sec
+layernorm_time: 1.2341017723083496 sec
+tanh_time: 0.04301023483276367 sec
+conv_time: 0 sec
+other_time: 0.0003542900085449219 sec
+====================================================
+total_comm_time: 7.415171701926738 sec
+embedding_comm_time: 0.3400419275276363 sec
+matmul_comm_time: 0.8632836788892746 sec
+softmax_comm_time: 3.0213882671669126 sec
+gelu_comm_time: 2.4325709883123636 sec
+silu_comm_time: 0 sec
+layernorm_comm_time: 0.5218875538557768 sec
+tanh_comm_time: 0.016491142567247152 sec
+conv_comm_time: 0 sec
+other_comm_time: 0.21950814360752702 sec
+====================================================
+total_comm_bytes: 10.4926997423172 GB
+embedding_comm_bytes: 0.38716888427734375 GB
+matmul_comm_bytes: 1.5205535888671875 GB
+softmax_comm_bytes: 4.2890625 GB
+gelu_comm_bytes: 4.1484375 GB
+silu_comm_bytes: 0.0 GB
+layernorm_comm_bytes: 0.1117706298828125 GB
+tanh_comm_bytes: 0.000537872314453125 GB
+conv_comm_bytes: 0.0 GB
+other_comm_bytes: 0.03516876697540283 GB
+====================================================
+total_comm_rounds: 1963
+embedding_comm_rounds: 4
+matmul_comm_rounds: 98
+softmax_comm_rounds: 492
+gelu_comm_rounds: 228
+silu_comm_rounds: 0
+layernorm_comm_rounds: 650
+tanh_comm_rounds: 23
+conv_comm_rounds: 0
+other_comm_rounds: 468
+====================================================
+running time: 20.29s, comm byte: 10.49 GB
+================ Diagnostic Run torch.onnx.export version 2.0.1 ================
+verbose: False, log level: Level.ERROR
+======================= 0 NONE 0 NOTE 0 WARNING 0 ERROR ========================
+
+================ Diagnostic Run torch.onnx.export version 2.0.1 ================
+verbose: False, log level: Level.ERROR
+======================= 0 NONE 0 NOTE 3 WARNING 0 ERROR ========================
+3 WARNING were not printed due to the log level.
+
+====================================================
+total_running_time: 20.637616634368896 sec
+embedding_time: 2.533809185028076 sec
+matmul_time: 8.100549697875977 sec
+softmax_time: 4.434329032897949 sec
+gelu_time: 2.8966944217681885 sec
+silu_time: 0 sec
+layernorm_time: 1.239159107208252 sec
+tanh_time: 0.04304909706115723 sec
+conv_time: 0 sec
+other_time: 0.00039386749267578125 sec
+====================================================
+total_comm_time: 7.974559717345983 sec
+embedding_comm_time: 0.706024656072259 sec
+matmul_comm_time: 0.9175511859357357 sec
+softmax_comm_time: 3.1228227145038545 sec
+gelu_comm_time: 2.4734752336516976 sec
+silu_comm_time: 0 sec
+layernorm_comm_time: 0.5163713460788131 sec
+tanh_comm_time: 0.01600642502307892 sec
+conv_comm_time: 0 sec
+other_comm_time: 0.222308156080544 sec
+====================================================
+total_comm_bytes: 10.4926997423172 GB
+embedding_comm_bytes: 0.38716888427734375 GB
+matmul_comm_bytes: 1.5205535888671875 GB
+softmax_comm_bytes: 4.2890625 GB
+gelu_comm_bytes: 4.1484375 GB
+silu_comm_bytes: 0.0 GB
+layernorm_comm_bytes: 0.1117706298828125 GB
+tanh_comm_bytes: 0.000537872314453125 GB
+conv_comm_bytes: 0.0 GB
+other_comm_bytes: 0.03516876697540283 GB
+====================================================
+total_comm_rounds: 1963
+embedding_comm_rounds: 4
+matmul_comm_rounds: 98
+softmax_comm_rounds: 492
+gelu_comm_rounds: 228
+silu_comm_rounds: 0
+layernorm_comm_rounds: 650
+tanh_comm_rounds: 23
+conv_comm_rounds: 0
+other_comm_rounds: 468
+====================================================

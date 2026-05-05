@@ -1,0 +1,252 @@
+INFO:root:==================
+INFO:root:DistributedCommunicator with rank 1
+INFO:root:==================
+INFO:root:==================
+INFO:root:DistributedCommunicator with rank 0
+INFO:root:==================
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:1 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:1 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:1 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:1 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:2 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:2 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:2 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:2 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:3 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:3 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:3 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:3 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:4 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:4 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:4 with 2 nodes.
+INFO:root:World size = 2
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:4 with 2 nodes.
+INFO:root:World size = 2
+WARNING:__mp_main__:device: cuda:1, rank: 1, world_size: 2, 16-bits inference: False
+/home/ylu18/miniconda3/envs/shaft_clean/lib/python3.10/site-packages/huggingface_hub/file_download.py:942: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+WARNING:__mp_main__:device: cuda:0, rank: 0, world_size: 2, 16-bits inference: False
+/home/ylu18/miniconda3/envs/shaft_clean/lib/python3.10/site-packages/huggingface_hub/file_download.py:942: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/__init__.py:66: RuntimeWarning: CrypTen is already initialized.
+  warnings.warn("CrypTen is already initialized.", RuntimeWarning)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/__init__.py:66: RuntimeWarning: CrypTen is already initialized.
+  warnings.warn("CrypTen is already initialized.", RuntimeWarning)
+[W shape_type_inference.cpp:1920] Warning: The shape inference of shaft::Embedding type is missing, so it may result in wrong shape inference for the exported graph. Please consider adding it in symbolic function. (function UpdateReliable)
+[W shape_type_inference.cpp:1920] Warning: The shape inference of shaft::Embedding type is missing, so it may result in wrong shape inference for the exported graph. Please consider adding it in symbolic function. (function UpdateReliable)
+[W shape_type_inference.cpp:1920] Warning: The shape inference of shaft::Embedding type is missing, so it may result in wrong shape inference for the exported graph. Please consider adding it in symbolic function. (function UpdateReliable)
+[W shape_type_inference.cpp:1920] Warning: The shape inference of shaft::Embedding type is missing, so it may result in wrong shape inference for the exported graph. Please consider adding it in symbolic function. (function UpdateReliable)
+/home/ylu18/miniconda3/envs/shaft_clean/lib/python3.10/site-packages/torch/onnx/utils.py:1636: UserWarning: The exported ONNX model failed ONNX shape inference.The model will not be executable by the ONNX Runtime.If this is unintended and you believe there is a bug,please report an issue at https://github.com/pytorch/pytorch/issues.Error reported by strict ONNX shape inference: [ShapeInferenceError] (op_type:Dropout, node name: /transformer/drop/Dropout): training_mode typestr: T2, has unsupported type: tensor(int64) (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/jit/serialization/export.cpp:1407.)
+  _C._check_onnx_proto(proto)
+/home/ylu18/miniconda3/envs/shaft_clean/lib/python3.10/site-packages/torch/onnx/utils.py:1636: UserWarning: The exported ONNX model failed ONNX shape inference.The model will not be executable by the ONNX Runtime.If this is unintended and you believe there is a bug,please report an issue at https://github.com/pytorch/pytorch/issues.Error reported by strict ONNX shape inference: [ShapeInferenceError] (op_type:Dropout, node name: /transformer/drop/Dropout): training_mode typestr: T2, has unsupported type: tensor(int64) (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/jit/serialization/export.cpp:1407.)
+  _C._check_onnx_proto(proto)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/nn/onnx_converter.py:256: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/tensor_numpy.cpp:206.)
+  param = torch.from_numpy(numpy_helper.to_array(node))
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/nn/onnx_converter.py:256: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/tensor_numpy.cpp:206.)
+  param = torch.from_numpy(numpy_helper.to_array(node))
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/provider/tfp_provider.py:62: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  v = torch.nn.functional.one_hot(r, num_classes=length)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/provider/tfp_provider.py:62: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  v = torch.nn.functional.one_hot(r, num_classes=length)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/provider/tfp_provider.py:29: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c = getattr(torch, op)(a, b, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/provider/tfp_provider.py:29: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c = getattr(torch, op)(a, b, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/beaver.py:82: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c._tensor += getattr(torch, op)(epsilon, b._tensor, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/beaver.py:82: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c._tensor += getattr(torch, op)(epsilon, b._tensor, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/beaver.py:83: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c._tensor += getattr(torch, op)(a._tensor, delta, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/beaver.py:83: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c._tensor += getattr(torch, op)(a._tensor, delta, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/beaver.py:84: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c += getattr(torch, op)(epsilon, delta, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/beaver.py:84: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c += getattr(torch, op)(epsilon, delta, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/arithmetic.py:372: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  result.share = getattr(torch, op)(result.share, y, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/arithmetic.py:372: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  result.share = getattr(torch, op)(result.share, y, *args, **kwargs)
+================ Diagnostic Run torch.onnx.export version 2.0.1 ================
+verbose: False, log level: Level.ERROR
+======================= 0 NONE 0 NOTE 0 WARNING 0 ERROR ========================
+
+================ Diagnostic Run torch.onnx.export version 2.0.1 ================
+verbose: False, log level: Level.ERROR
+======================= 0 NONE 0 NOTE 2 WARNING 0 ERROR ========================
+2 WARNING were not printed due to the log level.
+
+[OP_PROFILE] idx=1 node=/transformer/h.0/attn/c_attn/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 2304), (2304,)] output_shape=(128, 2304) time_ms=80.489397 comm_mb=28.500000 rounds=1
+[OP_PROFILE] idx=2 node=/transformer/h.0/attn/MatMul_output_0 module=MatMul input_shape=[(1, 12, 128, 64), (1, 12, 64, 128)] output_shape=(1, 12, 128, 128) time_ms=10.270596 comm_mb=3.000000 rounds=1
+[OP_PROFILE] idx=3 node=/transformer/h.0/attn/MatMul_1_output_0 module=MatMul input_shape=[(1, 12, 128, 128), (1, 12, 128, 64)] output_shape=(1, 12, 128, 64) time_ms=13.992071 comm_mb=4.500000 rounds=1
+[OP_PROFILE] idx=4 node=/transformer/h.0/attn/c_proj/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 768), (768,)] output_shape=(128, 768) time_ms=32.622814 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=5 node=/transformer/h.0/mlp/c_fc/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 3072), (3072,)] output_shape=(128, 3072) time_ms=104.579210 comm_mb=37.500000 rounds=1
+[OP_PROFILE] idx=6 node=/transformer/h.0/mlp/c_proj/Gemm_output_0 module=Gemm input_shape=[(128, 3072), (3072, 768), (768,)] output_shape=(128, 768) time_ms=115.261078 comm_mb=42.000000 rounds=1
+[OP_PROFILE] idx=7 node=/transformer/h.1/attn/c_attn/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 2304), (2304,)] output_shape=(128, 2304) time_ms=82.505226 comm_mb=28.500000 rounds=1
+[OP_PROFILE] idx=8 node=/transformer/h.1/attn/MatMul_output_0 module=MatMul input_shape=[(1, 12, 128, 64), (1, 12, 64, 128)] output_shape=(1, 12, 128, 128) time_ms=10.333300 comm_mb=3.000000 rounds=1
+[OP_PROFILE] idx=9 node=/transformer/h.1/attn/MatMul_1_output_0 module=MatMul input_shape=[(1, 12, 128, 128), (1, 12, 128, 64)] output_shape=(1, 12, 128, 64) time_ms=13.719797 comm_mb=4.500000 rounds=1
+[OP_PROFILE] idx=10 node=/transformer/h.1/attn/c_proj/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 768), (768,)] output_shape=(128, 768) time_ms=31.015635 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=11 node=/transformer/h.1/mlp/c_fc/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 3072), (3072,)] output_shape=(128, 3072) time_ms=104.669333 comm_mb=37.500000 rounds=1
+[OP_PROFILE] idx=12 node=/transformer/h.1/mlp/c_proj/Gemm_output_0 module=Gemm input_shape=[(128, 3072), (3072, 768), (768,)] output_shape=(128, 768) time_ms=114.218950 comm_mb=42.000000 rounds=1
+[OP_PROFILE] idx=13 node=/transformer/h.2/attn/c_attn/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 2304), (2304,)] output_shape=(128, 2304) time_ms=80.306768 comm_mb=28.500000 rounds=1
+[OP_PROFILE] idx=14 node=/transformer/h.2/attn/MatMul_output_0 module=MatMul input_shape=[(1, 12, 128, 64), (1, 12, 64, 128)] output_shape=(1, 12, 128, 128) time_ms=10.061026 comm_mb=3.000000 rounds=1
+[OP_PROFILE] idx=15 node=/transformer/h.2/attn/MatMul_1_output_0 module=MatMul input_shape=[(1, 12, 128, 128), (1, 12, 128, 64)] output_shape=(1, 12, 128, 64) time_ms=14.128685 comm_mb=4.500000 rounds=1
+[OP_PROFILE] idx=16 node=/transformer/h.2/attn/c_proj/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 768), (768,)] output_shape=(128, 768) time_ms=32.026052 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=17 node=/transformer/h.2/mlp/c_fc/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 3072), (3072,)] output_shape=(128, 3072) time_ms=108.248949 comm_mb=37.500000 rounds=1
+[OP_PROFILE] idx=18 node=/transformer/h.2/mlp/c_proj/Gemm_output_0 module=Gemm input_shape=[(128, 3072), (3072, 768), (768,)] output_shape=(128, 768) time_ms=114.567280 comm_mb=42.000000 rounds=1
+[OP_PROFILE] idx=19 node=/transformer/h.3/attn/c_attn/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 2304), (2304,)] output_shape=(128, 2304) time_ms=76.769352 comm_mb=28.500000 rounds=1
+[OP_PROFILE] idx=20 node=/transformer/h.3/attn/MatMul_output_0 module=MatMul input_shape=[(1, 12, 128, 64), (1, 12, 64, 128)] output_shape=(1, 12, 128, 128) time_ms=9.999514 comm_mb=3.000000 rounds=1
+[OP_PROFILE] idx=21 node=/transformer/h.3/attn/MatMul_1_output_0 module=MatMul input_shape=[(1, 12, 128, 128), (1, 12, 128, 64)] output_shape=(1, 12, 128, 64) time_ms=13.599873 comm_mb=4.500000 rounds=1
+[OP_PROFILE] idx=22 node=/transformer/h.3/attn/c_proj/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 768), (768,)] output_shape=(128, 768) time_ms=31.014681 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=23 node=/transformer/h.3/mlp/c_fc/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 3072), (3072,)] output_shape=(128, 3072) time_ms=108.896494 comm_mb=37.500000 rounds=1
+[OP_PROFILE] idx=24 node=/transformer/h.3/mlp/c_proj/Gemm_output_0 module=Gemm input_shape=[(128, 3072), (3072, 768), (768,)] output_shape=(128, 768) time_ms=115.847588 comm_mb=42.000000 rounds=1
+[OP_PROFILE] idx=25 node=/transformer/h.4/attn/c_attn/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 2304), (2304,)] output_shape=(128, 2304) time_ms=80.916405 comm_mb=28.500000 rounds=1
+[OP_PROFILE] idx=26 node=/transformer/h.4/attn/MatMul_output_0 module=MatMul input_shape=[(1, 12, 128, 64), (1, 12, 64, 128)] output_shape=(1, 12, 128, 128) time_ms=10.303020 comm_mb=3.000000 rounds=1
+[OP_PROFILE] idx=27 node=/transformer/h.4/attn/MatMul_1_output_0 module=MatMul input_shape=[(1, 12, 128, 128), (1, 12, 128, 64)] output_shape=(1, 12, 128, 64) time_ms=13.900757 comm_mb=4.500000 rounds=1
+[OP_PROFILE] idx=28 node=/transformer/h.4/attn/c_proj/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 768), (768,)] output_shape=(128, 768) time_ms=31.265259 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=29 node=/transformer/h.4/mlp/c_fc/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 3072), (3072,)] output_shape=(128, 3072) time_ms=106.601477 comm_mb=37.500000 rounds=1
+[OP_PROFILE] idx=30 node=/transformer/h.4/mlp/c_proj/Gemm_output_0 module=Gemm input_shape=[(128, 3072), (3072, 768), (768,)] output_shape=(128, 768) time_ms=117.377520 comm_mb=42.000000 rounds=1
+[OP_PROFILE] idx=31 node=/transformer/h.5/attn/c_attn/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 2304), (2304,)] output_shape=(128, 2304) time_ms=82.177877 comm_mb=28.500000 rounds=1
+[OP_PROFILE] idx=32 node=/transformer/h.5/attn/MatMul_output_0 module=MatMul input_shape=[(1, 12, 128, 64), (1, 12, 64, 128)] output_shape=(1, 12, 128, 128) time_ms=11.251926 comm_mb=3.000000 rounds=1
+[OP_PROFILE] idx=33 node=/transformer/h.5/attn/MatMul_1_output_0 module=MatMul input_shape=[(1, 12, 128, 128), (1, 12, 128, 64)] output_shape=(1, 12, 128, 64) time_ms=13.928890 comm_mb=4.500000 rounds=1
+[OP_PROFILE] idx=34 node=/transformer/h.5/attn/c_proj/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 768), (768,)] output_shape=(128, 768) time_ms=33.017397 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=35 node=/transformer/h.5/mlp/c_fc/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 3072), (3072,)] output_shape=(128, 3072) time_ms=107.237101 comm_mb=37.500000 rounds=1
+[OP_PROFILE] idx=36 node=/transformer/h.5/mlp/c_proj/Gemm_output_0 module=Gemm input_shape=[(128, 3072), (3072, 768), (768,)] output_shape=(128, 768) time_ms=115.390778 comm_mb=42.000000 rounds=1
+[OP_PROFILE] idx=37 node=/transformer/h.6/attn/c_attn/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 2304), (2304,)] output_shape=(128, 2304) time_ms=80.333948 comm_mb=28.500000 rounds=1
+[OP_PROFILE] idx=38 node=/transformer/h.6/attn/MatMul_output_0 module=MatMul input_shape=[(1, 12, 128, 64), (1, 12, 64, 128)] output_shape=(1, 12, 128, 128) time_ms=10.263443 comm_mb=3.000000 rounds=1
+[OP_PROFILE] idx=39 node=/transformer/h.6/attn/MatMul_1_output_0 module=MatMul input_shape=[(1, 12, 128, 128), (1, 12, 128, 64)] output_shape=(1, 12, 128, 64) time_ms=14.455318 comm_mb=4.500000 rounds=1
+[OP_PROFILE] idx=40 node=/transformer/h.6/attn/c_proj/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 768), (768,)] output_shape=(128, 768) time_ms=31.815529 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=41 node=/transformer/h.6/mlp/c_fc/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 3072), (3072,)] output_shape=(128, 3072) time_ms=106.456280 comm_mb=37.500000 rounds=1
+[OP_PROFILE] idx=42 node=/transformer/h.6/mlp/c_proj/Gemm_output_0 module=Gemm input_shape=[(128, 3072), (3072, 768), (768,)] output_shape=(128, 768) time_ms=118.183613 comm_mb=42.000000 rounds=1
+[OP_PROFILE] idx=43 node=/transformer/h.7/attn/c_attn/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 2304), (2304,)] output_shape=(128, 2304) time_ms=80.019236 comm_mb=28.500000 rounds=1
+[OP_PROFILE] idx=44 node=/transformer/h.7/attn/MatMul_output_0 module=MatMul input_shape=[(1, 12, 128, 64), (1, 12, 64, 128)] output_shape=(1, 12, 128, 128) time_ms=9.990931 comm_mb=3.000000 rounds=1
+[OP_PROFILE] idx=45 node=/transformer/h.7/attn/MatMul_1_output_0 module=MatMul input_shape=[(1, 12, 128, 128), (1, 12, 128, 64)] output_shape=(1, 12, 128, 64) time_ms=14.249563 comm_mb=4.500000 rounds=1
+[OP_PROFILE] idx=46 node=/transformer/h.7/attn/c_proj/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 768), (768,)] output_shape=(128, 768) time_ms=31.837225 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=47 node=/transformer/h.7/mlp/c_fc/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 3072), (3072,)] output_shape=(128, 3072) time_ms=106.210947 comm_mb=37.500000 rounds=1
+[OP_PROFILE] idx=48 node=/transformer/h.7/mlp/c_proj/Gemm_output_0 module=Gemm input_shape=[(128, 3072), (3072, 768), (768,)] output_shape=(128, 768) time_ms=115.026712 comm_mb=42.000000 rounds=1
+[OP_PROFILE] idx=49 node=/transformer/h.8/attn/c_attn/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 2304), (2304,)] output_shape=(128, 2304) time_ms=80.827236 comm_mb=28.500000 rounds=1
+[OP_PROFILE] idx=50 node=/transformer/h.8/attn/MatMul_output_0 module=MatMul input_shape=[(1, 12, 128, 64), (1, 12, 64, 128)] output_shape=(1, 12, 128, 128) time_ms=10.879278 comm_mb=3.000000 rounds=1
+[OP_PROFILE] idx=51 node=/transformer/h.8/attn/MatMul_1_output_0 module=MatMul input_shape=[(1, 12, 128, 128), (1, 12, 128, 64)] output_shape=(1, 12, 128, 64) time_ms=13.776302 comm_mb=4.500000 rounds=1
+[OP_PROFILE] idx=52 node=/transformer/h.8/attn/c_proj/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 768), (768,)] output_shape=(128, 768) time_ms=31.733990 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=53 node=/transformer/h.8/mlp/c_fc/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 3072), (3072,)] output_shape=(128, 3072) time_ms=104.811907 comm_mb=37.500000 rounds=1
+[OP_PROFILE] idx=54 node=/transformer/h.8/mlp/c_proj/Gemm_output_0 module=Gemm input_shape=[(128, 3072), (3072, 768), (768,)] output_shape=(128, 768) time_ms=114.877939 comm_mb=42.000000 rounds=1
+[OP_PROFILE] idx=55 node=/transformer/h.9/attn/c_attn/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 2304), (2304,)] output_shape=(128, 2304) time_ms=81.482649 comm_mb=28.500000 rounds=1
+[OP_PROFILE] idx=56 node=/transformer/h.9/attn/MatMul_output_0 module=MatMul input_shape=[(1, 12, 128, 64), (1, 12, 64, 128)] output_shape=(1, 12, 128, 128) time_ms=9.410381 comm_mb=3.000000 rounds=1
+[OP_PROFILE] idx=57 node=/transformer/h.9/attn/MatMul_1_output_0 module=MatMul input_shape=[(1, 12, 128, 128), (1, 12, 128, 64)] output_shape=(1, 12, 128, 64) time_ms=14.057159 comm_mb=4.500000 rounds=1
+[OP_PROFILE] idx=58 node=/transformer/h.9/attn/c_proj/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 768), (768,)] output_shape=(128, 768) time_ms=30.840635 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=59 node=/transformer/h.9/mlp/c_fc/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 3072), (3072,)] output_shape=(128, 3072) time_ms=107.265711 comm_mb=37.500000 rounds=1
+[OP_PROFILE] idx=60 node=/transformer/h.9/mlp/c_proj/Gemm_output_0 module=Gemm input_shape=[(128, 3072), (3072, 768), (768,)] output_shape=(128, 768) time_ms=115.076303 comm_mb=42.000000 rounds=1
+[OP_PROFILE] idx=61 node=/transformer/h.10/attn/c_attn/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 2304), (2304,)] output_shape=(128, 2304) time_ms=83.664179 comm_mb=28.500000 rounds=1
+[OP_PROFILE] idx=62 node=/transformer/h.10/attn/MatMul_output_0 module=MatMul input_shape=[(1, 12, 128, 64), (1, 12, 64, 128)] output_shape=(1, 12, 128, 128) time_ms=10.835886 comm_mb=3.000000 rounds=1
+[OP_PROFILE] idx=63 node=/transformer/h.10/attn/MatMul_1_output_0 module=MatMul input_shape=[(1, 12, 128, 128), (1, 12, 128, 64)] output_shape=(1, 12, 128, 64) time_ms=14.109612 comm_mb=4.500000 rounds=1
+[OP_PROFILE] idx=64 node=/transformer/h.10/attn/c_proj/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 768), (768,)] output_shape=(128, 768) time_ms=31.558037 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=65 node=/transformer/h.10/mlp/c_fc/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 3072), (3072,)] output_shape=(128, 3072) time_ms=105.197430 comm_mb=37.500000 rounds=1
+[OP_PROFILE] idx=66 node=/transformer/h.10/mlp/c_proj/Gemm_output_0 module=Gemm input_shape=[(128, 3072), (3072, 768), (768,)] output_shape=(128, 768) time_ms=114.743233 comm_mb=42.000000 rounds=1
+[OP_PROFILE] idx=67 node=/transformer/h.11/attn/c_attn/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 2304), (2304,)] output_shape=(128, 2304) time_ms=81.290245 comm_mb=28.500000 rounds=1
+[OP_PROFILE] idx=68 node=/transformer/h.11/attn/MatMul_output_0 module=MatMul input_shape=[(1, 12, 128, 64), (1, 12, 64, 128)] output_shape=(1, 12, 128, 128) time_ms=10.548353 comm_mb=3.000000 rounds=1
+[OP_PROFILE] idx=69 node=/transformer/h.11/attn/MatMul_1_output_0 module=MatMul input_shape=[(1, 12, 128, 128), (1, 12, 128, 64)] output_shape=(1, 12, 128, 64) time_ms=13.864040 comm_mb=4.500000 rounds=1
+[OP_PROFILE] idx=70 node=/transformer/h.11/attn/c_proj/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 768), (768,)] output_shape=(128, 768) time_ms=31.116962 comm_mb=10.500000 rounds=1
+[OP_PROFILE] idx=71 node=/transformer/h.11/mlp/c_fc/Gemm_output_0 module=Gemm input_shape=[(128, 768), (768, 3072), (3072,)] output_shape=(128, 3072) time_ms=107.020617 comm_mb=37.500000 rounds=1
+[OP_PROFILE] idx=72 node=/transformer/h.11/mlp/c_proj/Gemm_output_0 module=Gemm input_shape=[(128, 3072), (3072, 768), (768,)] output_shape=(128, 768) time_ms=117.237329 comm_mb=42.000000 rounds=1
+[OP_PROFILE] idx=73 node=output module=MatMul input_shape=[(1, 128, 768), (768, 50257)] output_shape=(1, 128, 50257) time_ms=1696.511269 comm_mb=590.449219 rounds=1
+====================================================
+total_running_time: 20.676400184631348 sec
+embedding_time: 2.366640090942383 sec
+matmul_time: 6.004091501235962 sec
+softmax_time: 4.660456895828247 sec
+gelu_time: 3.250680685043335 sec
+silu_time: 0 sec
+layernorm_time: 1.4314801692962646 sec
+tanh_time: 0 sec
+conv_time: 0 sec
+other_time: 0.0003466606140136719 sec
+====================================================
+total_comm_time: 8.901932809036225 sec
+embedding_comm_time: 0.8916089809499681 sec
+matmul_comm_time: 1.2563645392656326 sec
+softmax_comm_time: 3.1882304828613997 sec
+gelu_comm_time: 2.736767024267465 sec
+silu_comm_time: 0 sec
+layernorm_comm_time: 0.6131478352472186 sec
+tanh_comm_time: 0 sec
+conv_comm_time: 0 sec
+other_comm_time: 0.21581394644454122 sec
+====================================================
+total_comm_bytes: 11.3086177110672 GB
+embedding_comm_bytes: 0.6710052490234375 GB
+matmul_comm_bytes: 2.053173065185547 GB
+softmax_comm_bytes: 4.2890625 GB
+gelu_comm_bytes: 4.1484375 GB
+silu_comm_bytes: 0.0 GB
+layernorm_comm_bytes: 0.1117706298828125 GB
+tanh_comm_bytes: 0.0 GB
+conv_comm_bytes: 0.0 GB
+other_comm_bytes: 0.03516876697540283 GB
+====================================================
+total_comm_rounds: 1913
+embedding_comm_rounds: 2
+matmul_comm_rounds: 73
+softmax_comm_rounds: 492
+gelu_comm_rounds: 228
+silu_comm_rounds: 0
+layernorm_comm_rounds: 650
+tanh_comm_rounds: 0
+conv_comm_rounds: 0
+other_comm_rounds: 468
+====================================================
+running time: 20.68s, comm byte: 11.31 GB
+================ Diagnostic Run torch.onnx.export version 2.0.1 ================
+verbose: False, log level: Level.ERROR
+======================= 0 NONE 0 NOTE 0 WARNING 0 ERROR ========================
+
+================ Diagnostic Run torch.onnx.export version 2.0.1 ================
+verbose: False, log level: Level.ERROR
+======================= 0 NONE 0 NOTE 2 WARNING 0 ERROR ========================
+2 WARNING were not printed due to the log level.
+
+====================================================
+total_running_time: 20.37634038925171 sec
+embedding_time: 2.072195291519165 sec
+matmul_time: 6.051457643508911 sec
+softmax_time: 4.658105134963989 sec
+gelu_time: 3.243058204650879 sec
+silu_time: 0 sec
+layernorm_time: 1.407599925994873 sec
+tanh_time: 0 sec
+conv_time: 0 sec
+other_time: 0.00033211708068847656 sec
+====================================================
+total_comm_time: 8.508546829689294 sec
+embedding_comm_time: 0.5807464187964797 sec
+matmul_comm_time: 1.2395665002986789 sec
+softmax_comm_time: 3.1889991820789874 sec
+gelu_comm_time: 2.7313977177254856 sec
+silu_comm_time: 0 sec
+layernorm_comm_time: 0.5596710070967674 sec
+tanh_comm_time: 0 sec
+conv_comm_time: 0 sec
+other_comm_time: 0.20816600369289517 sec
+====================================================
+total_comm_bytes: 11.3086177110672 GB
+embedding_comm_bytes: 0.6710052490234375 GB
+matmul_comm_bytes: 2.053173065185547 GB
+softmax_comm_bytes: 4.2890625 GB
+gelu_comm_bytes: 4.1484375 GB
+silu_comm_bytes: 0.0 GB
+layernorm_comm_bytes: 0.1117706298828125 GB
+tanh_comm_bytes: 0.0 GB
+conv_comm_bytes: 0.0 GB
+other_comm_bytes: 0.03516876697540283 GB
+====================================================
+total_comm_rounds: 1913
+embedding_comm_rounds: 2
+matmul_comm_rounds: 73
+softmax_comm_rounds: 492
+gelu_comm_rounds: 228
+silu_comm_rounds: 0
+layernorm_comm_rounds: 650
+tanh_comm_rounds: 0
+conv_comm_rounds: 0
+other_comm_rounds: 468
+====================================================

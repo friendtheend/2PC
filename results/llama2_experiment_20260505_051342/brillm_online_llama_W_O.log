@@ -1,0 +1,139 @@
+==== llama_W_O (8,4096,4096), iters=100 ====
+[PCG] Loaded from /home/ylu18/luoresearch/2PC/results/llama2_experiment_20260505_051342/dummy_pcg/llama_W_O_party0.bin
+[PCG] Matrix: [8×4096] × [4096×4096] = [8×4096], k=64-bit
+
+╔═══════════════════════════════════════════════════════════╗
+║  GPU Matrix Beaver Online                                 ║
+║  Y = X × W                                                ║
+╠═══════════════════════════════════════════════════════════╣
+║  GPU: NVIDIA RTX A6000                               ║
+║  Matrix: [8×4096] × [4096×4096] = [8×4096]                      
+║  k_bits: 64                                              ║
+║  iterations: 100                                         ║
+╚═══════════════════════════════════════════════════════════╝
+
+Iter 1: total=95.04 ms, PRG=1.68 ms, comm=82.14 ms, GEMM=1.17 ms
+Iter 2: total=95.03 ms, PRG=1.68 ms, comm=82.08 ms, GEMM=1.10 ms
+Iter 3: total=94.33 ms, PRG=1.68 ms, comm=81.37 ms, GEMM=1.10 ms
+Iter 4: total=93.43 ms, PRG=1.68 ms, comm=80.50 ms, GEMM=1.10 ms
+Iter 5: total=98.89 ms, PRG=1.68 ms, comm=86.00 ms, GEMM=1.13 ms
+Iter 6: total=93.72 ms, PRG=1.68 ms, comm=80.74 ms, GEMM=1.10 ms
+Iter 7: total=94.60 ms, PRG=1.68 ms, comm=81.75 ms, GEMM=1.12 ms
+Iter 8: total=94.77 ms, PRG=1.68 ms, comm=81.80 ms, GEMM=1.11 ms
+Iter 9: total=94.06 ms, PRG=1.68 ms, comm=81.07 ms, GEMM=1.12 ms
+Iter 10: total=93.50 ms, PRG=1.69 ms, comm=80.49 ms, GEMM=1.12 ms
+Iter 11: total=94.64 ms, PRG=1.68 ms, comm=81.68 ms, GEMM=1.12 ms
+Iter 12: total=94.60 ms, PRG=1.67 ms, comm=81.63 ms, GEMM=1.12 ms
+Iter 13: total=94.38 ms, PRG=1.68 ms, comm=81.43 ms, GEMM=1.11 ms
+Iter 14: total=93.72 ms, PRG=1.67 ms, comm=80.77 ms, GEMM=1.12 ms
+Iter 15: total=94.05 ms, PRG=1.68 ms, comm=81.11 ms, GEMM=1.11 ms
+Iter 16: total=95.03 ms, PRG=1.67 ms, comm=82.05 ms, GEMM=1.11 ms
+Iter 17: total=93.63 ms, PRG=1.67 ms, comm=80.65 ms, GEMM=1.11 ms
+Iter 18: total=93.98 ms, PRG=1.68 ms, comm=81.14 ms, GEMM=1.12 ms
+Iter 19: total=94.04 ms, PRG=1.68 ms, comm=81.10 ms, GEMM=1.10 ms
+Iter 20: total=93.81 ms, PRG=1.67 ms, comm=80.84 ms, GEMM=1.11 ms
+Iter 21: total=93.88 ms, PRG=1.67 ms, comm=80.96 ms, GEMM=1.10 ms
+Iter 22: total=93.98 ms, PRG=1.68 ms, comm=81.01 ms, GEMM=1.12 ms
+Iter 23: total=93.34 ms, PRG=1.67 ms, comm=80.35 ms, GEMM=1.12 ms
+Iter 24: total=93.48 ms, PRG=1.67 ms, comm=80.50 ms, GEMM=1.12 ms
+Iter 25: total=94.19 ms, PRG=1.68 ms, comm=81.21 ms, GEMM=1.11 ms
+Iter 26: total=93.68 ms, PRG=1.67 ms, comm=80.69 ms, GEMM=1.12 ms
+Iter 27: total=94.63 ms, PRG=1.68 ms, comm=81.67 ms, GEMM=1.10 ms
+Iter 28: total=94.50 ms, PRG=1.67 ms, comm=81.64 ms, GEMM=1.11 ms
+Iter 29: total=93.53 ms, PRG=1.67 ms, comm=80.56 ms, GEMM=1.12 ms
+Iter 30: total=93.63 ms, PRG=1.67 ms, comm=80.69 ms, GEMM=1.11 ms
+Iter 31: total=94.56 ms, PRG=1.67 ms, comm=81.60 ms, GEMM=1.11 ms
+Iter 32: total=93.35 ms, PRG=1.68 ms, comm=80.37 ms, GEMM=1.12 ms
+Iter 33: total=93.29 ms, PRG=1.68 ms, comm=80.36 ms, GEMM=1.12 ms
+Iter 34: total=93.30 ms, PRG=1.67 ms, comm=80.33 ms, GEMM=1.12 ms
+Iter 35: total=93.78 ms, PRG=1.68 ms, comm=80.83 ms, GEMM=1.12 ms
+Iter 36: total=93.54 ms, PRG=1.67 ms, comm=80.58 ms, GEMM=1.11 ms
+Iter 37: total=93.67 ms, PRG=1.68 ms, comm=80.67 ms, GEMM=1.13 ms
+Iter 38: total=93.84 ms, PRG=1.68 ms, comm=80.85 ms, GEMM=1.12 ms
+Iter 39: total=94.76 ms, PRG=1.68 ms, comm=81.78 ms, GEMM=1.12 ms
+Iter 40: total=94.79 ms, PRG=1.67 ms, comm=81.80 ms, GEMM=1.12 ms
+Iter 41: total=93.56 ms, PRG=1.68 ms, comm=80.58 ms, GEMM=1.11 ms
+Iter 42: total=93.73 ms, PRG=1.67 ms, comm=80.79 ms, GEMM=1.12 ms
+Iter 43: total=93.65 ms, PRG=1.67 ms, comm=80.67 ms, GEMM=1.12 ms
+Iter 44: total=93.42 ms, PRG=1.68 ms, comm=80.38 ms, GEMM=1.13 ms
+Iter 45: total=94.25 ms, PRG=1.68 ms, comm=81.31 ms, GEMM=1.11 ms
+Iter 46: total=94.42 ms, PRG=1.68 ms, comm=81.46 ms, GEMM=1.11 ms
+Iter 47: total=94.15 ms, PRG=1.67 ms, comm=81.18 ms, GEMM=1.12 ms
+Iter 48: total=93.81 ms, PRG=1.67 ms, comm=80.90 ms, GEMM=1.12 ms
+Iter 49: total=94.70 ms, PRG=1.68 ms, comm=81.72 ms, GEMM=1.11 ms
+Iter 50: total=94.29 ms, PRG=1.68 ms, comm=81.31 ms, GEMM=1.12 ms
+Iter 51: total=94.40 ms, PRG=1.67 ms, comm=81.45 ms, GEMM=1.11 ms
+Iter 52: total=94.04 ms, PRG=1.67 ms, comm=81.12 ms, GEMM=1.10 ms
+Iter 53: total=94.14 ms, PRG=1.68 ms, comm=81.21 ms, GEMM=1.10 ms
+Iter 54: total=94.55 ms, PRG=1.68 ms, comm=81.58 ms, GEMM=1.11 ms
+Iter 55: total=94.67 ms, PRG=1.68 ms, comm=81.70 ms, GEMM=1.12 ms
+Iter 56: total=94.47 ms, PRG=1.67 ms, comm=81.50 ms, GEMM=1.11 ms
+Iter 57: total=94.45 ms, PRG=1.68 ms, comm=81.50 ms, GEMM=1.12 ms
+Iter 58: total=94.93 ms, PRG=1.68 ms, comm=81.96 ms, GEMM=1.11 ms
+Iter 59: total=94.21 ms, PRG=1.67 ms, comm=81.22 ms, GEMM=1.12 ms
+Iter 60: total=94.70 ms, PRG=1.67 ms, comm=81.71 ms, GEMM=1.12 ms
+Iter 61: total=94.46 ms, PRG=1.67 ms, comm=81.46 ms, GEMM=1.11 ms
+Iter 62: total=94.41 ms, PRG=1.67 ms, comm=81.42 ms, GEMM=1.11 ms
+Iter 63: total=93.21 ms, PRG=1.68 ms, comm=80.28 ms, GEMM=1.10 ms
+Iter 64: total=94.83 ms, PRG=1.68 ms, comm=81.87 ms, GEMM=1.11 ms
+Iter 65: total=94.75 ms, PRG=1.68 ms, comm=81.80 ms, GEMM=1.12 ms
+Iter 66: total=93.51 ms, PRG=1.67 ms, comm=80.54 ms, GEMM=1.11 ms
+Iter 67: total=94.03 ms, PRG=1.68 ms, comm=81.04 ms, GEMM=1.12 ms
+Iter 68: total=94.68 ms, PRG=1.67 ms, comm=81.69 ms, GEMM=1.11 ms
+Iter 69: total=94.80 ms, PRG=1.68 ms, comm=81.84 ms, GEMM=1.11 ms
+Iter 70: total=94.40 ms, PRG=1.68 ms, comm=81.48 ms, GEMM=1.11 ms
+Iter 71: total=94.67 ms, PRG=1.67 ms, comm=81.73 ms, GEMM=1.11 ms
+Iter 72: total=94.57 ms, PRG=1.68 ms, comm=81.60 ms, GEMM=1.13 ms
+Iter 73: total=94.58 ms, PRG=1.68 ms, comm=81.59 ms, GEMM=1.12 ms
+Iter 74: total=94.27 ms, PRG=1.67 ms, comm=81.32 ms, GEMM=1.11 ms
+Iter 75: total=94.64 ms, PRG=1.68 ms, comm=81.70 ms, GEMM=1.12 ms
+Iter 76: total=93.92 ms, PRG=1.67 ms, comm=80.91 ms, GEMM=1.12 ms
+Iter 77: total=95.11 ms, PRG=1.68 ms, comm=82.11 ms, GEMM=1.11 ms
+Iter 78: total=94.34 ms, PRG=1.68 ms, comm=81.35 ms, GEMM=1.11 ms
+Iter 79: total=93.83 ms, PRG=1.68 ms, comm=80.90 ms, GEMM=1.10 ms
+Iter 80: total=94.72 ms, PRG=1.68 ms, comm=81.74 ms, GEMM=1.11 ms
+Iter 81: total=94.33 ms, PRG=1.68 ms, comm=81.37 ms, GEMM=1.12 ms
+Iter 82: total=93.75 ms, PRG=1.67 ms, comm=80.79 ms, GEMM=1.12 ms
+Iter 83: total=94.51 ms, PRG=1.68 ms, comm=81.54 ms, GEMM=1.12 ms
+Iter 84: total=93.86 ms, PRG=1.68 ms, comm=80.91 ms, GEMM=1.11 ms
+Iter 85: total=94.00 ms, PRG=1.68 ms, comm=81.02 ms, GEMM=1.12 ms
+Iter 86: total=94.15 ms, PRG=1.68 ms, comm=81.21 ms, GEMM=1.11 ms
+Iter 87: total=94.87 ms, PRG=1.68 ms, comm=81.90 ms, GEMM=1.11 ms
+Iter 88: total=94.02 ms, PRG=1.67 ms, comm=81.06 ms, GEMM=1.10 ms
+Iter 89: total=93.68 ms, PRG=1.67 ms, comm=80.71 ms, GEMM=1.12 ms
+Iter 90: total=93.89 ms, PRG=1.68 ms, comm=80.88 ms, GEMM=1.13 ms
+Iter 91: total=94.79 ms, PRG=1.68 ms, comm=81.84 ms, GEMM=1.11 ms
+Iter 92: total=94.46 ms, PRG=1.68 ms, comm=81.49 ms, GEMM=1.11 ms
+Iter 93: total=93.98 ms, PRG=1.68 ms, comm=81.00 ms, GEMM=1.11 ms
+Iter 94: total=94.61 ms, PRG=1.67 ms, comm=81.64 ms, GEMM=1.11 ms
+Iter 95: total=94.97 ms, PRG=1.67 ms, comm=82.00 ms, GEMM=1.11 ms
+Iter 96: total=94.51 ms, PRG=1.68 ms, comm=81.51 ms, GEMM=1.11 ms
+Iter 97: total=94.55 ms, PRG=1.68 ms, comm=81.56 ms, GEMM=1.10 ms
+Iter 98: total=94.71 ms, PRG=1.67 ms, comm=81.79 ms, GEMM=1.11 ms
+Iter 99: total=93.54 ms, PRG=1.67 ms, comm=80.58 ms, GEMM=1.12 ms
+Iter 100: total=93.84 ms, PRG=1.68 ms, comm=80.92 ms, GEMM=1.12 ms
+
+╔══════════════════════════════════════════════════╗
+║  Results (with A/B/C storage pressure)          ║
+╠══════════════════════════════════════════════════╣
+║  Matrix:      [8×4096] × [4096×4096] = [8×4096]   ║
+║  Iterations:              100                     ║
+║  Total time:             9.42 s                 ║
+║  PRG time:               1.68 ms / iter         ║
+║  Comm time:             81.28 ms / iter         ║
+║  GEMM time:              1.11 ms / iter         ║
+║  Comm bytes:    134.48 /   134.48 MB/iter     ║
+║                                              ║
+║  PRG throughput (A+B):      10031.50 M elems/s   ║
+║  Gen throughput (A+B+C):     1299.43 M elems/s   ║
+║  Total throughput (A+B+C):    178.72 M elems/s   ║
+║                                              ║
+║  PRG bandwidth  (A+B → SSD):     80.25 GB/s    ║
+║  Gen bandwidth  (A+B+C→SSD):     10.40 GB/s    ║
+║  Total bandwidth(A+B+C→SSD):      1.43 GB/s    ║
+║                                              ║
+║  GEMM throughput:                2.85 GOPS/s     ║
+╚══════════════════════════════════════════════════╝
+
+[Party 0] Communication per iter: Sent=134.479872 MB, Recv=134.479872 MB, Total=268.959744 MB
+[Party 0] Communication total: Sent=13447.987200 MB, Recv=13447.987200 MB, Total=26895.974400 MB

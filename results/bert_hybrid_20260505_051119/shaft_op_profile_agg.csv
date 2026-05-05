@@ -1,0 +1,99 @@
+node,module,input_shape,output_shape,count,time_ms_sum,time_ms_avg,comm_mb_sum,comm_mb_avg,rounds_sum,rounds_avg
+/bert/encoder/layer.3/output/dense/MatMul_output_0,MatMul,"[(1, 128, 3072), (3072, 768)]","(1, 128, 768)",1,224.58148,224.58148,42.0,42.0,1.0,1.0
+/bert/encoder/layer.1/output/dense/MatMul_output_0,MatMul,"[(1, 128, 3072), (3072, 768)]","(1, 128, 768)",1,218.775511,218.775511,42.0,42.0,1.0,1.0
+/bert/encoder/layer.0/output/dense/MatMul_output_0,MatMul,"[(1, 128, 3072), (3072, 768)]","(1, 128, 768)",1,217.148304,217.148304,42.0,42.0,1.0,1.0
+/bert/encoder/layer.6/output/dense/MatMul_output_0,MatMul,"[(1, 128, 3072), (3072, 768)]","(1, 128, 768)",1,216.734648,216.734648,42.0,42.0,1.0,1.0
+/bert/encoder/layer.4/output/dense/MatMul_output_0,MatMul,"[(1, 128, 3072), (3072, 768)]","(1, 128, 768)",1,216.618776,216.618776,42.0,42.0,1.0,1.0
+/bert/encoder/layer.2/output/dense/MatMul_output_0,MatMul,"[(1, 128, 3072), (3072, 768)]","(1, 128, 768)",1,216.608286,216.608286,42.0,42.0,1.0,1.0
+/bert/encoder/layer.8/output/dense/MatMul_output_0,MatMul,"[(1, 128, 3072), (3072, 768)]","(1, 128, 768)",1,216.607094,216.607094,42.0,42.0,1.0,1.0
+/bert/encoder/layer.10/output/dense/MatMul_output_0,MatMul,"[(1, 128, 3072), (3072, 768)]","(1, 128, 768)",1,215.858459,215.858459,42.0,42.0,1.0,1.0
+/bert/encoder/layer.5/output/dense/MatMul_output_0,MatMul,"[(1, 128, 3072), (3072, 768)]","(1, 128, 768)",1,215.274096,215.274096,42.0,42.0,1.0,1.0
+/bert/encoder/layer.7/output/dense/MatMul_output_0,MatMul,"[(1, 128, 3072), (3072, 768)]","(1, 128, 768)",1,214.906693,214.906693,42.0,42.0,1.0,1.0
+/bert/encoder/layer.11/output/dense/MatMul_output_0,MatMul,"[(1, 128, 3072), (3072, 768)]","(1, 128, 768)",1,213.775635,213.775635,42.0,42.0,1.0,1.0
+/bert/encoder/layer.9/output/dense/MatMul_output_0,MatMul,"[(1, 128, 3072), (3072, 768)]","(1, 128, 768)",1,213.567972,213.567972,42.0,42.0,1.0,1.0
+/bert/encoder/layer.2/intermediate/dense/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 3072)]","(1, 128, 3072)",1,210.95562,210.95562,37.5,37.5,1.0,1.0
+/bert/encoder/layer.5/intermediate/dense/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 3072)]","(1, 128, 3072)",1,204.782248,204.782248,37.5,37.5,1.0,1.0
+/bert/encoder/layer.4/intermediate/dense/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 3072)]","(1, 128, 3072)",1,204.767704,204.767704,37.5,37.5,1.0,1.0
+/bert/encoder/layer.3/intermediate/dense/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 3072)]","(1, 128, 3072)",1,204.210043,204.210043,37.5,37.5,1.0,1.0
+/bert/encoder/layer.8/intermediate/dense/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 3072)]","(1, 128, 3072)",1,203.740358,203.740358,37.5,37.5,1.0,1.0
+/bert/encoder/layer.1/intermediate/dense/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 3072)]","(1, 128, 3072)",1,203.285217,203.285217,37.5,37.5,1.0,1.0
+/bert/encoder/layer.9/intermediate/dense/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 3072)]","(1, 128, 3072)",1,202.693462,202.693462,37.5,37.5,1.0,1.0
+/bert/encoder/layer.6/intermediate/dense/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 3072)]","(1, 128, 3072)",1,202.305794,202.305794,37.5,37.5,1.0,1.0
+/bert/encoder/layer.7/intermediate/dense/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 3072)]","(1, 128, 3072)",1,201.417446,201.417446,37.5,37.5,1.0,1.0
+/bert/encoder/layer.11/intermediate/dense/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 3072)]","(1, 128, 3072)",1,201.351404,201.351404,37.5,37.5,1.0,1.0
+/bert/encoder/layer.0/intermediate/dense/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 3072)]","(1, 128, 3072)",1,200.790882,200.790882,37.5,37.5,1.0,1.0
+/bert/encoder/layer.10/intermediate/dense/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 3072)]","(1, 128, 3072)",1,199.654579,199.654579,37.5,37.5,1.0,1.0
+/bert/encoder/layer.6/attention/output/dense/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,60.934305,60.934305,10.5,10.5,1.0,1.0
+/bert/encoder/layer.9/attention/output/dense/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,59.993505,59.993505,10.5,10.5,1.0,1.0
+/bert/encoder/layer.5/attention/output/dense/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,58.241367,58.241367,10.5,10.5,1.0,1.0
+/bert/encoder/layer.4/attention/output/dense/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,57.914734,57.914734,10.5,10.5,1.0,1.0
+/bert/encoder/layer.6/attention/self/query/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,57.698488,57.698488,10.5,10.5,1.0,1.0
+/bert/encoder/layer.9/attention/self/key/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,57.599545,57.599545,10.5,10.5,1.0,1.0
+/bert/encoder/layer.4/attention/self/query/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,57.505608,57.505608,10.5,10.5,1.0,1.0
+/bert/encoder/layer.3/attention/self/key/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,57.455301,57.455301,10.5,10.5,1.0,1.0
+/bert/encoder/layer.0/attention/output/dense/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,57.296515,57.296515,10.5,10.5,1.0,1.0
+/bert/encoder/layer.7/attention/self/key/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,57.138205,57.138205,10.5,10.5,1.0,1.0
+/bert/encoder/layer.4/attention/self/value/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,57.123184,57.123184,10.5,10.5,1.0,1.0
+/bert/encoder/layer.4/attention/self/key/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,57.122946,57.122946,10.5,10.5,1.0,1.0
+/bert/encoder/layer.3/attention/self/value/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,57.119131,57.119131,10.5,10.5,1.0,1.0
+/bert/encoder/layer.7/attention/output/dense/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,57.086945,57.086945,10.5,10.5,1.0,1.0
+/bert/encoder/layer.6/attention/self/key/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,57.073116,57.073116,10.5,10.5,1.0,1.0
+/bert/encoder/layer.3/attention/output/dense/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,56.988001,56.988001,10.5,10.5,1.0,1.0
+/bert/encoder/layer.5/attention/self/value/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,56.941986,56.941986,10.5,10.5,1.0,1.0
+/bert/encoder/layer.5/attention/self/key/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,56.931973,56.931973,10.5,10.5,1.0,1.0
+/bert/encoder/layer.11/attention/self/key/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,56.897402,56.897402,10.5,10.5,1.0,1.0
+/bert/encoder/layer.9/attention/self/value/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,56.892157,56.892157,10.5,10.5,1.0,1.0
+/bert/encoder/layer.1/attention/self/value/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,56.834936,56.834936,10.5,10.5,1.0,1.0
+/bert/encoder/layer.6/attention/self/value/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,56.7801,56.7801,10.5,10.5,1.0,1.0
+/bert/encoder/layer.2/attention/self/query/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,56.727171,56.727171,10.5,10.5,1.0,1.0
+/bert/encoder/layer.8/attention/self/value/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,56.72431,56.72431,10.5,10.5,1.0,1.0
+/bert/encoder/layer.8/attention/self/query/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,56.692839,56.692839,10.5,10.5,1.0,1.0
+/bert/encoder/layer.5/attention/self/query/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,56.652546,56.652546,10.5,10.5,1.0,1.0
+/bert/encoder/layer.2/attention/output/dense/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,56.62775,56.62775,10.5,10.5,1.0,1.0
+/bert/encoder/layer.1/attention/output/dense/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,56.618929,56.618929,10.5,10.5,1.0,1.0
+/bert/encoder/layer.8/attention/self/key/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,56.609154,56.609154,10.5,10.5,1.0,1.0
+/bert/encoder/layer.8/attention/output/dense/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,56.606531,56.606531,10.5,10.5,1.0,1.0
+/bert/encoder/layer.7/attention/self/query/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,56.500673,56.500673,10.5,10.5,1.0,1.0
+/bert/encoder/layer.7/attention/self/value/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,56.376696,56.376696,10.5,10.5,1.0,1.0
+/bert/encoder/layer.9/attention/self/query/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,56.261301,56.261301,10.5,10.5,1.0,1.0
+/bert/encoder/layer.0/attention/self/value/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,56.191683,56.191683,10.5,10.5,1.0,1.0
+/bert/encoder/layer.10/attention/self/query/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,56.005716,56.005716,10.5,10.5,1.0,1.0
+/bert/encoder/layer.1/attention/self/key/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,55.993795,55.993795,10.5,10.5,1.0,1.0
+/bert/encoder/layer.3/attention/self/query/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,55.83787,55.83787,10.5,10.5,1.0,1.0
+/bert/encoder/layer.10/attention/output/dense/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,55.804968,55.804968,10.5,10.5,1.0,1.0
+/bert/encoder/layer.2/attention/self/value/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,55.758715,55.758715,10.5,10.5,1.0,1.0
+/bert/encoder/layer.10/attention/self/key/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,55.757523,55.757523,10.5,10.5,1.0,1.0
+/bert/encoder/layer.2/attention/self/key/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,55.727005,55.727005,10.5,10.5,1.0,1.0
+/bert/encoder/layer.1/attention/self/query/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,55.660725,55.660725,10.5,10.5,1.0,1.0
+/bert/encoder/layer.10/attention/self/value/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,55.624723,55.624723,10.5,10.5,1.0,1.0
+/bert/encoder/layer.11/attention/output/dense/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,55.554628,55.554628,10.5,10.5,1.0,1.0
+/bert/encoder/layer.0/attention/self/key/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,55.541039,55.541039,10.5,10.5,1.0,1.0
+/bert/encoder/layer.11/attention/self/value/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,55.492163,55.492163,10.5,10.5,1.0,1.0
+/bert/encoder/layer.0/attention/self/query/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,55.429697,55.429697,10.5,10.5,1.0,1.0
+/bert/encoder/layer.11/attention/self/query/MatMul_output_0,MatMul,"[(1, 128, 768), (768, 768)]","(1, 128, 768)",1,55.345058,55.345058,10.5,10.5,1.0,1.0
+/bert/encoder/layer.1/attention/self/MatMul_1_output_0,MatMul,"[(1, 12, 128, 128), (1, 12, 128, 64)]","(1, 12, 128, 64)",1,20.913839,20.913839,4.5,4.5,1.0,1.0
+/bert/encoder/layer.6/attention/self/MatMul_1_output_0,MatMul,"[(1, 12, 128, 128), (1, 12, 128, 64)]","(1, 12, 128, 64)",1,19.862652,19.862652,4.5,4.5,1.0,1.0
+/bert/encoder/layer.8/attention/self/MatMul_1_output_0,MatMul,"[(1, 12, 128, 128), (1, 12, 128, 64)]","(1, 12, 128, 64)",1,19.826651,19.826651,4.5,4.5,1.0,1.0
+/bert/encoder/layer.7/attention/self/MatMul_1_output_0,MatMul,"[(1, 12, 128, 128), (1, 12, 128, 64)]","(1, 12, 128, 64)",1,19.509554,19.509554,4.5,4.5,1.0,1.0
+/bert/encoder/layer.5/attention/self/MatMul_1_output_0,MatMul,"[(1, 12, 128, 128), (1, 12, 128, 64)]","(1, 12, 128, 64)",1,19.412756,19.412756,4.5,4.5,1.0,1.0
+/bert/encoder/layer.4/attention/self/MatMul_1_output_0,MatMul,"[(1, 12, 128, 128), (1, 12, 128, 64)]","(1, 12, 128, 64)",1,19.324541,19.324541,4.5,4.5,1.0,1.0
+/bert/encoder/layer.3/attention/self/MatMul_1_output_0,MatMul,"[(1, 12, 128, 128), (1, 12, 128, 64)]","(1, 12, 128, 64)",1,19.315958,19.315958,4.5,4.5,1.0,1.0
+/bert/encoder/layer.10/attention/self/MatMul_1_output_0,MatMul,"[(1, 12, 128, 128), (1, 12, 128, 64)]","(1, 12, 128, 64)",1,19.109011,19.109011,4.5,4.5,1.0,1.0
+/bert/encoder/layer.2/attention/self/MatMul_1_output_0,MatMul,"[(1, 12, 128, 128), (1, 12, 128, 64)]","(1, 12, 128, 64)",1,18.888235,18.888235,4.5,4.5,1.0,1.0
+/bert/encoder/layer.0/attention/self/MatMul_1_output_0,MatMul,"[(1, 12, 128, 128), (1, 12, 128, 64)]","(1, 12, 128, 64)",1,18.754005,18.754005,4.5,4.5,1.0,1.0
+/bert/encoder/layer.11/attention/self/MatMul_1_output_0,MatMul,"[(1, 12, 128, 128), (1, 12, 128, 64)]","(1, 12, 128, 64)",1,18.719196,18.719196,4.5,4.5,1.0,1.0
+/bert/encoder/layer.9/attention/self/MatMul_1_output_0,MatMul,"[(1, 12, 128, 128), (1, 12, 128, 64)]","(1, 12, 128, 64)",1,17.32111,17.32111,4.5,4.5,1.0,1.0
+/bert/pooler/dense/Gemm_output_0,Gemm,"[(1, 768), (768, 768), (768,)]","(1, 768)",1,17.047644,17.047644,9.011719,9.011719,1.0,1.0
+/bert/encoder/layer.9/attention/self/MatMul_output_0,MatMul,"[(1, 12, 128, 64), (1, 12, 64, 128)]","(1, 12, 128, 128)",1,16.320705,16.320705,3.0,3.0,1.0,1.0
+/bert/encoder/layer.0/attention/self/MatMul_output_0,MatMul,"[(1, 12, 128, 64), (1, 12, 64, 128)]","(1, 12, 128, 128)",1,16.07132,16.07132,3.0,3.0,1.0,1.0
+/bert/encoder/layer.1/attention/self/MatMul_output_0,MatMul,"[(1, 12, 128, 64), (1, 12, 64, 128)]","(1, 12, 128, 128)",1,16.062498,16.062498,3.0,3.0,1.0,1.0
+/bert/encoder/layer.7/attention/self/MatMul_output_0,MatMul,"[(1, 12, 128, 64), (1, 12, 64, 128)]","(1, 12, 128, 128)",1,15.972853,15.972853,3.0,3.0,1.0,1.0
+/bert/encoder/layer.2/attention/self/MatMul_output_0,MatMul,"[(1, 12, 128, 64), (1, 12, 64, 128)]","(1, 12, 128, 128)",1,15.946388,15.946388,3.0,3.0,1.0,1.0
+/bert/encoder/layer.6/attention/self/MatMul_output_0,MatMul,"[(1, 12, 128, 64), (1, 12, 64, 128)]","(1, 12, 128, 128)",1,15.893459,15.893459,3.0,3.0,1.0,1.0
+/bert/encoder/layer.5/attention/self/MatMul_output_0,MatMul,"[(1, 12, 128, 64), (1, 12, 64, 128)]","(1, 12, 128, 128)",1,15.857458,15.857458,3.0,3.0,1.0,1.0
+/bert/encoder/layer.4/attention/self/MatMul_output_0,MatMul,"[(1, 12, 128, 64), (1, 12, 64, 128)]","(1, 12, 128, 128)",1,15.706062,15.706062,3.0,3.0,1.0,1.0
+/bert/encoder/layer.8/attention/self/MatMul_output_0,MatMul,"[(1, 12, 128, 64), (1, 12, 64, 128)]","(1, 12, 128, 128)",1,15.260458,15.260458,3.0,3.0,1.0,1.0
+/bert/encoder/layer.11/attention/self/MatMul_output_0,MatMul,"[(1, 12, 128, 64), (1, 12, 64, 128)]","(1, 12, 128, 128)",1,15.217543,15.217543,3.0,3.0,1.0,1.0
+/bert/encoder/layer.3/attention/self/MatMul_output_0,MatMul,"[(1, 12, 128, 64), (1, 12, 64, 128)]","(1, 12, 128, 128)",1,15.139818,15.139818,3.0,3.0,1.0,1.0
+/bert/encoder/layer.10/attention/self/MatMul_output_0,MatMul,"[(1, 12, 128, 64), (1, 12, 64, 128)]","(1, 12, 128, 128)",1,15.138626,15.138626,3.0,3.0,1.0,1.0
+output,Gemm,"[(1, 768), (2, 768), (2,)]","(1, 2)",1,8.889437,8.889437,0.035156,0.035156,1.0,1.0

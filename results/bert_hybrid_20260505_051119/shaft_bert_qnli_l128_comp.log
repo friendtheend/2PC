@@ -1,0 +1,74 @@
+/home/ylu18/miniconda3/envs/shaft_clean/lib/python3.10/site-packages/huggingface_hub/file_download.py:942: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+loading configuration file config.json from cache at /home/ylu18/.cache/huggingface/hub/models--andeskyl--bert-base-cased-qnli/snapshots/71bbfcd7141adc6ca5db400825f4726c39b2e4bc/config.json
+Model config BertConfig {
+  "_name_or_path": "andeskyl/bert-base-cased-qnli",
+  "architectures": [
+    "BertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "finetuning_task": "qnli",
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "problem_type": "single_label_classification",
+  "torch_dtype": "float32",
+  "transformers_version": "4.38.2",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 28996
+}
+
+loading file vocab.txt from cache at /home/ylu18/.cache/huggingface/hub/models--andeskyl--bert-base-cased-qnli/snapshots/71bbfcd7141adc6ca5db400825f4726c39b2e4bc/vocab.txt
+loading file tokenizer.json from cache at /home/ylu18/.cache/huggingface/hub/models--andeskyl--bert-base-cased-qnli/snapshots/71bbfcd7141adc6ca5db400825f4726c39b2e4bc/tokenizer.json
+loading file added_tokens.json from cache at None
+loading file special_tokens_map.json from cache at None
+loading file tokenizer_config.json from cache at /home/ylu18/.cache/huggingface/hub/models--andeskyl--bert-base-cased-qnli/snapshots/71bbfcd7141adc6ca5db400825f4726c39b2e4bc/tokenizer_config.json
+loading weights file model.safetensors from cache at /home/ylu18/.cache/huggingface/hub/models--andeskyl--bert-base-cased-qnli/snapshots/71bbfcd7141adc6ca5db400825f4726c39b2e4bc/model.safetensors
+All model checkpoint weights were used when initializing BertForSequenceClassification.
+
+All the weights of BertForSequenceClassification were initialized from the model checkpoint at andeskyl/bert-base-cased-qnli.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use BertForSequenceClassification for predictions without further training.
+Running tokenizer on dataset:   0%|          | 0/104743 [00:00<?, ? examples/s]Running tokenizer on dataset:   3%|▎         | 3000/104743 [00:00<00:04, 24007.56 examples/s]Running tokenizer on dataset:   7%|▋         | 7000/104743 [00:00<00:03, 29325.01 examples/s]Running tokenizer on dataset:  11%|█         | 11000/104743 [00:00<00:02, 32615.47 examples/s]Running tokenizer on dataset:  14%|█▍        | 15000/104743 [00:00<00:02, 33699.98 examples/s]Running tokenizer on dataset:  18%|█▊        | 19000/104743 [00:00<00:02, 34355.06 examples/s]Running tokenizer on dataset:  23%|██▎       | 24000/104743 [00:00<00:03, 22783.09 examples/s]Running tokenizer on dataset:  27%|██▋       | 28000/104743 [00:01<00:02, 25654.26 examples/s]Running tokenizer on dataset:  31%|███       | 32000/104743 [00:01<00:02, 28088.46 examples/s]Running tokenizer on dataset:  34%|███▍      | 36000/104743 [00:01<00:02, 29686.74 examples/s]Running tokenizer on dataset:  39%|███▉      | 41000/104743 [00:01<00:02, 23655.88 examples/s]Running tokenizer on dataset:  43%|████▎     | 45000/104743 [00:01<00:02, 26136.70 examples/s]Running tokenizer on dataset:  47%|████▋     | 49000/104743 [00:01<00:01, 28273.95 examples/s]Running tokenizer on dataset:  51%|█████     | 53000/104743 [00:01<00:01, 30219.50 examples/s]Running tokenizer on dataset:  54%|█████▍    | 57000/104743 [00:02<00:01, 24161.10 examples/s]Running tokenizer on dataset:  58%|█████▊    | 61000/104743 [00:02<00:01, 26647.38 examples/s]Running tokenizer on dataset:  62%|██████▏   | 65000/104743 [00:02<00:01, 28870.37 examples/s]Running tokenizer on dataset:  66%|██████▌   | 69000/104743 [00:02<00:01, 30520.42 examples/s]Running tokenizer on dataset:  70%|██████▉   | 73000/104743 [00:02<00:00, 31951.80 examples/s]Running tokenizer on dataset:  74%|███████▎  | 77000/104743 [00:02<00:01, 25141.79 examples/s]Running tokenizer on dataset:  77%|███████▋  | 81000/104743 [00:02<00:00, 27515.05 examples/s]Running tokenizer on dataset:  81%|████████  | 85000/104743 [00:03<00:00, 28768.83 examples/s]Running tokenizer on dataset:  85%|████████▍ | 89000/104743 [00:03<00:00, 30143.39 examples/s]Running tokenizer on dataset:  89%|████████▉ | 93000/104743 [00:03<00:00, 31262.01 examples/s]Running tokenizer on dataset:  94%|█████████▎| 98000/104743 [00:03<00:00, 23472.62 examples/s]Running tokenizer on dataset:  97%|█████████▋| 102000/104743 [00:03<00:00, 25862.83 examples/s]Running tokenizer on dataset: 100%|██████████| 104743/104743 [00:03<00:00, 27606.45 examples/s]
+Running tokenizer on dataset:   0%|          | 0/5463 [00:00<?, ? examples/s]Running tokenizer on dataset:  73%|███████▎  | 4000/5463 [00:00<00:00, 34234.81 examples/s]Running tokenizer on dataset: 100%|██████████| 5463/5463 [00:00<00:00, 33571.20 examples/s]
+Running tokenizer on dataset:   0%|          | 0/5463 [00:00<?, ? examples/s]Running tokenizer on dataset:  73%|███████▎  | 4000/5463 [00:00<00:00, 33691.29 examples/s]Running tokenizer on dataset: 100%|██████████| 5463/5463 [00:00<00:00, 33091.12 examples/s]
+[W shape_type_inference.cpp:1920] Warning: The shape inference of shaft::Embedding type is missing, so it may result in wrong shape inference for the exported graph. Please consider adding it in symbolic function. (function UpdateReliable)
+[W shape_type_inference.cpp:1920] Warning: The shape inference of shaft::Embedding type is missing, so it may result in wrong shape inference for the exported graph. Please consider adding it in symbolic function. (function UpdateReliable)
+[W shape_type_inference.cpp:1920] Warning: The shape inference of shaft::Embedding type is missing, so it may result in wrong shape inference for the exported graph. Please consider adding it in symbolic function. (function UpdateReliable)
+/home/ylu18/miniconda3/envs/shaft_clean/lib/python3.10/site-packages/torch/onnx/utils.py:1636: UserWarning: The exported ONNX model failed ONNX shape inference.The model will not be executable by the ONNX Runtime.If this is unintended and you believe there is a bug,please report an issue at https://github.com/pytorch/pytorch/issues.Error reported by strict ONNX shape inference: [ShapeInferenceError] (op_type:Dropout, node name: /bert/embeddings/dropout/Dropout): training_mode typestr: T2, has unsupported type: tensor(int64) (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/jit/serialization/export.cpp:1407.)
+  _C._check_onnx_proto(proto)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/nn/onnx_converter.py:256: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/tensor_numpy.cpp:206.)
+  param = torch.from_numpy(numpy_helper.to_array(node))
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/arithmetic.py:372: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  result.share = getattr(torch, op)(result.share, y, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/provider/tfp_provider.py:62: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  v = torch.nn.functional.one_hot(r, num_classes=length)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/provider/tfp_provider.py:29: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c = getattr(torch, op)(a, b, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/beaver.py:82: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c._tensor += getattr(torch, op)(epsilon, b._tensor, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/beaver.py:83: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c._tensor += getattr(torch, op)(a._tensor, delta, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/beaver.py:84: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c += getattr(torch, op)(epsilon, delta, *args, **kwargs)
+================ Diagnostic Run torch.onnx.export version 2.0.1 ================
+verbose: False, log level: Level.ERROR
+======================= 0 NONE 0 NOTE 0 WARNING 0 ERROR ========================
+
+================ Diagnostic Run torch.onnx.export version 2.0.1 ================
+verbose: False, log level: Level.ERROR
+======================= 0 NONE 0 NOTE 3 WARNING 0 ERROR ========================
+3 WARNING were not printed due to the log level.
+
+comp time: 6.40s
