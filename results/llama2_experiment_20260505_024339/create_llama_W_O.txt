@@ -1,0 +1,2 @@
+/home/ylu18/luoresearch/2PC/results/llama2_experiment_20260505_024339/dummy_pcg/llama_W_O_party0.bin 262180
+/home/ylu18/luoresearch/2PC/results/llama2_experiment_20260505_024339/dummy_pcg/llama_W_O_party1.bin 262180

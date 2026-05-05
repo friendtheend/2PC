@@ -271,8 +271,10 @@ def main() -> int:
         r"\end{table}",
         "",
     ]
-    (args.out_dir / "gpt2_table.tex").write_text("\n".join(latex), encoding="utf-8")
-    print("\n".join(latex))
+    tex = "\n".join(latex)
+    (args.out_dir / "gpt2_table.tex").write_text(tex, encoding="utf-8")
+    (args.out_dir / "table5.tex").write_text(tex, encoding="utf-8")
+    print(tex)
     return 0
 
 

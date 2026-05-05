@@ -1,0 +1,179 @@
+INFO:root:==================
+INFO:root:DistributedCommunicator with rank 0
+INFO:root:==================
+INFO:root:==================
+INFO:root:DistributedCommunicator with rank 1
+INFO:root:==================
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:1 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:1 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:1 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:1 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:2 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:2 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:2 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:2 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:3 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:3 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:3 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:3 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:4 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:4 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:4 to store for rank: 1
+INFO:root:World size = 2
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:4 with 2 nodes.
+INFO:root:World size = 2
+WARNING:__mp_main__:device: cuda:0, rank: 0, world_size: 2, 16-bits inference: False
+/home/ylu18/miniconda3/envs/shaft_clean/lib/python3.10/site-packages/huggingface_hub/file_download.py:942: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+WARNING:__mp_main__:device: cuda:1, rank: 1, world_size: 2, 16-bits inference: False
+/home/ylu18/miniconda3/envs/shaft_clean/lib/python3.10/site-packages/huggingface_hub/file_download.py:942: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/__init__.py:66: RuntimeWarning: CrypTen is already initialized.
+  warnings.warn("CrypTen is already initialized.", RuntimeWarning)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/__init__.py:66: RuntimeWarning: CrypTen is already initialized.
+  warnings.warn("CrypTen is already initialized.", RuntimeWarning)
+[W shape_type_inference.cpp:1920] Warning: The shape inference of shaft::Embedding type is missing, so it may result in wrong shape inference for the exported graph. Please consider adding it in symbolic function. (function UpdateReliable)
+[W shape_type_inference.cpp:1920] Warning: The shape inference of shaft::Embedding type is missing, so it may result in wrong shape inference for the exported graph. Please consider adding it in symbolic function. (function UpdateReliable)
+[W shape_type_inference.cpp:1920] Warning: The shape inference of shaft::Embedding type is missing, so it may result in wrong shape inference for the exported graph. Please consider adding it in symbolic function. (function UpdateReliable)
+[W shape_type_inference.cpp:1920] Warning: The shape inference of shaft::Embedding type is missing, so it may result in wrong shape inference for the exported graph. Please consider adding it in symbolic function. (function UpdateReliable)
+/home/ylu18/miniconda3/envs/shaft_clean/lib/python3.10/site-packages/torch/onnx/utils.py:1636: UserWarning: The exported ONNX model failed ONNX shape inference.The model will not be executable by the ONNX Runtime.If this is unintended and you believe there is a bug,please report an issue at https://github.com/pytorch/pytorch/issues.Error reported by strict ONNX shape inference: [ShapeInferenceError] (op_type:Dropout, node name: /transformer/drop/Dropout): training_mode typestr: T2, has unsupported type: tensor(int64) (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/jit/serialization/export.cpp:1407.)
+  _C._check_onnx_proto(proto)
+/home/ylu18/miniconda3/envs/shaft_clean/lib/python3.10/site-packages/torch/onnx/utils.py:1636: UserWarning: The exported ONNX model failed ONNX shape inference.The model will not be executable by the ONNX Runtime.If this is unintended and you believe there is a bug,please report an issue at https://github.com/pytorch/pytorch/issues.Error reported by strict ONNX shape inference: [ShapeInferenceError] (op_type:Dropout, node name: /transformer/drop/Dropout): training_mode typestr: T2, has unsupported type: tensor(int64) (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/jit/serialization/export.cpp:1407.)
+  _C._check_onnx_proto(proto)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/nn/onnx_converter.py:256: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/tensor_numpy.cpp:206.)
+  param = torch.from_numpy(numpy_helper.to_array(node))
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/nn/onnx_converter.py:256: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/tensor_numpy.cpp:206.)
+  param = torch.from_numpy(numpy_helper.to_array(node))
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/provider/tfp_provider.py:62: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  v = torch.nn.functional.one_hot(r, num_classes=length)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/provider/tfp_provider.py:62: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  v = torch.nn.functional.one_hot(r, num_classes=length)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/provider/tfp_provider.py:29: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c = getattr(torch, op)(a, b, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/provider/tfp_provider.py:29: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c = getattr(torch, op)(a, b, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/beaver.py:82: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c._tensor += getattr(torch, op)(epsilon, b._tensor, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/beaver.py:82: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c._tensor += getattr(torch, op)(epsilon, b._tensor, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/beaver.py:83: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c._tensor += getattr(torch, op)(a._tensor, delta, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/beaver.py:83: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c._tensor += getattr(torch, op)(a._tensor, delta, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/beaver.py:84: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c += getattr(torch, op)(epsilon, delta, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/beaver.py:84: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c += getattr(torch, op)(epsilon, delta, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/arithmetic.py:372: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  result.share = getattr(torch, op)(result.share, y, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/vit_experiment/crypten/mpc/primitives/arithmetic.py:372: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  result.share = getattr(torch, op)(result.share, y, *args, **kwargs)
+================ Diagnostic Run torch.onnx.export version 2.0.1 ================
+verbose: False, log level: Level.ERROR
+======================= 0 NONE 0 NOTE 0 WARNING 0 ERROR ========================
+
+================ Diagnostic Run torch.onnx.export version 2.0.1 ================
+verbose: False, log level: Level.ERROR
+======================= 0 NONE 0 NOTE 2 WARNING 0 ERROR ========================
+2 WARNING were not printed due to the log level.
+
+====================================================
+total_running_time: 20.223407983779907 sec
+embedding_time: 2.107691526412964 sec
+matmul_time: 6.2333760261535645 sec
+softmax_time: 4.6422038078308105 sec
+gelu_time: 3.0778257846832275 sec
+silu_time: 0 sec
+layernorm_time: 1.3976151943206787 sec
+tanh_time: 0 sec
+conv_time: 0 sec
+other_time: 0.0003566741943359375 sec
+====================================================
+total_comm_time: 8.98769321385771 sec
+embedding_comm_time: 0.6185187119990587 sec
+matmul_comm_time: 1.4560258528217673 sec
+softmax_comm_time: 3.479162273928523 sec
+gelu_comm_time: 2.6681081247515976 sec
+silu_comm_time: 0 sec
+layernorm_comm_time: 0.5613012793473899 sec
+tanh_comm_time: 0 sec
+conv_comm_time: 0 sec
+other_comm_time: 0.20457697100937366 sec
+====================================================
+total_comm_bytes: 11.3086177110672 GB
+embedding_comm_bytes: 0.6710052490234375 GB
+matmul_comm_bytes: 2.053173065185547 GB
+softmax_comm_bytes: 4.2890625 GB
+gelu_comm_bytes: 4.1484375 GB
+silu_comm_bytes: 0.0 GB
+layernorm_comm_bytes: 0.1117706298828125 GB
+tanh_comm_bytes: 0.0 GB
+conv_comm_bytes: 0.0 GB
+other_comm_bytes: 0.03516876697540283 GB
+====================================================
+total_comm_rounds: 1913
+embedding_comm_rounds: 2
+matmul_comm_rounds: 73
+softmax_comm_rounds: 492
+gelu_comm_rounds: 228
+silu_comm_rounds: 0
+layernorm_comm_rounds: 650
+tanh_comm_rounds: 0
+conv_comm_rounds: 0
+other_comm_rounds: 468
+====================================================
+================ Diagnostic Run torch.onnx.export version 2.0.1 ================
+verbose: False, log level: Level.ERROR
+======================= 0 NONE 0 NOTE 0 WARNING 0 ERROR ========================
+
+================ Diagnostic Run torch.onnx.export version 2.0.1 ================
+verbose: False, log level: Level.ERROR
+======================= 0 NONE 0 NOTE 2 WARNING 0 ERROR ========================
+2 WARNING were not printed due to the log level.
+
+====================================================
+total_running_time: 20.290289163589478 sec
+embedding_time: 2.1411070823669434 sec
+matmul_time: 6.01937198638916 sec
+softmax_time: 4.635767936706543 sec
+gelu_time: 3.089967727661133 sec
+silu_time: 0 sec
+layernorm_time: 1.4264507293701172 sec
+tanh_time: 0 sec
+conv_time: 0 sec
+other_time: 0.0003495216369628906 sec
+====================================================
+total_comm_time: 8.466551275458187 sec
+embedding_comm_time: 0.6733418786898255 sec
+matmul_comm_time: 1.2665871526114643 sec
+softmax_comm_time: 3.1301248921081424 sec
+gelu_comm_time: 2.5884754806756973 sec
+silu_comm_time: 0 sec
+layernorm_comm_time: 0.5977981430478394 sec
+tanh_comm_time: 0 sec
+conv_comm_time: 0 sec
+other_comm_time: 0.21022372832521796 sec
+====================================================
+total_comm_bytes: 11.3086177110672 GB
+embedding_comm_bytes: 0.6710052490234375 GB
+matmul_comm_bytes: 2.053173065185547 GB
+softmax_comm_bytes: 4.2890625 GB
+gelu_comm_bytes: 4.1484375 GB
+silu_comm_bytes: 0.0 GB
+layernorm_comm_bytes: 0.1117706298828125 GB
+tanh_comm_bytes: 0.0 GB
+conv_comm_bytes: 0.0 GB
+other_comm_bytes: 0.03516876697540283 GB
+====================================================
+total_comm_rounds: 1913
+embedding_comm_rounds: 2
+matmul_comm_rounds: 73
+softmax_comm_rounds: 492
+gelu_comm_rounds: 228
+silu_comm_rounds: 0
+layernorm_comm_rounds: 650
+tanh_comm_rounds: 0
+conv_comm_rounds: 0
+other_comm_rounds: 468
+====================================================
+running time: 20.29s, comm byte: 11.31 GB

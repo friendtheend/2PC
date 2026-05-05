@@ -22,7 +22,7 @@ nvidia-smi --query-gpu=name,memory.total,driver_version --format=csv,noheader ||
 echo
 echo "== Python imports =="
 PYTHONPATH="$ROOT/llama_experiment:$ROOT/vit_experiment:${PYTHONPATH:-}" python3 - <<'PY'
-mods = ["torch", "torchvision", "transformers", "datasets", "numpy", "pandas", "scipy", "tqdm", "crypten"]
+mods = ["torch", "torchvision", "transformers", "datasets", "evaluate", "numpy", "pandas", "scipy", "tqdm", "crypten"]
 for name in mods:
     try:
         mod = __import__(name)
@@ -42,7 +42,7 @@ echo
 echo "== Local source checks =="
 test -f "$ROOT/brillmflow_2pc/BMT/gpu_matrix_beaver_online.cu" && echo "BriLLMFlow online CUDA source OK"
 test -f "$ROOT/llama_experiment/examples/text-generation/run_generation_private.py" && echo "LLaMA SHAFT entrypoint OK"
-test -f "$ROOT/vit_experiment/examples/image-classification/run_image_classification_private.py" && echo "ViT SHAFT entrypoint OK"
+test -f "$ROOT/vit_experiment/examples/text-classification/run_glue_private.py" && echo "BERT SHAFT entrypoint OK"
 
 echo
 echo "Environment check finished. Missing tools/imports must be fixed before rerunning experiments."

@@ -1,0 +1,21 @@
+{
+  "model": "BERT-base, 12 layers",
+  "shaft_total_s": 21.783806562423706,
+  "shaft_total_comm_gb": 10.4926997423172,
+  "shaft_linear_s": 8.103677749633789,
+  "shaft_linear_comm_gb": 1.5205535888671875,
+  "shaft_nonlin_s": 13.680128812789917,
+  "shaft_nonlin_comm_gb": 8.972146153450012,
+  "shaft_gelu_s": 3.136514902114868,
+  "shaft_gelu_comm_gb": 4.1484375,
+  "brillm_linear_s": 0.5549241600000002,
+  "brillm_linear_comm_gb": 0.8115978239999999,
+  "brillm_nonlin_s": 10.611613910675048,
+  "brillm_nonlin_comm_gb": 4.8937086534500125,
+  "brillm_gelu_s": 0.068,
+  "brillm_gelu_comm_gb": 0.07,
+  "brillm_total_s": 11.166538070675049,
+  "brillm_total_comm_gb": 5.705306477450012,
+  "online_speedup": 1.9508111130370072,
+  "online_comm_less": 1.8391123743814923
+}

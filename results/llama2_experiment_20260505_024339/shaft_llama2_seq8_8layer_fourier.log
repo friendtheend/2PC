@@ -1,0 +1,170 @@
+INFO:root:==================
+INFO:root:DistributedCommunicator with rank 1
+INFO:root:==================
+INFO:root:==================
+INFO:root:DistributedCommunicator with rank 0
+INFO:root:==================
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:1 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:1 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:1 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:1 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:2 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:2 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:2 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:2 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:3 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:3 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:3 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:3 with 2 nodes.
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:4 to store for rank: 1
+INFO:torch.distributed.distributed_c10d:Rank 1: Completed store-based barrier for key:store_based_barrier_key:4 with 2 nodes.
+INFO:root:World size = 2
+INFO:torch.distributed.distributed_c10d:Added key: store_based_barrier_key:4 to store for rank: 0
+INFO:torch.distributed.distributed_c10d:Rank 0: Completed store-based barrier for key:store_based_barrier_key:4 with 2 nodes.
+INFO:root:World size = 2
+WARNING:__mp_main__:device: cuda:1, rank: 1, world_size: 2, 16-bits inference: True
+/home/ylu18/miniconda3/envs/shaft_clean/lib/python3.10/site-packages/huggingface_hub/file_download.py:942: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+WARNING:__mp_main__:device: cuda:0, rank: 0, world_size: 2, 16-bits inference: True
+/home/ylu18/miniconda3/envs/shaft_clean/lib/python3.10/site-packages/huggingface_hub/file_download.py:942: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Loading checkpoint shards:   0%|                                                                                     | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|                                                                                     | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|██████████████████████████████████████▌                                      | 1/2 [00:00<00:00,  1.16it/s]Loading checkpoint shards:  50%|██████████████████████████████████████▌                                      | 1/2 [00:01<00:01,  1.07s/it]Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████████████████████████| 2/2 [00:01<00:00,  1.76it/s]Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████████████████████████| 2/2 [00:01<00:00,  1.63it/s]
+Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████████████████████████| 2/2 [00:01<00:00,  1.51it/s]Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████████████████████████| 2/2 [00:01<00:00,  1.38it/s]
+WARNING:__mp_main__:Truncated Llama layers: 32 -> 8
+WARNING:__mp_main__:Truncated Llama layers: 32 -> 8
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/__init__.py:66: RuntimeWarning: CrypTen is already initialized.
+  warnings.warn("CrypTen is already initialized.", RuntimeWarning)
+/home/ylu18/miniconda3/envs/shaft_clean/lib/python3.10/site-packages/transformers/models/llama/modeling_llama.py:1068: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if seq_length > self.causal_mask.shape[-1]:
+/home/ylu18/miniconda3/envs/shaft_clean/lib/python3.10/site-packages/transformers/models/llama/modeling_llama.py:385: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if attn_output.size() != (bsz, self.num_heads, q_len, self.head_dim):
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/__init__.py:66: RuntimeWarning: CrypTen is already initialized.
+  warnings.warn("CrypTen is already initialized.", RuntimeWarning)
+/home/ylu18/miniconda3/envs/shaft_clean/lib/python3.10/site-packages/transformers/models/llama/modeling_llama.py:1068: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if seq_length > self.causal_mask.shape[-1]:
+[W shape_type_inference.cpp:1920] Warning: The shape inference of shaft::Embedding type is missing, so it may result in wrong shape inference for the exported graph. Please consider adding it in symbolic function. (function UpdateReliable)
+/home/ylu18/miniconda3/envs/shaft_clean/lib/python3.10/site-packages/transformers/models/llama/modeling_llama.py:385: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if attn_output.size() != (bsz, self.num_heads, q_len, self.head_dim):
+[W shape_type_inference.cpp:1920] Warning: The shape inference of shaft::Embedding type is missing, so it may result in wrong shape inference for the exported graph. Please consider adding it in symbolic function. (function UpdateReliable)
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/nn/onnx_converter.py:255: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/tensor_numpy.cpp:206.)
+  param = torch.from_numpy(numpy_helper.to_array(node))
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/nn/onnx_converter.py:255: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/tensor_numpy.cpp:206.)
+  param = torch.from_numpy(numpy_helper.to_array(node))
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/mpc/provider/tfp_provider.py:62: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  v = torch.nn.functional.one_hot(r, num_classes=length)
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/mpc/provider/tfp_provider.py:62: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  v = torch.nn.functional.one_hot(r, num_classes=length)
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/mpc/provider/tfp_provider.py:29: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c = getattr(torch, op)(a, b, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/mpc/provider/tfp_provider.py:29: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c = getattr(torch, op)(a, b, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/mpc/primitives/beaver.py:82: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c._tensor += getattr(torch, op)(epsilon, b._tensor, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/mpc/primitives/beaver.py:82: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c._tensor += getattr(torch, op)(epsilon, b._tensor, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/mpc/primitives/beaver.py:83: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c._tensor += getattr(torch, op)(a._tensor, delta, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/mpc/primitives/beaver.py:83: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c._tensor += getattr(torch, op)(a._tensor, delta, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/mpc/primitives/beaver.py:84: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c += getattr(torch, op)(epsilon, delta, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/mpc/primitives/beaver.py:84: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  c += getattr(torch, op)(epsilon, delta, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/mpc/primitives/arithmetic.py:372: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  result.share = getattr(torch, op)(result.share, y, *args, **kwargs)
+/home/ylu18/luoresearch/2PC/llama_experiment/crypten/mpc/primitives/arithmetic.py:372: UserWarning: Defining your `__torch_function__` as a plain method is deprecated and will be an error in future, please define it as a classmethod. (Triggered internally at /workspace/croot/pytorch_1692381528408/work/torch/csrc/utils/python_arg_parser.cpp:363.)
+  result.share = getattr(torch, op)(result.share, y, *args, **kwargs)
+================ Diagnostic Run torch.onnx.export version 2.0.1 ================
+verbose: False, log level: Level.ERROR
+======================= 0 NONE 0 NOTE 1 WARNING 0 ERROR ========================
+1 WARNING were not printed due to the log level.
+
+====================================================
+total_running_time: 45.60700988769531 sec
+embedding_time: 4.190073251724243 sec
+matmul_time: 36.981656551361084 sec
+softmax_time: 0.7322566509246826 sec
+silu_time: 0.6989452838897705 sec
+layernorm_time: 0 sec
+tanh_time: 0 sec
+conv_time: 0 sec
+other_time: 6.508827209472656e-05 sec
+====================================================
+total_comm_time: 18.96122772525996 sec
+embedding_comm_time: 2.5560670159757137 sec
+matmul_comm_time: 14.675011766143143 sec
+softmax_comm_time: 0.30660786712542176 sec
+silu_comm_time: 0.5094433068297803 sec
+layernorm_comm_time: 0 sec
+tanh_comm_time: 0 sec
+conv_comm_time: 0 sec
+other_comm_time: 0.9140977691859007 sec
+====================================================
+total_comm_bytes: 28.778026819229126 GB
+embedding_comm_bytes: 1.9569398164749146 GB
+matmul_comm_bytes: 26.12451171875 GB
+softmax_comm_bytes: 0.02978515625 GB
+silu_comm_bytes: 0.619384765625 GB
+layernorm_comm_bytes: 0.0 GB
+tanh_comm_bytes: 0.0 GB
+conv_comm_bytes: 0.0 GB
+other_comm_bytes: 0.047405362129211426 GB
+====================================================
+total_comm_rounds: 1997
+embedding_comm_rounds: 2
+matmul_comm_rounds: 73
+softmax_comm_rounds: 328
+silu_comm_rounds: 152
+layernorm_comm_rounds: 0
+tanh_comm_rounds: 0
+conv_comm_rounds: 0
+other_comm_rounds: 1442
+====================================================
+running time: 45.61s, comm byte: 28.78 GB
+================ Diagnostic Run torch.onnx.export version 2.0.1 ================
+verbose: False, log level: Level.ERROR
+======================= 0 NONE 0 NOTE 1 WARNING 0 ERROR ========================
+1 WARNING were not printed due to the log level.
+
+====================================================
+total_running_time: 44.64592695236206 sec
+embedding_time: 3.2263245582580566 sec
+matmul_time: 37.006999254226685 sec
+softmax_time: 0.7319278717041016 sec
+silu_time: 0.6915440559387207 sec
+layernorm_time: 0 sec
+tanh_time: 0 sec
+conv_time: 0 sec
+other_time: 6.008148193359375e-05 sec
+====================================================
+total_comm_time: 18.01621574163437 sec
+embedding_comm_time: 1.5859871450811625 sec
+matmul_comm_time: 14.670012050308287 sec
+softmax_comm_time: 0.3185742925852537 sec
+silu_comm_time: 0.5075974254868925 sec
+layernorm_comm_time: 0 sec
+tanh_comm_time: 0 sec
+conv_comm_time: 0 sec
+other_comm_time: 0.9340448281727731 sec
+====================================================
+total_comm_bytes: 28.778026819229126 GB
+embedding_comm_bytes: 1.9569398164749146 GB
+matmul_comm_bytes: 26.12451171875 GB
+softmax_comm_bytes: 0.02978515625 GB
+silu_comm_bytes: 0.619384765625 GB
+layernorm_comm_bytes: 0.0 GB
+tanh_comm_bytes: 0.0 GB
+conv_comm_bytes: 0.0 GB
+other_comm_bytes: 0.047405362129211426 GB
+====================================================
+total_comm_rounds: 1997
+embedding_comm_rounds: 2
+matmul_comm_rounds: 73
+softmax_comm_rounds: 328
+silu_comm_rounds: 152
+layernorm_comm_rounds: 0
+tanh_comm_rounds: 0
+conv_comm_rounds: 0
+other_comm_rounds: 1442
+====================================================
+BENCH_RESULT system=SHAFT model=Llama2-7B latency_sec=45.61 comm_gb=28.78

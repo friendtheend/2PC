@@ -23,6 +23,8 @@ Common environment overrides:
   RUN_D2POLY=1
   RUN_BRILLM=1
   BIN=/path/to/gpu_matrix_beaver
+  BRILLM_CUDA_VISIBLE_DEVICES=rank|0    # default rank; use 0 for single-GPU two-rank runs
+  BRILLM_LLAMA_MODE=real_forward|stress # default: real_forward
 
 Outputs:
   $OUT/env.txt
@@ -32,6 +34,10 @@ Outputs:
   $OUT/shaft_summary.csv
   $OUT/brillm_online_llama_*.log
   $OUT/brillm_llama2_raw_online.csv
+  $OUT/llama2_brillm_perop.csv
+  $OUT/llama2_hybrid_summary.csv
+  $OUT/llama2_table.tex
+  $OUT/table5.tex
 EOF
   exit 0
 fi
@@ -47,7 +53,12 @@ RUN_FOURIER="${RUN_FOURIER:-1}"
 RUN_D2POLY="${RUN_D2POLY:-1}"
 RUN_BRILLM="${RUN_BRILLM:-1}"
 BIN="${BIN:-$ROOT/brillmflow_2pc/BMT/build/gpu_matrix_beaver}"
+BRILLM_CUDA_VISIBLE_DEVICES="${BRILLM_CUDA_VISIBLE_DEVICES:-rank}"
+ENABLE_OP_PROFILE="${ENABLE_OP_PROFILE:-1}"
+BRILLM_LLAMA_MODE="${BRILLM_LLAMA_MODE:-real_forward}"
 mkdir -p "$OUT"
+
+export PYTHONPATH="$SHAFT_ROOT:${PYTHONPATH:-}"
 
 {
   date
@@ -58,6 +69,9 @@ mkdir -p "$OUT"
   echo "MAX_LAYERS=$MAX_LAYERS"
   echo "FP16=$FP16"
   echo "BIN=$BIN"
+  echo "BRILLM_CUDA_VISIBLE_DEVICES=$BRILLM_CUDA_VISIBLE_DEVICES"
+  echo "ENABLE_OP_PROFILE=$ENABLE_OP_PROFILE"
+  echo "BRILLM_LLAMA_MODE=$BRILLM_LLAMA_MODE"
   nvidia-smi || true
   tc qdisc show || true
 } > "$OUT/env.txt" 2>&1
@@ -80,14 +94,28 @@ if [[ "$RUN_SHAFT" == "1" ]]; then
       LEN_DATA="$LEN_DATA"
       MAX_LAYERS="$MAX_LAYERS"
       REPORT_COST=1
+      CRYPTEN_PROFILE_LINEAR_OPS="${ENABLE_OP_PROFILE}"
+      CRYPTEN_PROFILE_RANK0_ONLY=1
       bash bench_llama2_2pc_total.sh
     )
     printf '%q ' "${cmd[@]}" >> "$OUT/commands.txt"
     echo >> "$OUT/commands.txt"
     "${cmd[@]}" 2>&1 | tee "$log"
   }
-  [[ "$RUN_FOURIER" == "1" ]] && run_shaft fourier "$OUT/shaft_llama2_seq8_8layer_fourier.log"
-  [[ "$RUN_D2POLY" == "1" ]] && run_shaft d2poly "$OUT/shaft_llama2_seq8_8layer_d2poly.log"
+[[ "$RUN_FOURIER" == "1" ]] && run_shaft fourier "$OUT/shaft_llama2_seq8_8layer_fourier.log"
+[[ "$RUN_D2POLY" == "1" ]] && run_shaft d2poly "$OUT/shaft_llama2_seq8_8layer_d2poly.log"
+fi
+
+if [[ "$ENABLE_OP_PROFILE" == "1" ]]; then
+  for log in "$OUT/shaft_llama2_seq8_8layer_fourier.log" "$OUT/shaft_llama2_seq8_8layer_d2poly.log"; do
+    if [[ -f "$log" ]]; then
+      base="$(basename "$log" .log)"
+      python "$ROOT/scripts/parse_shaft_op_profile.py" \
+        --log "$log" \
+        --raw-out "$OUT/${base}_op_profile_raw.csv" \
+        --agg-out "$OUT/${base}_op_profile_agg.csv" || true
+    fi
+  done
 fi
 
 if [[ "$RUN_BRILLM" == "1" ]]; then
@@ -100,7 +128,7 @@ if [[ "$RUN_BRILLM" == "1" ]]; then
     echo "Still missing BriLLMFlow online binary after build attempt: $BIN" >&2
     exit 1
   fi
-  OUT="$OUT" BIN="$BIN" "$ROOT/scripts/run_llama2_online_ops.sh"
+  OUT="$OUT" BIN="$BIN" BRILLM_LLAMA_MODE="$BRILLM_LLAMA_MODE" "$ROOT/scripts/run_llama2_online_ops.sh"
 fi
 
 shaft_logs=()
@@ -120,8 +148,17 @@ if [[ -f "$OUT/brillm_online_llama_W_QKV.log" ]]; then
     llama_W_down="$OUT/brillm_online_llama_W_down.log" \
     llama_QKT="$OUT/brillm_online_llama_QKT.log" \
     llama_scoresV="$OUT/brillm_online_llama_scoresV.log"
+  cp -f "$OUT/brillm_llama2_raw_online.csv" "$OUT/brillm_llama2_raw_online_${BRILLM_LLAMA_MODE}.csv"
+fi
+
+if [[ -f "$OUT/shaft_summary.csv" && -f "$OUT/brillm_llama2_raw_online.csv" ]]; then
+  python "$ROOT/scripts/make_llama2_hybrid_table.py" \
+    --shaft-summary "$OUT/shaft_summary.csv" \
+    --brillm-csv "$OUT/brillm_llama2_raw_online.csv" \
+    --out-dir "$OUT"
 fi
 
 echo "OUT=$OUT"
 [[ -f "$OUT/shaft_summary.csv" ]] && echo "SHAFT CSV=$OUT/shaft_summary.csv"
 [[ -f "$OUT/brillm_llama2_raw_online.csv" ]] && echo "BriLLMFlow CSV=$OUT/brillm_llama2_raw_online.csv"
+[[ -f "$OUT/table5.tex" ]] && echo "LaTeX=$OUT/table5.tex"

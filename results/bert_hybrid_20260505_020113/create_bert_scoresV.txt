@@ -1,0 +1,2 @@
+/home/ylu18/luoresearch/2PC/results/bert_hybrid_20260505_020113/brillm_dummy_pcg/bert_scoresV_party0.bin 65572
+/home/ylu18/luoresearch/2PC/results/bert_hybrid_20260505_020113/brillm_dummy_pcg/bert_scoresV_party1.bin 65572

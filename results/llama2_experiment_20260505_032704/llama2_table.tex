@@ -1,0 +1,32 @@
+\begin{table}[t]
+\centering
+\caption{LLaMA-2-7B online phase: projected 32-layer performance from an 8-layer two-party run (seq=8). Vanilla SHAFT uses Fourier-series SiLU; BriLLMFlow applies MixPoly SiLU and replaces linear operators with GPU integer GEMM.}
+\label{tab:llama2_hybrid_comparison}
+\setlength{\tabcolsep}{4pt}
+\footnotesize
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Op} & \textbf{Time (ms)} & \textbf{Comm (MB)} & \textbf{BW (Gbps)} \\
+\midrule
+\multicolumn{4}{l}{\textit{BriLLMFlow Linear (per-operator)}} \\
+W\_Q/K/V      & 11571.3 & 12910.1 & 8.93 \\
+W\_O          & 3839.9 & 4303.4 & 8.97 \\
+W\_gate/up    & 19968.4 & 23102.2 & 9.26 \\
+W\_down       & 10026.0 & 11565.3 & 9.23 \\
+Q@K$^T$       & 86.8 & 16.8 & 1.55 \\
+scores@V      & 71.9 & 8.9 & 0.99 \\
+\midrule
+\multicolumn{4}{l}{\textit{Aggregate (LLaMA-2-7B, 32 layers)}} \\
+                       & \textbf{SHAFT} & \textbf{BriLLMFlow} & \textbf{Speedup} \\
+Linear time            & 147618 ms & \textbf{45564 ms} & \textbf{3.24}$\times$ \\
+Linear comm            & 104498 MB & 51907 MB & 2.01$\times$ less \\
+Non-linear time        & 21805 ms & \textbf{19876 ms} & 1.10$\times$ \\
+Non-linear comm        & 4743 MB & \textbf{2308 MB} & 2.06$\times$ less \\
+\quad of which SiLU time & 2879 ms & \textbf{214 ms} & \textbf{13.5}$\times$ \\
+\quad of which SiLU comm & 2478 MB & \textbf{42 MB} & \textbf{59.0}$\times$ less \\
+\midrule
+\textbf{Online E2E}    & 169423 ms & \textbf{65440 ms} & \textbf{2.59}$\times$ \\
+\textbf{Online comm}   & 109241 MB & \textbf{54214 MB} & \textbf{2.01}$\times$ less \\
+\bottomrule
+\end{tabular}
+\end{table}

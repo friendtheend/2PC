@@ -1,0 +1,1 @@
+python run_glue_private.py --model_name_or_path andeskyl/bert-base-cased-qnli --task_name qnli --len_data 128 --max_length 128 --per_device_eval_batch_size 1 --output_dir /home/ylu18/luoresearch/2PC/results/bert_hybrid_20260505_033759/eval_qnli_report --estimate_mode total --report_cost --gelu_method fourier 

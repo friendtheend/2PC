@@ -37,8 +37,9 @@ try:
 
     SYM_REGISTRY = True
 except ImportError:
-    from torch.onnx._internal.registration import registry  # noqa
-
+    # Newer PyTorch versions removed both `symbolic_registry` and the old
+    # `_internal.registration` import path used by legacy CrypTen code.
+    # In that case we rely on `torch.onnx.register_custom_op_symbolic` below.
     SYM_REGISTRY = False
 
 

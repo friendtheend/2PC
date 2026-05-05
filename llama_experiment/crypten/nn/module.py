@@ -770,6 +770,23 @@ class Graph(Container):
             # NOTE: We maintain inputs_available[remove_key] as True to
             # prevent re-computation of the node.
 
+        profile_linear_ops = os.environ.get("CRYPTEN_PROFILE_LINEAR_OPS", "0") == "1"
+        profile_all_ops = os.environ.get("CRYPTEN_PROFILE_ALL_OPS", "0") == "1"
+        profile_rank0_only = os.environ.get("CRYPTEN_PROFILE_RANK0_ONLY", "1") == "1"
+        op_profile_idx = 0
+
+        def _shape_of(obj):
+            if isinstance(obj, (list, tuple)):
+                return [_shape_of(x) for x in obj]
+            if isinstance(obj, dict):
+                return {k: _shape_of(v) for k, v in obj.items()}
+            if hasattr(obj, "size"):
+                try:
+                    return tuple(int(v) for v in obj.size())
+                except Exception:
+                    pass
+            return type(obj).__name__
+
         # perform forward pass:
         for input_name in self.input_names:
             _mark_as_computed(input_name)
@@ -790,6 +807,24 @@ class Graph(Container):
             comm_bytes = stats["bytes"]
             comm_time = stats["time"]
             comm_rounds = stats["rounds"]
+
+            if profile_linear_ops or profile_all_ops:
+                is_linear_op = isinstance(module, (Linear, MatMul, Gemm))
+                if (profile_all_ops or is_linear_op) and (
+                    not profile_rank0_only or crypten.comm.get().get_rank() == 0
+                ):
+                    op_profile_idx += 1
+                    print(
+                        "[OP_PROFILE] "
+                        f"idx={op_profile_idx} "
+                        f"node={node_to_compute} "
+                        f"module={type(module).__name__} "
+                        f"input_shape={_shape_of(input)} "
+                        f"output_shape={_shape_of(output)} "
+                        f"time_ms={module_time * 1000.0:.6f} "
+                        f"comm_mb={comm_bytes / (1024.0 * 1024.0):.6f} "
+                        f"rounds={comm_rounds}"
+                    )
 
             if (isinstance(module, Embedding)):
                 self.embedding_time += module_time

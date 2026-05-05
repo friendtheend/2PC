@@ -1,0 +1,2 @@
+/home/ylu18/luoresearch/2PC/results/gpt2_hybrid_20260505_033602/brillm_dummy_pcg/gpt2_W_2_party0.bin 786468
+/home/ylu18/luoresearch/2PC/results/gpt2_hybrid_20260505_033602/brillm_dummy_pcg/gpt2_W_2_party1.bin 786468

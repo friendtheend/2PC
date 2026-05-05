@@ -1,0 +1,21 @@
+{
+  "model": "LLaMA-2-7B, seq=8, 32 layers projected from 8 layers",
+  "shaft_total_s": 169.42300629615784,
+  "shaft_total_comm_gb": 109.24128782749176,
+  "shaft_linear_s": 147.61830806732178,
+  "shaft_linear_comm_gb": 104.498046875,
+  "shaft_nonlin_s": 21.80469822883606,
+  "shaft_nonlin_comm_gb": 4.74324095249176,
+  "shaft_silu_s": 2.87893009185791,
+  "shaft_silu_comm_gb": 2.4775390625,
+  "brillm_linear_s": 45.56434112,
+  "brillm_linear_comm_gb": 51.906609151999994,
+  "brillm_nonlin_s": 19.87567925453186,
+  "brillm_nonlin_comm_gb": 2.3076940774917603,
+  "brillm_silu_s": 0.21367263793945312,
+  "brillm_silu_comm_gb": 0.0419921875,
+  "brillm_total_s": 65.44002037453185,
+  "brillm_total_comm_gb": 54.214303229491755,
+  "online_speedup": 2.588981563980295,
+  "online_comm_less": 2.0149901653271853
+}

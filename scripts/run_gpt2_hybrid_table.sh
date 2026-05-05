@@ -22,6 +22,7 @@ Common environment overrides:
   RUN_SHAFT_COMP=1
   RUN_BRILLM=1
   BIN=/path/to/gpu_matrix_beaver
+  BRILLM_CUDA_VISIBLE_DEVICES=rank|0    # default rank; use 0 for single-GPU two-rank runs
 
 Outputs:
   $OUT/shaft_gpt2_l128_comp.log
@@ -31,6 +32,7 @@ Outputs:
   $OUT/gpt2_brillm_perop.csv
   $OUT/gpt2_hybrid_summary.csv
   $OUT/gpt2_table.tex
+  $OUT/table5.tex
 EOF
   exit 0
 fi
@@ -45,8 +47,14 @@ GELU_METHOD="${GELU_METHOD:-fourier}"
 RUN_SHAFT="${RUN_SHAFT:-1}"
 RUN_SHAFT_COMP="${RUN_SHAFT_COMP:-1}"
 RUN_BRILLM="${RUN_BRILLM:-1}"
+BRILLM_CUDA_VISIBLE_DEVICES="${BRILLM_CUDA_VISIBLE_DEVICES:-rank}"
+ENABLE_OP_PROFILE="${ENABLE_OP_PROFILE:-1}"
 
 mkdir -p "$OUT"
+
+# Ensure local SHAFT/CrypTen modules are importable without pip-installing
+# crypten into the active environment.
+export PYTHONPATH="$SHAFT_ROOT:${PYTHONPATH:-}"
 
 {
   date
@@ -58,6 +66,8 @@ mkdir -p "$OUT"
   echo "LENGTH=$LENGTH"
   echo "GELU_METHOD=$GELU_METHOD"
   echo "BIN=$BIN"
+  echo "BRILLM_CUDA_VISIBLE_DEVICES=$BRILLM_CUDA_VISIBLE_DEVICES"
+  echo "ENABLE_OP_PROFILE=$ENABLE_OP_PROFILE"
   nvidia-smi || true
   tc qdisc show || true
 } > "$OUT/env.txt" 2>&1
@@ -106,7 +116,17 @@ if [[ "$RUN_SHAFT" == "1" ]]; then
   fi
   printf '%q ' "${SHAFT_ARGS[@]}" > "$OUT/shaft_command.txt"
   echo >> "$OUT/shaft_command.txt"
-  "${SHAFT_ARGS[@]}" 2>&1 | tee "$SHAFT_LOG"
+  if [[ "$ENABLE_OP_PROFILE" == "1" ]]; then
+    CRYPTEN_PROFILE_LINEAR_OPS=1 \
+    CRYPTEN_PROFILE_RANK0_ONLY=1 \
+    "${SHAFT_ARGS[@]}" 2>&1 | tee "$SHAFT_LOG"
+    python "$ROOT/scripts/parse_shaft_op_profile.py" \
+      --log "$SHAFT_LOG" \
+      --raw-out "$OUT/shaft_op_profile_raw.csv" \
+      --agg-out "$OUT/shaft_op_profile_agg.csv" || true
+  else
+    "${SHAFT_ARGS[@]}" 2>&1 | tee "$SHAFT_LOG"
+  fi
 fi
 
 if [[ "$RUN_BRILLM" == "1" ]]; then
@@ -121,7 +141,7 @@ if [[ "$RUN_BRILLM" == "1" ]]; then
     local log="$OUT/brillm_online_${label}.log"
     "$ROOT/scripts/create_dummy_matrix_pcg.py" --prefix "$prefix" --M "$M" --K "$K" --N "$N" --bits 64 > "$OUT/create_${label}.txt"
     echo "==== $label ($M,$K,$N), iters=$iters ====" | tee "$log"
-    "${MPIRUN[@]}" bash -lc "export CUDA_VISIBLE_DEVICES=\${OMPI_COMM_WORLD_LOCAL_RANK}; exec '$BIN' --pcg '$prefix' --iterations '$iters'" >> "$log" 2>&1
+    "${MPIRUN[@]}" bash -lc "if [[ '$BRILLM_CUDA_VISIBLE_DEVICES' == rank ]]; then export CUDA_VISIBLE_DEVICES=\${OMPI_COMM_WORLD_LOCAL_RANK}; else export CUDA_VISIBLE_DEVICES='$BRILLM_CUDA_VISIBLE_DEVICES'; fi; exec '$BIN' --pcg '$prefix' --iterations '$iters'" >> "$log" 2>&1
     grep -E "Matrix:|Total time:|PRG time:|Comm time:|GEMM time:|Communication per iter" "$log" | tail -10
   }
 
@@ -149,5 +169,5 @@ python "$ROOT/scripts/make_gpt2_hybrid_table.py" \
   --out-dir "$OUT"
 
 echo "OUT=$OUT"
-echo "LaTeX: $OUT/gpt2_table.tex"
+echo "LaTeX: $OUT/table5.tex"
 echo "Summary: $OUT/gpt2_hybrid_summary.csv"

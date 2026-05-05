@@ -1,16 +1,18 @@
-# ViT, LLaMA, and GPT-2 Experiment Bundle
+# BERT, LLaMA, and GPT-2 Experiment Bundle
 
-This bundle collects the ViT, LLaMA, and GPT-2 experiment code, scripts, and
-measurement outputs used for the current paper tables.
+This bundle collects the BERT, LLaMA, and GPT-2 experiment code, scripts, and
+measurement outputs used for the current paper tables. Table V is the
+BERT-base/QNLI SHAFT-vs-BriLLMFlow comparison; ViT code may still exist in the
+vendored SHAFT tree, but it is not part of the main Table V pipeline.
 
 ## Can This Run After Moving?
 
 Mostly yes, for the paths this bundle is intended to preserve:
 
-- ViT/SHAFT and LLaMA/SHAFT experiment source trees are included.
+- BERT/SHAFT and LLaMA/SHAFT experiment source trees are included.
 - BriLLMFlow GPU online linear-operator source is included and can be rebuilt.
 - LLaMA2 hybrid logs, CSVs, projection notes, and LaTeX table rows are included.
-- ViT SHAFT image-classification scripts are included.
+- BERT-base SHAFT vs BriLLMFlow Table V scripts are included.
 - GPT2-base SHAFT vs BriLLMFlow table scripts are included.
 - Helper scripts are included for rebuilding and rerunning BriLLMFlow LLaMA2
   online linear operators with generated dummy PCG files.
@@ -25,7 +27,9 @@ bundle alone.
 ## Contents
 
 - `vit_experiment/`
-  - ViT/SHAFT-style experiment tree, including image-classification scripts.
+  - SHAFT/CrypTen experiment tree. The directory name is historical; the Table
+    V runner uses its BERT text-classification path under
+    `examples/text-classification/`.
   - Large caches, compiled Python files, model checkpoints, and model binaries
     are excluded.
 
@@ -44,17 +48,13 @@ bundle alone.
     projection notes, and LaTeX table fragments.
   - Dummy PCG `.bin` files are excluded because they are generated artifacts.
 
-- `HE_related/`
-  - Minimal ViT/SPU-related files copied from `HE_experiment`, without vendoring
-    the full SPU source tree.
-
 - `brillmflow_2pc/`
   - BriLLMFlow Matrix Beaver Triple sources used by the linear online
     measurements, including the original CUDA online implementation and BMT GPU
     prototype sources.
 
 - `scripts/`
-  - One-command experiment wrappers for ViT, LLaMA2, and GPT2.
+  - One-command experiment wrappers for BERT Table V, LLaMA2, and GPT2.
   - Helper scripts to build the BriLLMFlow online binary, generate dummy PCG
     files, parse SHAFT logs, parse BriLLMFlow logs, and generate table CSV/TeX.
 
@@ -84,7 +84,7 @@ Python packages:
 
 ```bash
 python3 -m pip install -r requirements.polytransformer.txt
-python3 -m pip install "numpy<2"
+python3 -m pip install "numpy<2" evaluate omegaconf
 ```
 
 Install a CUDA-enabled PyTorch build matching the machine's CUDA driver/toolkit.
@@ -93,7 +93,8 @@ PyTorch for the private inference runs.
 
 Model/data access:
 
-- ViT runs use `google/vit-base-patch16-224` by default.
+- BERT Table V runs use `andeskyl/bert-base-cased-qnli` and GLUE/QNLI by
+  default.
 - LLaMA2 runs use `meta-llama/Llama-2-7b-hf`; the target machine needs accepted
   HuggingFace access and either a valid login token or a pre-populated HF cache.
 - Model weights and HF cache files are intentionally not included in this
@@ -122,30 +123,43 @@ From the bundle root:
 scripts/check_env.sh
 ```
 
-The three top-level experiment commands are:
+The main paper-table commands are:
 
 ```bash
-scripts/run_vit_experiment.sh
-scripts/run_llama2_experiment.sh
-scripts/run_gpt2_hybrid_table.sh
+scripts/run_table5_bert.sh
+scripts/run_table5_llama2.sh
+scripts/run_table5_gpt2.sh
 ```
 
 Each command creates one timestamped output directory under `results/` and
-writes raw logs plus machine-readable summaries. The LLaMA2 and GPT2 scripts
+writes raw logs plus machine-readable summaries. The BERT, LLaMA2, and GPT2 scripts
 automatically build the BriLLMFlow online CUDA binary if it is missing. Set
 `CUDA_ARCH=sm_86` or another architecture if the target GPU is not A6000-class.
+
+For BERT Table V specifically, the intended one-command entrypoint is:
+
+```bash
+scripts/run_table5_bert.sh
+```
+
+It is an alias for `scripts/run_bert_hybrid_table.sh` and writes all BERT Table
+V artifacts in one directory. The LLaMA2 and GPT2 aliases behave the same way
+for their corresponding tables.
 
 Expected output layout:
 
 ```text
-results/vit_experiment_*/
+results/bert_hybrid_*/
   env.txt
-  commands.txt
-  vit_d2poly_report.log
-  vit_fourier_report.log
-  vit_comp.log
-  vit_comm.log
-  shaft_summary.csv
+  shaft_bert_qnli_l128_comp.log
+  shaft_bert_qnli_l128_report.log
+  brillm_online_bert_*.log
+  bert_brillm_raw_online.csv
+  bert_brillm_perop.csv
+  bert_hybrid_summary.csv
+  bert_hybrid_summary.json
+  bert_table.tex
+  table5.tex
 
 results/llama2_experiment_*/
   env.txt
@@ -155,6 +169,11 @@ results/llama2_experiment_*/
   shaft_summary.csv
   brillm_online_llama_*.log
   brillm_llama2_raw_online.csv
+  llama2_brillm_perop.csv
+  llama2_hybrid_summary.csv
+  llama2_hybrid_summary.json
+  llama2_table.tex
+  table5.tex
 
 results/gpt2_hybrid_*/
   env.txt
@@ -163,7 +182,9 @@ results/gpt2_hybrid_*/
   gpt2_brillm_raw_online.csv
   gpt2_brillm_perop.csv
   gpt2_hybrid_summary.csv
+  gpt2_hybrid_summary.json
   gpt2_table.tex
+  table5.tex
 ```
 
 If you only want to build the BriLLMFlow online binary manually:
@@ -172,91 +193,47 @@ If you only want to build the BriLLMFlow online binary manually:
 CUDA_ARCH=sm_86 scripts/build_brillm_online.sh
 ```
 
-### ViT Experiments
+### BERT Table V
 
-The ViT path is under:
-
-```text
-vit_experiment/examples/image-classification/
-```
-
-Main entrypoints:
-
-```text
-run_image_classification_private.py
-bench_vitb16_2pc_total.sh
-test_vit_base_224_comp.sh
-test_vit_base_224_comm.sh
-```
-
-Run the SHAFT ViT-B/16 private inference total-profile path:
+Run the full BERT-base QNLI Table V pipeline:
 
 ```bash
-cd vit_experiment/examples/image-classification
-GELU_METHOD=d2poly REPORT_COST=1 EVAL_SAMPLES=1 \
-  bash bench_vitb16_2pc_total.sh
+scripts/run_table5_bert.sh
 ```
 
-Run the vanilla/Fourier-style baseline by changing `GELU_METHOD`:
+This runs:
+
+- SHAFT BERT-base QNLI, seq=128, batch size 1, vanilla Fourier GELU, with
+  `--report_cost`.
+- BriLLMFlow online GPU GEMM measurements for the six BERT-base linear
+  operators: `W_Q/K/V`, `W_O`, `W_1`, `W_2`, `Q@K^T`, and `scores@V`.
+- CSV and LaTeX generation for the paper-style Table V.
+
+Useful overrides:
 
 ```bash
-cd vit_experiment/examples/image-classification
-GELU_METHOD=fourier REPORT_COST=1 EVAL_SAMPLES=1 \
-  bash bench_vitb16_2pc_total.sh
-```
-
-Run SHAFT's original separated comp/comm scripts:
-
-```bash
-cd vit_experiment/examples/image-classification
-bash test_vit_base_224_comp.sh
-bash test_vit_base_224_comm.sh
-```
-
-ViT uses `google/vit-base-patch16-224` by default in the bundled benchmark
-script. The model weights are not included; the target machine needs HF access
-or a populated cache. Logs are printed to stdout unless you redirect them, e.g.:
-
-```bash
-mkdir -p ../../results/vit_rerun
-GELU_METHOD=d2poly REPORT_COST=1 EVAL_SAMPLES=1 \
-  bash bench_vitb16_2pc_total.sh 2>&1 | tee ../../results/vit_rerun/vit_d2poly.log
+OUT=results/bert_hybrid_test GELU_METHOD=fourier scripts/run_table5_bert.sh
+BRILLM_CUDA_VISIBLE_DEVICES=0 scripts/run_table5_bert.sh   # single-GPU two-rank run
+CUDA_ARCH=sm_90 scripts/run_table5_bert.sh                 # build for Hopper
 ```
 
 ### LLaMA2 Experiments
 
-Rerun the LLaMA2 forward-shape BriLLMFlow online linear operators:
+Run the full LLaMA2 table pipeline:
 
 ```bash
-OUT=results/rerun_llama2_online_$(date +%Y%m%d_%H%M%S) \
-  scripts/run_llama2_online_ops.sh
+scripts/run_table5_llama2.sh
 ```
 
-Run LLaMA2 SHAFT 2PC profiling from the LLaMA experiment tree:
-
-```bash
-cd llama_experiment/examples/text-generation
-WORLD_SIZE=2 \
-CUDA_VISIBLE_DEVICES=0,1 \
-SHAFT_CUDA_DEVICES=0,1 \
-PYTORCH_ALLOC_CONF=max_split_size_mb:64 \
-FP16=1 \
-SILU_METHOD=fourier \
-CRYPTEN_ONNX_FORCE_DISK=1 \
-CRYPTEN_KEEP_PYTORCH_MODEL=0 \
-MAX_LAYERS=8 \
-LEN_DATA=8 \
-bash bench_llama2_2pc_total.sh
-```
-
-For the d2poly/MixPoly-style SiLU path, set `SILU_METHOD=d2poly`.
-
-The one-command wrapper above runs both Fourier and d2poly SHAFT LLaMA2 logs
-and the BriLLMFlow online linear operator logs, then writes:
+The wrapper runs both Fourier and d2poly SHAFT LLaMA2 logs, runs the BriLLMFlow
+online linear operator logs, projects the 8-layer run to 32 layers, and writes:
 
 ```text
 results/llama2_experiment_*/shaft_summary.csv
 results/llama2_experiment_*/brillm_llama2_raw_online.csv
+results/llama2_experiment_*/llama2_hybrid_summary.csv
+results/llama2_experiment_*/llama2_table.tex
+results/llama2_experiment_*/table5.tex
 ```
 
 ### GPT2-base Experiments
@@ -264,11 +241,11 @@ results/llama2_experiment_*/brillm_llama2_raw_online.csv
 Run the GPT2-base seq=128 SHAFT vs BriLLMFlow table pipeline:
 
 ```bash
-scripts/run_gpt2_hybrid_table.sh
+scripts/run_table5_gpt2.sh
 ```
 
-The GPT-2 runner writes raw logs, CSV summaries, and `gpt2_table.tex` under a
-new `results/gpt2_hybrid_*` directory. It also keeps the SHAFT-standard
+The GPT-2 runner writes raw logs, CSV summaries, `gpt2_table.tex`, and
+`table5.tex` under a new `results/gpt2_hybrid_*` directory. It also keeps the SHAFT-standard
 `--comp` command log:
 
 ```bash
@@ -300,17 +277,10 @@ python run_generation_private.py \
 
 ## Key Files
 
-- ViT SHAFT script:
-  `vit_experiment/examples/image-classification/bench_vitb16_2pc_total.sh`
-- ViT SHAFT entrypoint:
-  `vit_experiment/examples/image-classification/run_image_classification_private.py`
-- LLaMA2 table:
-  `results/llama2_hybrid_20260504_142750/llama2_table_bert_style.tex`
-- LLaMA2 aggregate CSV:
-  `results/llama2_hybrid_20260504_142750/llama2_hybrid_aggregate.csv`
-- LLaMA2 per-op CSV:
-  `results/llama2_hybrid_20260504_142750/brillm_llama2_forward_online_e2e_counts.csv`
-- LLaMA2 projection notes:
-  `results/llama2_hybrid_20260504_142750/projection_notes.txt`
-- BriLLMFlow online CUDA source:
-  `brillmflow_2pc/BMT/gpu_matrix_beaver_online.cu`
+- BERT Table V wrapper: `scripts/run_table5_bert.sh`
+- LLaMA2 table wrapper: `scripts/run_table5_llama2.sh`
+- GPT2 table wrapper: `scripts/run_table5_gpt2.sh`
+- BERT table generator: `scripts/make_bert_hybrid_table.py`
+- LLaMA2 table generator: `scripts/make_llama2_hybrid_table.py`
+- GPT2 table generator: `scripts/make_gpt2_hybrid_table.py`
+- BriLLMFlow online CUDA source: `brillmflow_2pc/BMT/gpu_matrix_beaver_online.cu`

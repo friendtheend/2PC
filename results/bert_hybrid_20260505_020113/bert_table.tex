@@ -1,0 +1,32 @@
+\begin{table}[t]
+\centering
+\caption{BERT-base online phase comparison with SHAFT (QNLI, seq=128, 12 layers). SHAFT uses Fourier GELU; BriLLMFlow replaces linear operators with GPU integer GEMM and uses MixPoly GELU.}
+\label{tab:bert_shaft_comparison}
+\setlength{\tabcolsep}{4pt}
+\footnotesize
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Op} & \textbf{Time (ms)} & \textbf{Comm (MB)} & \textbf{BW (Gbps)} \\
+\midrule
+\multicolumn{4}{l}{\textit{BriLLMFlow Linear (per-operator)}} \\
+W\_Q/K/V    & 110.2 & 198.2 & 14.39 \\
+W\_O        & 36.8 & 66.1 & 14.36 \\
+W\_1        & 162.9 & 235.9 & 11.58 \\
+W\_2        & 183.0 & 264.2 & 11.55 \\
+Q@K$^T$     & 21.7 & 18.9 & 6.95 \\
+scores@V    & 33.0 & 28.3 & 6.85 \\
+\midrule
+\multicolumn{4}{l}{\textit{Aggregate (BERT-base, 12 layers)}} \\
+                       & \textbf{SHAFT} & \textbf{BriLLMFlow} & \textbf{Speedup} \\
+Linear time            & 8173 ms & \textbf{548 ms} & \textbf{14.92}$\times$ \\
+Linear comm            & 1521 MB & 812 MB & 1.87$\times$ less \\
+Non-linear time        & 13398 ms & \textbf{10164 ms} & 1.32$\times$ \\
+Non-linear comm        & 8972 MB & \textbf{4894 MB} & 1.83$\times$ less \\
+\quad of which GELU time & 3303 ms & \textbf{68 ms} & \textbf{48.6}$\times$ \\
+\quad of which GELU comm & 4148 MB & \textbf{70 MB} & \textbf{59.3}$\times$ less \\
+\midrule
+\textbf{Online E2E}    & 21572 ms & \textbf{10711 ms} & \textbf{2.01}$\times$ \\
+\textbf{Online comm}   & 10493 MB & \textbf{5705 MB} & \textbf{1.84}$\times$ less \\
+\bottomrule
+\end{tabular}
+\end{table}

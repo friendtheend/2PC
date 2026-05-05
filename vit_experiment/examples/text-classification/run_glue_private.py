@@ -40,15 +40,22 @@ from transformers import (
     default_data_collator,
 )
 
-from transformers.utils import check_min_version, send_example_telemetry
+from transformers.utils import check_min_version
+try:
+    from transformers.utils import send_example_telemetry
+except ImportError:
+    def send_example_telemetry(*args, **kwargs):
+        return None
 from transformers.utils.versions import require_version
 
 import crypten as ct
 from crypten.config import cfg
 from multiprocess_launcher import MultiProcessLauncher
 
-# Will error if the minimal version of Transformers is not installed. Remove at your own risks.
-check_min_version("4.42.0.dev0")
+# Keep this aligned with the reproducible bundle environment. The original
+# script came from a newer Transformers example, but the SHAFT/CrypTen path used
+# for these experiments works with the pinned 4.38.x environment.
+check_min_version("4.38.0")
 
 require_version("datasets>=1.8.0", "To fix: pip install -r examples/pytorch/text-classification/requirements.txt")
 
@@ -93,6 +100,25 @@ def parse_args():
         "--comp",
         action="store_true",
         help="If passed, estimate computation time (without communication).",
+    )
+    parser.add_argument(
+        "--estimate_mode",
+        type=str,
+        choices=["auto", "comm", "total"],
+        default="auto",
+        help="Cost print mode for communication run. 'total' prints latency + communication.",
+    )
+    parser.add_argument(
+        "--report_cost",
+        action="store_true",
+        help="Print detailed per-module latency/communication breakdown from crypten.nn.Graph.",
+    )
+    parser.add_argument(
+        "--gelu_method",
+        type=str,
+        default=os.environ.get("GELU_METHOD", cfg.functions.gelu_method),
+        choices=["ideal", "fourier", "secformer", "poly", "bolt", "erf", "d2poly"],
+        help="GELU approximation used by the SHAFT crypten backend.",
     )
     parser.add_argument(
         "--acc",
@@ -178,6 +204,15 @@ def parse_args():
 def main():
     script_start_time = time.time()
     args = parse_args()
+    cfg.debug.report_cost = bool(args.report_cost)
+    cfg.functions.gelu_method = args.gelu_method
+    if args.comp:
+        cfg.cost.estimate_cost = True
+        cfg.cost.estimate_mode = "comp"
+    elif args.estimate_mode != "auto":
+        cfg.cost.estimate_cost = True
+        cfg.cost.estimate_mode = args.estimate_mode
+
     # Sending telemetry. Tracking the example usage helps us better allocate resources to maintain them. The
     # information sent is the one passed as arguments along with your Python/PyTorch versions.
     send_example_telemetry("run_glue_private", args)
@@ -351,11 +386,15 @@ def main():
 
     eval_dataloader = DataLoader(eval_dataset, collate_fn=data_collator, batch_size=args.per_device_eval_batch_size)
 
-    # Get the metric function
-    if args.task_name is not None:
-        metric = evaluate.load("glue", args.task_name)
-    else:
-        metric = evaluate.load("accuracy")
+    # For profiling paths, metric computation is unnecessary and may pull extra
+    # optional deps (e.g., scikit-learn via evaluate's GLUE metric).
+    need_metric = args.acc and args.len_data <= 0
+    metric = None
+    if need_metric:
+        if args.task_name is not None:
+            metric = evaluate.load("glue", args.task_name)
+        else:
+            metric = evaluate.load("accuracy")
 
     device = "cuda"
     ct.init()
@@ -386,10 +425,11 @@ def main():
             predictions = predictions[: len(eval_dataloader.dataset) - samples_seen]
             references = references[: len(eval_dataloader.dataset) - samples_seen]
         samples_seen += references.shape[0]
-        metric.add_batch(
-            predictions=predictions,
-            references=references,
-        )
+        if metric is not None:
+            metric.add_batch(
+                predictions=predictions,
+                references=references,
+            )
         if args.len_data > 0:
             return
         elif args.num_data > 0 and samples_seen >= args.num_data:
@@ -397,6 +437,9 @@ def main():
         print(f"running private inference, samples_seen={samples_seen}")
     
     try:
+        if metric is None:
+            print(f"running time: {time.time() - script_start_time}s")
+            return
         eval_metric = metric.compute()
         print(f"metric: {eval_metric}")
         print(f"running time: {time.time() - script_start_time}s")
