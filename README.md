@@ -342,6 +342,21 @@ Environment requirements (offline CPU path):
 - Runtime libs: `libsodium`, `boost`, `openssl`
 - If installing to `/usr/local`, admin privileges (`sudo`) are required.
 
+Environment check script:
+
+```bash
+scripts/check_offline_env.sh
+```
+
+This checks:
+
+- MPI toolchain paths/versions (`mpirun`, `mpicxx`)
+- CPU topology and effective affinity
+- offline binary existence/executable bit
+- linked MPI runtime in the binary
+- required `libOTe`/`cryptoTools`/`coproto` headers and static libs
+- common MPI mismatch hint (`Need 2 MPI processes`)
+
 Build command (manual):
 
 ```bash
