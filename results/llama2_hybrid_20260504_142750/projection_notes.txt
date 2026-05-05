@@ -1,0 +1,7 @@
+Projection notes for llama2_hybrid_20260504_142750
+- SHAFT full run used max_layers=8 due GPU memory. The table projects decoder-block costs to 32 layers.
+- Projection formula: projected_total = embedding_once + 4 * (measured_total_8layer - embedding_8layer). Linear matmul = 4 * measured_matmul_8layer. Non-linear = projected_total - projected_linear.
+- BriLLMFlow online linear rows use true seq=8 forward shapes, not weight-shape stress tests.
+- BriLLMFlow counts for 32 layers: W_Q/K/V=32*3, W_O=32, W_gate/up=32*2, W_down=32, Q@K^T=32*32 heads, scores@V=32*32 heads.
+- Communication column for BriLLMFlow uses party-0 sent MB from gpu_matrix_beaver logs. SHAFT communication uses report_cost bytes as printed by CrypTen/SHAFT and is converted GB -> MB with x1000 for paper-table convention.
+- Network qdisc recorded for this run: noqueue on lo (no tc rate limit active).

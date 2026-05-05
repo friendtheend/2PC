@@ -1,0 +1,22 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+
+# Do not commit model/cache artifacts.
+*.bin
+*.pt
+*.pth
+*.safetensors
+*.onnx
+*.ckpt
+*.model
+
+# Local runtime outputs.
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+*.tmp
+*.pid
+core

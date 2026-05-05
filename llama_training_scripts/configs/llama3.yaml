@@ -1,0 +1,49 @@
+model:
+  model_id: meta-llama/Meta-Llama-3-8B
+  device_map: auto
+  torch_dtype: bfloat16
+  trust_remote_code: true
+
+teacher:
+  enabled: true
+  model_id: meta-llama/Meta-Llama-3-8B
+  device_map: auto
+  torch_dtype: bfloat16
+  trust_remote_code: true
+
+poly:
+  enabled: true
+  replace_odd_layers: true
+  poly_degree: 2
+
+loss:
+  weights:
+    kl: 1.0
+    ce: 1.0
+    mse: 1.0
+    cosine: 1.0
+
+training:
+  steps: 5000
+  save_steps: 500
+  save_total_limit: 3
+  logging_steps: 10
+  warmup_steps: 150
+  gradient_checkpointing: true
+  batch_size: 1
+  grad_accum: 64
+  lr: 1.5e-5
+  max_norm: 0.5
+  optimizer:
+    use_sam: true
+    rho: 0.03
+    adaptive: false
+  output_dir: outputs/llama3_8b_poly_act
+
+data:
+  dataset: allenai/c4
+  subset: en
+  split: train
+  streaming: true
+  max_length: 4096
+  min_text_length: 50

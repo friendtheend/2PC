@@ -1,0 +1,17 @@
+model:
+  model_id: meta-llama/Meta-Llama-3-8B
+  device_map: auto
+  torch_dtype: bfloat16
+  trust_remote_code: true
+
+poly:
+  enabled: false
+
+evaluation:
+  method: loglikelihood
+  dataset_name: allenai/ai2_arc
+  subset: ARC-Easy
+  split: test
+  max_samples: 1000
+  max_new_tokens: 4
+  do_sample: false

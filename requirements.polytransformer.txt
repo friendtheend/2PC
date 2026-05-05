@@ -1,0 +1,12 @@
+pyyaml
+datasets
+numpy
+pandas
+scipy
+tqdm
+torch
+torchvision
+transformers
+safetensors
+accelerate
+peft
